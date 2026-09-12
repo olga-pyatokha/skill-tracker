@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""Render a skill-tracker HTML from a discipline's skills.json.
+
+usage: python3 build.py acro
+Writes <discipline>/<discipline>_skills.html and mirrors it to Windows Downloads.
+"""
+import json, re, sys, html, shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+DOWNLOADS = Path("/mnt/c/Users/olga.p/Downloads")
+WIKI = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=520"
+
+TITLES = {"acro": ("Acro Yoga Skill Map", "🤸")}
+USERS = ["olga", "reza"]
+
+def esc(s): return html.escape(str(s), quote=True)
+
+def build(disc: str):
+    d = json.loads((ROOT / disc / "skills.json").read_text())
+    title, emoji = TITLES.get(disc, (f"{disc} skills", "✅"))
+    for s in d["skills"]:
+        if s.get("img"):
+            s["img_url"] = WIKI.format(s["img"])
+            s["img_page"] = "https://commons.wikimedia.org/wiki/File:" + s["img"]
+        q = s["name"].split("(")[0].split("/")[0].strip()
+        s["ig"] = "https://www.instagram.com/explore/search/keyword/?q=" + q.replace(" ", "%20") + "%20acroyoga"
+        s["acropedia"] = "https://www.acropedia.org/?s=" + q.replace(" ", "+")
+    # tutorial video id -> thumbnail
+    for s in d["skills"]:
+        m = re.search(r"(?:v=|youtu\.be/)([\w-]{11})", s.get("yt", ""))
+        if m: s["yt_id"] = m.group(1)
+    data = json.dumps(d, ensure_ascii=False)
+    tpl = (ROOT / "template.html").read_text()
+    links = []
+    for user in USERS:
+        prog = {}
+        for p in (DOWNLOADS / f"{disc}_progress_{user}.json", ROOT / disc / f"progress_{user}.json"):
+            if p.exists():
+                prog = json.loads(p.read_text()); print(f"progress[{user}] from", p, len(prog), "skills")
+                (ROOT / disc / f"progress_{user}.json").write_text(json.dumps(prog, indent=1)); break
+        out = (tpl.replace("__TITLE__", esc(title)).replace("__EMOJI__", emoji).replace("__DATA__", data)
+                  .replace("__DISC__", disc).replace("__USER__", user).replace("__USERNAME__", user.capitalize())
+                  .replace("__PROGRESS__", json.dumps(prog)))
+        out_path = ROOT / disc / f"{user}.html"
+        out_path.write_text(out, encoding="utf-8")
+        print("wrote", out_path, f"{out_path.stat().st_size//1024} KB")
+        links.append((user, f"{disc}/{user}.html"))
+        if user == "olga" and DOWNLOADS.exists():
+            dst = DOWNLOADS / f"{disc}yoga_skills.html"; shutil.copy(out_path, dst); print("mirrored", dst)
+    # landing page
+    items = "".join(f'<li><a href="{href}">{u.capitalize()} · {esc(title)}</a></li>' for u, href in links)
+    (ROOT / "index.html").write_text(f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skill Tracker</title><style>body{{font:17px/1.5 -apple-system,"Segoe UI",sans-serif;background:#faf8f4;color:#1f2328;max-width:640px;margin:60px auto;padding:0 20px}}
+li{{margin:10px 0}} a{{color:#0f766e;font-weight:600;text-decoration:none}} a:hover{{text-decoration:underline}} p{{color:#6b7280}}</style></head>
+<body><h1>{emoji} Skill Tracker</h1><p>One board per person. Progress saves in your own browser; use <em>Save progress to file</em> in the footer to back it up.</p><ul>{items}</ul></body></html>""", encoding="utf-8")
+    print("wrote index.html")
+
+if __name__ == "__main__":
+    build(sys.argv[1] if len(sys.argv) > 1 else "acro")

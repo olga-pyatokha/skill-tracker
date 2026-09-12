@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__ · __USERNAME__</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1f2328;--muted:#6b7280;--line:#e6e2da;--accent:#0f766e;
+ --l1:#2e7d32;--l2:#00838f;--l3:#ef6c00;--l4:#c62828;--l5:#6a1b9a;
+ --s0:#e5e7eb;--s1:#fde68a;--s2:#93c5fd;--s3:#86efac}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Segoe UI",Inter,Roboto,sans-serif}
+header{padding:28px 24px 12px;max-width:1280px;margin:0 auto}
+h1{margin:0 0 4px;font-size:30px;letter-spacing:-.01em}
+h1 small{font-weight:400;color:var(--muted);font-size:15px;margin-left:10px}
+.sub{color:var(--muted);margin:0 0 18px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px 60px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;border-left-width:5px}
+.tile.active{outline:2px solid var(--ink)}
+.tile b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.tile .n{font-size:22px;font-weight:700;margin-top:2px}
+.tile .bar{height:6px;border-radius:3px;background:#eee;margin-top:8px;overflow:hidden;display:flex}
+.tile .bar i{display:block;height:100%}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 18px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px;user-select:none}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+input[type=search]{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;background:var(--card)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:0 0 14px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:var(--c)}
+.track{margin:26px 0 10px;display:flex;align-items:baseline;gap:12px}
+.track h2{margin:0;font-size:20px}
+.track small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;position:relative;border-top:4px solid var(--lc)}
+.card.hide{display:none}
+.card.st3{opacity:.75}
+.thumb{height:150px;background:linear-gradient(135deg,var(--lbg),#fff);display:flex;align-items:center;justify-content:center;color:var(--lc);font-size:44px;font-weight:800;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb a.cap{position:absolute;right:8px;bottom:6px;font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:2px 6px;border-radius:6px;text-decoration:none}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.hd h3{margin:0;font-size:16px;line-height:1.25}
+.lvl{font-size:11px;font-weight:700;color:#fff;background:var(--lc);border-radius:6px;padding:3px 7px;white-space:nowrap}
+.role{font-size:13px;margin:0}
+.role b{display:inline-block;min-width:54px;color:var(--muted);font-weight:600}
+.note{font-size:13px;color:var(--accent);margin:0}
+.pre{font-size:12px;color:var(--muted);margin:0}
+.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.links a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:4px 8px;color:var(--ink);background:#fafafa}
+.links a:hover{border-color:var(--ink)}
+.status{border:none;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;background:var(--s0);width:100%;text-align:left;display:flex;justify-content:space-between}
+.status.s1{background:var(--s1)}.status.s2{background:var(--s2)}.status.s3{background:var(--s3)}
+.status span{opacity:.6;font-weight:400}
+details.sources{margin-top:36px;color:var(--muted);font-size:13px}
+details.sources a{color:var(--accent)}
+.io{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.io button{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:#fff;cursor:pointer}
+textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
+@media (max-width:600px){header,.wrap{padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+<header>
+ <h1>__EMOJI__ __TITLE__ <small>__USERNAME__'s board</small> <small id="count"></small></h1>
+ <p class="sub">Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em>not started → learning → with spot → solid</em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
+</header>
+<div class="wrap">
+ <div class="summary" id="summary"></div>
+ <div class="legend">
+  <span style="--c:var(--s0)">not started</span><span style="--c:var(--s1)">learning</span><span style="--c:var(--s2)">can do with a spot</span><span style="--c:var(--s3)">solid</span>
+ </div>
+ <div class="controls" id="tracks"></div>
+ <div class="controls">
+  <input type="search" id="q" placeholder="search a pose, e.g. star, throne, whale…">
+  <label class="chip"><input type="checkbox" id="hideSolid" style="vertical-align:-2px"> hide solid</label>
+  <label class="chip"><input type="checkbox" id="onlyMine" style="vertical-align:-2px"> only in progress</label>
+ </div>
+ <div id="content"></div>
+ <details class="sources">
+  <summary>Sources, method &amp; export</summary>
+  <p>Skill list and level bands assembled 2026-09-12 from: <a href="https://partneracrobatics.com/manual/">Partner Acrobatics Manual</a> (category structure: L-basing, inversions, standing, trios, icarian, washing machines), <a href="https://acrodemy.eu/sequences-flows-washing-machines/">Acrodemy</a> (washing-machine catalog and levels), <a href="https://www.yogaemotion.net/courses">YogaEmotion AcroYoga Biblio</a> (Level 1 pose list), <a href="https://www.acrospiritcommunity.com/post/what-level-are-you-at-in-acroyoga">AcroSpirit level definitions</a> (what marks beginner / intermediate / advanced / expert), <a href="https://beyondthematco.com/blogs/acroyoganearme/acro-lingo-101-30-acroyoga-terms-to-boost-your-flow-dictionary-game">Beyond The Mat acro lingo</a>, <a href="https://acroyoga757.com/acro-yoga-poses/">AcroYoga 757 pose gallery</a>, <a href="https://antranik.org/acro-yoga/">Antranik's progression</a>, <a href="https://en.wikipedia.org/wiki/Acroyoga">Wikipedia</a>. Photos: <a href="https://commons.wikimedia.org/wiki/Category:Acroyoga">Wikimedia Commons</a>.</p>
+  <p><a href="https://www.acropedia.org/poses/">Acropedia</a> was returning 522 errors while this was built, so each card links to its search instead of a pose page. Base / flyer lines are one-line summaries to jog memory, not instructions — use the ▶ tutorial link before trying anything new, and spot everything above Level 1.</p>
+  <p>Named channels worth a subscribe: Acro Adventure, Daniel Scott (AcroYoga Basics), Feel The Flow, Super Dave, Jacob &amp; Debbie Acro, YogaSlackers, Partner Acrobatics. Instagram: <a href="https://www.instagram.com/acroyogatutorials/">@acroyogatutorials</a>, <a href="https://www.instagram.com/acro_adventure/">@acro_adventure</a>, <a href="https://www.instagram.com/acroyoga/">@acroyoga</a>.</p>
+  <div class="io"><button id="dl"><b>Save progress to file</b> (Downloads/__DISC___progress___USER__.json — rebuilds keep it)</button><button id="exp">Copy progress JSON</button><button id="imp">Import from box</button><button id="clr">Reset progress</button></div>
+  <textarea id="box" placeholder="progress JSON appears here on export; paste here to import"></textarea>
+ </details>
+</div>
+<script>
+const D = __DATA__;
+const EMBEDDED = __PROGRESS__;
+const USER = "__USER__";
+const KEY = "skilltracker-__DISC__-" + USER + "-v1";
+const ST = ["not started","learning","with spot","solid"];
+let prog = {}; try{ prog = JSON.parse(localStorage.getItem(KEY) || localStorage.getItem("skilltracker-__DISC__-v1") || "{}"); }catch(e){}
+// file-saved progress is the floor; anything newer in this browser wins per skill
+for (const k in EMBEDDED) if (!(k in prog)) prog[k] = EMBEDDED[k];
+let lvlFilter = null, trackFilter = null;
+
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(prog)); }catch(e){} }
+function lv(n){ return D.levels[String(n)]; }
+
+function render(){
+  const c = document.getElementById("content"); c.innerHTML = "";
+  for (const t of D.tracks){
+    const skills = D.skills.filter(s=>s.track===t);
+    if(!skills.length) continue;
+    const h = document.createElement("div"); h.className="track";
+    h.innerHTML = `<h2>${t}</h2><small>${skills.length} skills</small>`;
+    const g = document.createElement("div"); g.className="grid";
+    for (const s of skills){
+      const L = lv(s.level); const st = prog[s.id]||0;
+      const card = document.createElement("div");
+      card.className = "card st"+st; card.dataset.id=s.id; card.dataset.level=s.level; card.dataset.track=t;
+      card.style.setProperty("--lc", L.color); card.style.setProperty("--lbg", L.bg);
+      let thumb = `L${s.level}`;
+      if (s.img_url) thumb = `<img loading="lazy" src="${s.img_url}" alt="${s.name}"><a class="cap" href="${s.img_page}" target="_blank">wikimedia</a>`;
+      else if (s.yt_id) thumb = `<a href="${s.yt}" target="_blank" style="display:contents"><img loading="lazy" src="https://img.youtube.com/vi/${s.yt_id}/hqdefault.jpg" alt="${s.name}"></a><a class="cap" href="${s.yt}" target="_blank">▶ ${s.yt_by||"tutorial"}</a>`;
+      const spot = s.spotter ? `<p class="role"><b>Spotter</b> ${s.spotter}</p>` : "";
+      const note = s.note ? `<p class="note">${s.note}</p>` : "";
+      card.innerHTML = `
+        <div class="thumb">${thumb}</div>
+        <div class="body">
+          <div class="hd"><h3>${s.name}</h3><span class="lvl">L${s.level} · ${L.name}</span></div>
+          <p class="role"><b>Base</b> ${s.base}</p>
+          <p class="role"><b>Flyer</b> ${s.flyer}</p>${spot}${note}
+          <p class="pre">Prereq: ${s.prereq}</p>
+          <div class="links">
+            <a href="${s.yt}" target="_blank">▶ tutorial</a>
+            <a href="${s.ig}" target="_blank">◎ instagram</a>
+            <a href="${s.acropedia}" target="_blank">📖 acropedia</a>
+          </div>
+          <button class="status s${st}" data-id="${s.id}">${ST[st]}<span>click to change</span></button>
+        </div>`;
+      g.appendChild(card);
+    }
+    c.appendChild(h); c.appendChild(g);
+  }
+  c.querySelectorAll(".status").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.id; prog[id]=((prog[id]||0)+1)%4; save(); render();
+  });
+  applyFilters(); summary();
+}
+
+function summary(){
+  const el = document.getElementById("summary"); el.innerHTML="";
+  for (const n of [1,2,3,4,5]){
+    const L = lv(n); const ss = D.skills.filter(s=>s.level===n);
+    const cnt=[0,0,0,0]; ss.forEach(s=>cnt[prog[s.id]||0]++);
+    const t = document.createElement("div"); t.className="tile"+(lvlFilter===n?" active":"");
+    t.style.borderLeftColor=L.color;
+    const seg = (i,cls)=>`<i style="width:${100*cnt[i]/ss.length}%;background:var(--${cls})"></i>`;
+    t.innerHTML = `<b style="color:${L.color}">L${n} · ${L.name}</b><div class="n">${cnt[3]} / ${ss.length} <span style="font-size:12px;color:var(--muted);font-weight:400">solid</span></div>
+      <div class="bar">${seg(3,"s3")}${seg(2,"s2")}${seg(1,"s1")}</div>`;
+    t.onclick=()=>{ lvlFilter = lvlFilter===n?null:n; summary(); applyFilters(); };
+    el.appendChild(t);
+  }
+  const total = D.skills.length, solid = D.skills.filter(s=>(prog[s.id]||0)===3).length, going = D.skills.filter(s=>[1,2].includes(prog[s.id]||0)).length;
+  document.getElementById("count").textContent = `${total} skills · ${solid} solid · ${going} in progress`;
+}
+
+function tracks(){
+  const el = document.getElementById("tracks");
+  el.innerHTML = `<span class="chip ${trackFilter?"":"on"}" data-t="">all tracks</span>` + D.tracks.map(t=>`<span class="chip ${trackFilter===t?"on":""}" data-t="${t}">${t}</span>`).join("");
+  el.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{ trackFilter = ch.dataset.t||null; tracks(); applyFilters(); });
+}
+
+function applyFilters(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const hideSolid = document.getElementById("hideSolid").checked, onlyMine = document.getElementById("onlyMine").checked;
+  document.querySelectorAll(".card").forEach(c=>{
+    const s = D.skills.find(x=>x.id===c.dataset.id); const st = prog[s.id]||0;
+    let show = true;
+    if (lvlFilter && s.level!==lvlFilter) show=false;
+    if (trackFilter && s.track!==trackFilter) show=false;
+    if (q && !(s.name+" "+s.base+" "+s.flyer+" "+s.prereq).toLowerCase().includes(q)) show=false;
+    if (hideSolid && st===3) show=false;
+    if (onlyMine && !(st===1||st===2)) show=false;
+    c.classList.toggle("hide", !show);
+  });
+  document.querySelectorAll(".track").forEach(h=>{
+    const g=h.nextElementSibling; h.style.display = g.querySelector(".card:not(.hide)") ? "" : "none"; g.style.display=h.style.display;
+  });
+}
+
+document.getElementById("q").oninput=applyFilters;
+document.getElementById("hideSolid").onchange=applyFilters;
+document.getElementById("onlyMine").onchange=applyFilters;
+document.getElementById("dl").onclick=()=>{ const b=new Blob([JSON.stringify(prog,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download="__DISC___progress___USER__.json"; a.click(); };
+document.getElementById("exp").onclick=()=>{ const s=JSON.stringify(prog); document.getElementById("box").value=s; navigator.clipboard&&navigator.clipboard.writeText(s); };
+document.getElementById("imp").onclick=()=>{ try{ prog=JSON.parse(document.getElementById("box").value); save(); render(); }catch(e){ alert("not valid JSON"); } };
+document.getElementById("clr").onclick=()=>{ if(confirm("Reset all progress?")){ prog={}; save(); render(); } };
+tracks(); render();
+</script>
+</body>
+</html>
