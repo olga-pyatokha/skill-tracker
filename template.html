@@ -57,7 +57,17 @@ details.sources a{color:var(--accent)}
 .io{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .io button{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:#fff;cursor:pointer}
 textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
-@media (max-width:600px){header,.wrap{padding-left:16px;padding-right:16px}}
+@media (max-width:600px){
+ header{padding:18px 16px 8px}.wrap{padding-left:16px;padding-right:16px}
+ h1{font-size:22px}h1 small{display:block;margin:4px 0 0;font-size:13px}.sub{font-size:14px}
+ .summary{grid-template-columns:repeat(2,1fr);gap:8px}.tile{padding:10px 10px;border-radius:10px}.tile .n{font-size:18px}.tile b{font-size:11px}
+ .chip{padding:8px 12px}input[type=search]{padding:10px 12px;font-size:16px}
+ .grid{grid-template-columns:1fr;gap:12px}.thumb{height:170px}
+ .hd{flex-direction:column;gap:4px}.lvl{align-self:flex-start}
+ .status{min-height:44px;font-size:14px}.links a{padding:8px 10px;font-size:13px}
+ .track{margin-top:20px}.track h2{font-size:18px}
+}
+@media (hover:none){.status:active{filter:brightness(.95)}}
 </style>
 </head>
 <body>
