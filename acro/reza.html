@@ -73,12 +73,12 @@ textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
 <body>
 <header>
  <h1>🤸 Acro Yoga Skill Map <small>Reza's board</small> <small id="count"></small></h1>
- <p class="sub">L1 first classes · L2 inversions and star family · L3 hand-to-hand entries and the classic washing machines · L4 H2H, standing acro, pops · L5 icarian and free machines — Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em>not started → learning → with spot → solid</em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
+ <p class="sub">L1 first classes · L2 inversions and star family · L3 hand-to-hand entries and the classic washing machines · L4 H2H, standing acro, pops · L5 icarian and free machines — Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em id="cycle"></em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
 </header>
 <div class="wrap">
  <div class="summary" id="summary"></div>
  <div class="legend">
-  <span style="--c:var(--s0)">not started</span><span style="--c:var(--s1)">learning</span><span style="--c:var(--s2)">can do with a spot</span><span style="--c:var(--s3)">solid</span>
+  <span style="--c:var(--s0)" data-st="0"></span><span style="--c:var(--s1)" data-st="1"></span><span style="--c:var(--s2)" data-st="2"></span><span style="--c:var(--s3)" data-st="3"></span>
  </div>
  <div class="controls" id="tracks"></div>
  <div class="controls">
@@ -102,7 +102,7 @@ const D = {"levels": {"1": {"name": "Foundations", "color": "#2e7d32", "bg": "#e
 const EMBEDDED = {};
 const USER = "reza";
 const KEY = "skilltracker-acro-" + USER + "-v1";
-const ST = ["not started","learning","with spot","solid"];
+const ST = D.statuses || ["not started","learning","with spot","solid"];
 let prog = {}; try{ prog = JSON.parse(localStorage.getItem(KEY) || localStorage.getItem("skilltracker-acro-v1") || "{}"); }catch(e){}
 // file-saved progress is the floor; anything newer in this browser wins per skill
 for (const k in EMBEDDED) if (!(k in prog)) prog[k] = EMBEDDED[k];
@@ -160,13 +160,13 @@ function summary(){
     const t = document.createElement("div"); t.className="tile"+(lvlFilter===n?" active":"");
     t.style.borderLeftColor=L.color;
     const seg = (i,cls)=>`<i style="width:${100*cnt[i]/ss.length}%;background:var(--${cls})"></i>`;
-    t.innerHTML = `<b style="color:${L.color}">L${n} · ${L.name}</b><div class="n">${cnt[3]} / ${ss.length} <span style="font-size:12px;color:var(--muted);font-weight:400">solid</span></div>
+    t.innerHTML = `<b style="color:${L.color}">L${n} · ${L.name}</b><div class="n">${cnt[3]} / ${ss.length} <span style="font-size:12px;color:var(--muted);font-weight:400">${ST[3]}</span></div>
       <div class="bar">${seg(3,"s3")}${seg(2,"s2")}${seg(1,"s1")}</div>`;
     t.onclick=()=>{ lvlFilter = lvlFilter===n?null:n; summary(); applyFilters(); };
     el.appendChild(t);
   }
   const total = D.skills.length, solid = D.skills.filter(s=>(prog[s.id]||0)===3).length, going = D.skills.filter(s=>[1,2].includes(prog[s.id]||0)).length;
-  document.getElementById("count").textContent = `${total} skills · ${solid} solid · ${going} in progress`;
+  document.getElementById("count").textContent = `${total} skills · ${solid} ${ST[3]} · ${going} in progress`;
 }
 
 function tracks(){
@@ -200,6 +200,8 @@ document.getElementById("dl").onclick=()=>{ const b=new Blob([JSON.stringify(pro
 document.getElementById("exp").onclick=()=>{ const s=JSON.stringify(prog); document.getElementById("box").value=s; navigator.clipboard&&navigator.clipboard.writeText(s); };
 document.getElementById("imp").onclick=()=>{ try{ prog=JSON.parse(document.getElementById("box").value); save(); render(); }catch(e){ alert("not valid JSON"); } };
 document.getElementById("clr").onclick=()=>{ if(confirm("Reset all progress?")){ prog={}; save(); render(); } };
+document.querySelectorAll(".legend [data-st]").forEach(el=>el.textContent=ST[+el.dataset.st]);
+document.getElementById("cycle").textContent = ST.join(" → ");
 tracks(); render();
 </script>
 </body>

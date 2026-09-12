@@ -11,12 +11,13 @@ ROOT = Path(__file__).resolve().parent
 DOWNLOADS = Path("/mnt/c/Users/olga.p/Downloads")
 WIKI = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=520"
 
-TITLES = {"acro": ("Acro Yoga Skill Map", "🤸"), "pole": ("Pole Skill Map", "🪩"), "stretch": ("Stretching Map", "🧘")}
+TITLES = {"acro": ("Acro Yoga Skill Map", "🤸"), "pole": ("Pole Skill Map", "🪩"), "stretch": ("Stretching Map", "🧘"), "mobility": ("Hip Mobility Plan", "🦵")}
 SOURCES = {
  "pole": """<p>Level bands follow <a href="https://polemovebook.com/">PoleMovebook</a>'s ladder (Intro → solid invert → solid Ayesha → Iron X/Phoenix) cross-checked with <a href="https://polepedia.com/move-dictionary/">PolePedia</a> and <a href="https://louspolewearstudios.com/en/blogs/blog/pole-dance-figuren">Lou's level overview</a>. Sport reference: the <a href="https://ipsfsports.org/downloads/Uncategorised/ipsf_pole_sports_code_of_points_2025-2027_final_070120240.pdf">IPSF Pole Sports Code of Points 2025–27</a> — compulsory elements are grouped strength / flexibility / spins / deadlifts with technical values 0.1–1.0; this board's L4–L5 shapes are the ones that appear there. Tutorials picked 2026-09-12 from ElizabethBfit, PolePedia, PoleFreaks (Holly Munson), Pole with Steph, Polesthenics and the "3 Essential Tips" series.</p>""",
+ "mobility": """<p>Built for very tight hips as therapeutic mobility, not performance flexibility. Structure borrows the Bodyweight Warrior "Basics" tier (resting squat, hinge, cross-legged sit) as the goals, and drills from Squat University, Ask Doctor Jo, Antranik and physio channels. The daily 10 minutes matters more than any single drill; test the goals monthly, photograph them, and expect 3–6 months for real change. Not medical advice — a physio should see anything that pinches, clicks or radiates.</p>""",
  "stretch": """<p>Bands follow <a href="https://www.bodyweightwarrior.co.uk/blog/how-flexible-are-you/">Bodyweight Warrior's flexibility levels</a>; progressions and drills draw on <a href="https://www.daniwinksflexibility.com/bendy-blog">Dani Winks Flexibility</a>, <a href="https://gmb.io/splits/">GMB</a> and <a href="https://antranik.org/">Antranik</a>. Dose lines are starting points, not prescriptions — deep stretching 3–4× a week beats daily grinding, and nothing here should hurt in a joint.</p>""",
 }
-USERS = {"acro": ["olga", "reza"], "pole": ["olga"], "stretch": ["olga"]}  # who has a board where
+USERS = {"acro": ["olga", "reza"], "pole": ["olga"], "stretch": ["olga"], "mobility": ["sid"]}  # who has a board where
 # hashtag pages deep-link into the Instagram app; only for names that are acro-specific
 # enough that the tag is not swamped by unrelated posts. Everything else gets a site: search.
 IG_TAGS = {
@@ -58,7 +59,8 @@ def build(disc: str):
         s["ig_label"] = f"#{tag}" if tag else "instagram via google"
         REF = {"acro": ("https://www.acropedia.org/?s=", "📖 acropedia"),
                "pole": ("https://polepedia.com/?s=", "📖 polepedia"),
-               "stretch": ("https://www.daniwinksflexibility.com/search?q=", "📖 dani winks")}
+               "stretch": ("https://www.daniwinksflexibility.com/search?q=", "📖 dani winks"),
+               "mobility": ("https://www.google.com/search?q=site:squatuniversity.com+", "📖 squat university")}
         base, label = REF.get(disc, REF["acro"])
         s["ref"] = base + q.replace(" ", "+"); s["ref_label"] = label
     # tutorial video id -> thumbnail
