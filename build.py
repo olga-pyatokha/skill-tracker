@@ -56,7 +56,11 @@ def build(disc: str):
         s["ig"] = (f"https://www.instagram.com/explore/tags/{tag}/" if tag
                    else "https://www.google.com/search?q=" + ("site:instagram.com acroyoga " + q).replace(" ", "+"))
         s["ig_label"] = f"#{tag}" if tag else "instagram via google"
-        s["acropedia"] = "https://www.acropedia.org/?s=" + q.replace(" ", "+")
+        REF = {"acro": ("https://www.acropedia.org/?s=", "📖 acropedia"),
+               "pole": ("https://polepedia.com/?s=", "📖 polepedia"),
+               "stretch": ("https://www.daniwinksflexibility.com/search?q=", "📖 dani winks")}
+        base, label = REF.get(disc, REF["acro"])
+        s["ref"] = base + q.replace(" ", "+"); s["ref_label"] = label
     # tutorial video id -> thumbnail
     for s in d["skills"]:
         m = re.search(r"(?:v=|youtu\.be/)([\w-]{11})", s.get("yt", ""))
