@@ -82,8 +82,8 @@ textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
  </div>
  <div class="controls" id="tracks"></div>
  <div class="controls">
-  <input type="search" id="q" placeholder="search a pose, e.g. star, throne, whale…">
-  <label class="chip"><input type="checkbox" id="hideSolid" style="vertical-align:-2px"> hide solid</label>
+  <input type="search" id="q" placeholder="search skills…">
+  <label class="chip"><input type="checkbox" id="hideSolid" style="vertical-align:-2px"> hide <span id="hideLbl">solid</span></label>
   <label class="chip"><input type="checkbox" id="onlyMine" style="vertical-align:-2px"> only in progress</label>
  </div>
  <div id="content"></div>
@@ -200,6 +200,7 @@ document.getElementById("imp").onclick=()=>{ try{ prog=JSON.parse(document.getEl
 document.getElementById("clr").onclick=()=>{ if(confirm("Reset all progress?")){ prog={}; save(); render(); } };
 document.querySelectorAll(".legend [data-st]").forEach(el=>el.textContent=ST[+el.dataset.st]);
 document.getElementById("cycle").textContent = ST.join(" → ");
+document.getElementById("hideLbl").textContent = ST[3];
 tracks(); render();
 </script>
 </body>
