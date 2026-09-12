@@ -16,7 +16,7 @@ SOURCES = {
  "pole": """<p>Level bands follow <a href="https://polemovebook.com/">PoleMovebook</a>'s ladder (Intro → solid invert → solid Ayesha → Iron X/Phoenix) cross-checked with <a href="https://polepedia.com/move-dictionary/">PolePedia</a> and <a href="https://louspolewearstudios.com/en/blogs/blog/pole-dance-figuren">Lou's level overview</a>. Sport reference: the <a href="https://ipsfsports.org/downloads/Uncategorised/ipsf_pole_sports_code_of_points_2025-2027_final_070120240.pdf">IPSF Pole Sports Code of Points 2025–27</a> — compulsory elements are grouped strength / flexibility / spins / deadlifts with technical values 0.1–1.0; this board's L4–L5 shapes are the ones that appear there. Tutorials picked 2026-09-12 from ElizabethBfit, PolePedia, PoleFreaks (Holly Munson), Pole with Steph, Polesthenics and the "3 Essential Tips" series.</p>""",
  "stretch": """<p>Bands follow <a href="https://www.bodyweightwarrior.co.uk/blog/how-flexible-are-you/">Bodyweight Warrior's flexibility levels</a>; progressions and drills draw on <a href="https://www.daniwinksflexibility.com/bendy-blog">Dani Winks Flexibility</a>, <a href="https://gmb.io/splits/">GMB</a> and <a href="https://antranik.org/">Antranik</a>. Dose lines are starting points, not prescriptions — deep stretching 3–4× a week beats daily grinding, and nothing here should hurt in a joint.</p>""",
 }
-USERS = ["olga", "reza"]
+USERS = {"acro": ["olga", "reza"], "pole": ["olga"], "stretch": ["olga"]}  # who has a board where
 # hashtag pages deep-link into the Instagram app; only for names that are acro-specific
 # enough that the tag is not swamped by unrelated posts. Everything else gets a site: search.
 IG_TAGS = {
@@ -70,7 +70,7 @@ def build(disc: str):
     if disc != "acro":
         tpl = re.sub(r'<p>Skill list and level bands assembled.*?</p>\s*<p><a href="https://www.acropedia.org.*?</p>\s*<p>Named channels.*?</p>', "", tpl, flags=re.S)
     links = []
-    for user in USERS:
+    for user in USERS.get(disc, ["olga"]):
         prog = {}
         for p in (DOWNLOADS / f"{disc}_progress_{user}.json", ROOT / disc / f"progress_{user}.json"):
             if p.exists():
@@ -92,7 +92,7 @@ def build(disc: str):
     sections = ""
     for dd in discs:
         tt, ee = TITLES.get(dd, (dd, "✅"))
-        items = "".join(f'<li><a href="{dd}/{u}.html">{u.capitalize()}</a></li>' for u in USERS)
+        items = "".join(f'<li><a href="{dd}/{u}.html">{u.capitalize()}</a></li>' for u in USERS.get(dd, ["olga"]))
         sections += f"<h2>{ee} {esc(tt)}</h2><ul>{items}</ul>"
     (ROOT / "index.html").write_text(f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Skill Tracker</title><style>body{{font:17px/1.5 -apple-system,"Segoe UI",sans-serif;background:#faf8f4;color:#1f2328;max-width:640px;margin:40px auto;padding:0 20px}}
