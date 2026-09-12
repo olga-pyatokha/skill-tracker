@@ -13,6 +13,30 @@ WIKI = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=520"
 
 TITLES = {"acro": ("Acro Yoga Skill Map", "🤸")}
 USERS = ["olga", "reza"]
+# hashtag pages deep-link into the Instagram app; only for names that are acro-specific
+# enough that the tag is not swamped by unrelated posts. Everything else gets a site: search.
+IG_TAGS = {
+ "front-plank":"frontplank","front-bird":"frontbird","bow":"acrobow","throne":"acrothrone",
+ "straddle-throne":"straddlethrone","f2s":"foottoshin","reverse-throne":"reversethrone",
+ "back-bird":"backbird","whale":"highflyingwhale","reverse-bird":"reversebird","back-plank":"backplank",
+ "floating-paschi":"floatingpaschi","straddle-bat":"straddlebat","bat":"acrobat","boat":"acroboat",
+ "mermaid":"acromermaid","koala":"acrokoala","vishnu":"vishnuscouch","camel":"acrocamel",
+ "backfly-dancer":"backflydancer","dragonfly":"acrodragonfly",
+ "folded-leaf":"foldedleaf","hangle-dangle":"hangledangle","hammock":"acrohammock","super-yogi":"superyogi",
+ "forward-flying":"therapeuticflying","backward-flying":"therapeuticflying",
+ "candlestick":"acrocandlestick","shoulderstand":"acroshoulderstand","star":"acrostar","inside-star-mount":"acrostar",
+ "free-star":"freestar","reverse-star":"reversestar","side-star":"sidestar","tick-tock":"ticktock",
+ "f2h":"foottohand","reverse-f2h":"reversefoottohand","f2f":"foottofoot","h2h":"handtohand",
+ "bicep-stand":"bicepstand","forearm-star":"scorpionstar","needle-lotus":"freeshoulderstand",
+ "thighstand":"thighstand","two-high":"twohigh","standing-f2h":"standingacro","flag":"acroflag",
+ "standing-h2h":"standinghandtohand","dance-acro":"danceacro","bird-on-shoulders":"standingacro",
+ "ninja-star":"ninjastar","barrel-roll":"barrelroll","nunchuck":"nunchuck","four-step":"fourstep",
+ "trapdoor":"trapdoor","tumbleweed":"tumbleweed","spider-roll":"spiderroll","swimming-mermaid":"swimmingmermaid",
+ "koala-wm":"acrokoala","monkey-frog":"monkeyfrog","rotisserie":"rotisserie","catherines-wheel":"catherineswheel",
+ "whirly-gig":"whirlygig","vertical-spins":"washingmachine","free-machines":"washingmachine",
+ "pops-intro":"acropops","whips":"acrowhips","icarian":"icarian","icarian-expert":"icariangames",
+ "pass-the-flyer":"acrotrio","stacking":"acrotrio","group-dynamics":"banquine",
+}
 
 def esc(s): return html.escape(str(s), quote=True)
 
@@ -24,7 +48,10 @@ def build(disc: str):
             s["img_url"] = WIKI.format(s["img"])
             s["img_page"] = "https://commons.wikimedia.org/wiki/File:" + s["img"]
         q = s["name"].split("(")[0].split("/")[0].strip()
-        s["ig"] = "https://www.instagram.com/explore/search/keyword/?q=" + q.replace(" ", "%20") + "%20acroyoga"
+        tag = IG_TAGS.get(s["id"])
+        s["ig"] = (f"https://www.instagram.com/explore/tags/{tag}/" if tag
+                   else "https://www.google.com/search?q=" + ("site:instagram.com acroyoga " + q).replace(" ", "+"))
+        s["ig_label"] = f"#{tag}" if tag else "instagram via google"
         s["acropedia"] = "https://www.acropedia.org/?s=" + q.replace(" ", "+")
     # tutorial video id -> thumbnail
     for s in d["skills"]:
