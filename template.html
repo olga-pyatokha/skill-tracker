@@ -73,7 +73,7 @@ textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
 <body>
 <header>
  <h1>__EMOJI__ __TITLE__ <small>__USERNAME__'s board</small> <small id="count"></small></h1>
- <p class="sub">Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em>not started → learning → with spot → solid</em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
+ <p class="sub">__LEVELNOTES__ Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em>not started → learning → with spot → solid</em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
 </header>
 <div class="wrap">
  <div class="summary" id="summary"></div>
@@ -89,6 +89,7 @@ textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
  <div id="content"></div>
  <details class="sources">
   <summary>Sources, method &amp; export</summary>
+  __SOURCES__
   <p>Skill list and level bands assembled 2026-09-12 from: <a href="https://partneracrobatics.com/manual/">Partner Acrobatics Manual</a> (category structure: L-basing, inversions, standing, trios, icarian, washing machines), <a href="https://acrodemy.eu/sequences-flows-washing-machines/">Acrodemy</a> (washing-machine catalog and levels), <a href="https://www.yogaemotion.net/courses">YogaEmotion AcroYoga Biblio</a> (Level 1 pose list), <a href="https://www.acrospiritcommunity.com/post/what-level-are-you-at-in-acroyoga">AcroSpirit level definitions</a> (what marks beginner / intermediate / advanced / expert), <a href="https://beyondthematco.com/blogs/acroyoganearme/acro-lingo-101-30-acroyoga-terms-to-boost-your-flow-dictionary-game">Beyond The Mat acro lingo</a>, <a href="https://acroyoga757.com/acro-yoga-poses/">AcroYoga 757 pose gallery</a>, <a href="https://antranik.org/acro-yoga/">Antranik's progression</a>, <a href="https://en.wikipedia.org/wiki/Acroyoga">Wikipedia</a>. Photos: <a href="https://commons.wikimedia.org/wiki/Category:Acroyoga">Wikimedia Commons</a>.</p>
   <p><a href="https://www.acropedia.org/poses/">Acropedia</a> was returning 522 errors while this was built, so each card links to its search instead of a pose page. Base / flyer lines are one-line summaries to jog memory, not instructions — use the ▶ tutorial link before trying anything new, and spot everything above Level 1.</p>
   <p>Named channels worth a subscribe: Acro Adventure, Daniel Scott (AcroYoga Basics), Feel The Flow, Super Dave, Jacob &amp; Debbie Acro, YogaSlackers, Partner Acrobatics. Instagram: <a href="https://www.instagram.com/acroyogatutorials/">@acroyogatutorials</a>, <a href="https://www.instagram.com/acro_adventure/">@acro_adventure</a>, <a href="https://www.instagram.com/acroyoga/">@acroyoga</a>.</p>
@@ -126,14 +127,13 @@ function render(){
       let thumb = `L${s.level}`;
       if (s.img_url) thumb = `<img loading="lazy" src="${s.img_url}" alt="${s.name}"><a class="cap" href="${s.img_page}" target="_blank">wikimedia</a>`;
       else if (s.yt_id) thumb = `<a href="${s.yt}" target="_blank" style="display:contents"><img loading="lazy" src="https://img.youtube.com/vi/${s.yt_id}/hqdefault.jpg" alt="${s.name}"></a><a class="cap" href="${s.yt}" target="_blank">▶ ${s.yt_by||"tutorial"}</a>`;
-      const spot = s.spotter ? `<p class="role"><b>Spotter</b> ${s.spotter}</p>` : "";
+      const roles = (D.fields||[]).filter(f=>s[f[0]]).map(f=>`<p class="role"><b>${f[1]}</b> ${s[f[0]]}</p>`).join("");
       const note = s.note ? `<p class="note">${s.note}</p>` : "";
       card.innerHTML = `
         <div class="thumb">${thumb}</div>
         <div class="body">
           <div class="hd"><h3>${s.name}</h3><span class="lvl">L${s.level} · ${L.name}</span></div>
-          <p class="role"><b>Base</b> ${s.base}</p>
-          <p class="role"><b>Flyer</b> ${s.flyer}</p>${spot}${note}
+          ${roles}${note}
           <p class="pre">Prereq: ${s.prereq}</p>
           <div class="links">
             <a href="${s.yt}" target="_blank">▶ tutorial</a>
@@ -183,7 +183,7 @@ function applyFilters(){
     let show = true;
     if (lvlFilter && s.level!==lvlFilter) show=false;
     if (trackFilter && s.track!==trackFilter) show=false;
-    if (q && !(s.name+" "+s.base+" "+s.flyer+" "+s.prereq).toLowerCase().includes(q)) show=false;
+    if (q && !(s.name+" "+(D.fields||[]).map(f=>s[f[0]]||"").join(" ")+" "+s.prereq).toLowerCase().includes(q)) show=false;
     if (hideSolid && st===3) show=false;
     if (onlyMine && !(st===1||st===2)) show=false;
     c.classList.toggle("hide", !show);

@@ -909,5 +909,20 @@
    "yt": "https://www.youtube.com/watch?v=tTG42xzJb2E",
    "yt_by": "Banquine + H2H (demo)"
   }
- ]
+ ],
+ "fields": [
+  [
+   "base",
+   "Base"
+  ],
+  [
+   "flyer",
+   "Flyer"
+  ],
+  [
+   "spotter",
+   "Spotter"
+  ]
+ ],
+ "level_notes": "L1 first classes · L2 inversions and star family · L3 hand-to-hand entries and the classic washing machines · L4 H2H, standing acro, pops · L5 icarian and free machines"
 }

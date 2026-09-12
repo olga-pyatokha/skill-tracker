@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stretching Map · Olga</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1f2328;--muted:#6b7280;--line:#e6e2da;--accent:#0f766e;
+ --l1:#2e7d32;--l2:#00838f;--l3:#ef6c00;--l4:#c62828;--l5:#6a1b9a;
+ --s0:#e5e7eb;--s1:#fde68a;--s2:#93c5fd;--s3:#86efac}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Segoe UI",Inter,Roboto,sans-serif}
+header{padding:28px 24px 12px;max-width:1280px;margin:0 auto}
+h1{margin:0 0 4px;font-size:30px;letter-spacing:-.01em}
+h1 small{font-weight:400;color:var(--muted);font-size:15px;margin-left:10px}
+.sub{color:var(--muted);margin:0 0 18px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px 60px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;border-left-width:5px}
+.tile.active{outline:2px solid var(--ink)}
+.tile b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.tile .n{font-size:22px;font-weight:700;margin-top:2px}
+.tile .bar{height:6px;border-radius:3px;background:#eee;margin-top:8px;overflow:hidden;display:flex}
+.tile .bar i{display:block;height:100%}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 18px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px;user-select:none}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+input[type=search]{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;background:var(--card)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:0 0 14px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:var(--c)}
+.track{margin:26px 0 10px;display:flex;align-items:baseline;gap:12px}
+.track h2{margin:0;font-size:20px}
+.track small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;position:relative;border-top:4px solid var(--lc)}
+.card.hide{display:none}
+.card.st3{opacity:.75}
+.thumb{height:150px;background:linear-gradient(135deg,var(--lbg),#fff);display:flex;align-items:center;justify-content:center;color:var(--lc);font-size:44px;font-weight:800;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb a.cap{position:absolute;right:8px;bottom:6px;font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:2px 6px;border-radius:6px;text-decoration:none}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.hd h3{margin:0;font-size:16px;line-height:1.25}
+.lvl{font-size:11px;font-weight:700;color:#fff;background:var(--lc);border-radius:6px;padding:3px 7px;white-space:nowrap}
+.role{font-size:13px;margin:0}
+.role b{display:inline-block;min-width:54px;color:var(--muted);font-weight:600}
+.note{font-size:13px;color:var(--accent);margin:0}
+.pre{font-size:12px;color:var(--muted);margin:0}
+.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.links a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:4px 8px;color:var(--ink);background:#fafafa}
+.links a:hover{border-color:var(--ink)}
+.status{border:none;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;background:var(--s0);width:100%;text-align:left;display:flex;justify-content:space-between}
+.status.s1{background:var(--s1)}.status.s2{background:var(--s2)}.status.s3{background:var(--s3)}
+.status span{opacity:.6;font-weight:400}
+details.sources{margin-top:36px;color:var(--muted);font-size:13px}
+details.sources a{color:var(--accent)}
+.io{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.io button{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:#fff;cursor:pointer}
+textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
+@media (max-width:600px){
+ header{padding:18px 16px 8px}.wrap{padding-left:16px;padding-right:16px}
+ h1{font-size:22px}h1 small{display:block;margin:4px 0 0;font-size:13px}.sub{font-size:14px}
+ .summary{grid-template-columns:repeat(2,1fr);gap:8px}.tile{padding:10px 10px;border-radius:10px}.tile .n{font-size:18px}.tile b{font-size:11px}
+ .chip{padding:8px 12px}input[type=search]{padding:10px 12px;font-size:16px}
+ .grid{grid-template-columns:1fr;gap:12px}.thumb{height:170px}
+ .hd{flex-direction:column;gap:4px}.lvl{align-self:flex-start}
+ .status{min-height:44px;font-size:14px}.links a{padding:8px 10px;font-size:13px}
+ .track{margin-top:20px}.track h2{font-size:18px}
+}
+@media (hover:none){.status:active{filter:brightness(.95)}}
+</style>
+</head>
+<body>
+<header>
+ <h1>🧘 Stretching Map <small>Olga's board</small> <small id="count"></small></h1>
+ <p class="sub">Bands follow the Bodyweight Warrior flexibility ladder: Basics = daily-movement range · Basic+ = prep positions (horse stance, long lunge, loaded Jefferson curl) · Intermediate = 45° pancake, active leg lifts, wall bridge · Advanced = full pike, pancake, bridge, front and middle split · Contortion = oversplits, chest stand, scorpion — Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em>not started → learning → with spot → solid</em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
+</header>
+<div class="wrap">
+ <div class="summary" id="summary"></div>
+ <div class="legend">
+  <span style="--c:var(--s0)">not started</span><span style="--c:var(--s1)">learning</span><span style="--c:var(--s2)">can do with a spot</span><span style="--c:var(--s3)">solid</span>
+ </div>
+ <div class="controls" id="tracks"></div>
+ <div class="controls">
+  <input type="search" id="q" placeholder="search a pose, e.g. star, throne, whale…">
+  <label class="chip"><input type="checkbox" id="hideSolid" style="vertical-align:-2px"> hide solid</label>
+  <label class="chip"><input type="checkbox" id="onlyMine" style="vertical-align:-2px"> only in progress</label>
+ </div>
+ <div id="content"></div>
+ <details class="sources">
+  <summary>Sources, method &amp; export</summary>
+  <p>Bands follow <a href="https://www.bodyweightwarrior.co.uk/blog/how-flexible-are-you/">Bodyweight Warrior's flexibility levels</a>; progressions and drills draw on <a href="https://www.daniwinksflexibility.com/bendy-blog">Dani Winks Flexibility</a>, <a href="https://gmb.io/splits/">GMB</a> and <a href="https://antranik.org/">Antranik</a>. Dose lines are starting points, not prescriptions — deep stretching 3–4× a week beats daily grinding, and nothing here should hurt in a joint.</p>
+  
+  <div class="io"><button id="dl"><b>Save progress to file</b> (Downloads/stretch_progress_olga.json — rebuilds keep it)</button><button id="exp">Copy progress JSON</button><button id="imp">Import from box</button><button id="clr">Reset progress</button></div>
+  <textarea id="box" placeholder="progress JSON appears here on export; paste here to import"></textarea>
+ </details>
+</div>
+<script>
+const D = {"fields": [["how", "How"], ["target", "Target"], ["dose", "Dose"]], "levels": {"1": {"name": "Basics", "color": "#2e7d32", "bg": "#e8f5e9"}, "2": {"name": "Basic+", "color": "#00838f", "bg": "#e0f7fa"}, "3": {"name": "Intermediate", "color": "#ef6c00", "bg": "#fff3e0"}, "4": {"name": "Advanced", "color": "#c62828", "bg": "#ffebee"}, "5": {"name": "Contortion", "color": "#6a1b9a", "bg": "#f3e5f5"}}, "level_notes": "Bands follow the Bodyweight Warrior flexibility ladder: Basics = daily-movement range · Basic+ = prep positions (horse stance, long lunge, loaded Jefferson curl) · Intermediate = 45° pancake, active leg lifts, wall bridge · Advanced = full pike, pancake, bridge, front and middle split · Contortion = oversplits, chest stand, scorpion", "tracks": ["Warm-up & Method", "Hamstrings & Pike", "Front Split Line", "Middle Split & Pancake", "Back & Backbends", "Shoulders & Upper Body", "Active Flexibility & Compression", "Feet · Wrists · Recovery"], "skills": [{"id": "flex-test", "name": "Know your level (flexibility tests)", "level": 1, "track": "Warm-up & Method", "how": "Run the pike, pancake, bridge, shoulder and split tests once a month and photograph them.", "target": "Baseline; measures progress so you stop guessing.", "dose": "Monthly, same warm-up each time.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=58nxC7SVIto", "yt_by": "Bodyweight Warrior · flexibility levels", "tag": "flexibilitytest", "ig": "https://www.instagram.com/explore/tags/flexibilitytest/", "ig_label": "#flexibilitytest", "acropedia": "https://www.acropedia.org/?s=Know+your+level", "yt_id": "58nxC7SVIto"}, {"id": "dynamic-warmup", "name": "Dynamic warm-up (leg swings, hip circles)", "level": 1, "track": "Warm-up & Method", "how": "Forward/back and side-to-side leg swings, hip circles, cat-cow — 8–10 min before any deep stretch.", "target": "Blood flow and joint prep; never stretch cold.", "dose": "Every session, first thing.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=korxBhGzzJE", "yt_by": "Leg swings warm-up", "tag": "dynamicstretching", "ig": "https://www.instagram.com/explore/tags/dynamicstretching/", "ig_label": "#dynamicstretching", "acropedia": "https://www.acropedia.org/?s=Dynamic+warm-up", "yt_id": "korxBhGzzJE"}, {"id": "pnf", "name": "PNF / contract-relax method", "level": 2, "track": "Warm-up & Method", "how": "Stretch → contract the stretched muscle 5–10 s against resistance → relax and go deeper. Repeat 3×.", "target": "Fastest passive-range gains for splits and pike.", "dose": "2–3× per week per stretch, not daily.", "prereq": "Dynamic warm-up", "yt": "https://www.youtube.com/watch?v=ISD7xLUrNJ4", "yt_by": "PNF routine & techniques", "tag": "pnfstretching", "ig": "https://www.instagram.com/explore/tags/pnfstretching/", "ig_label": "#pnfstretching", "acropedia": "https://www.acropedia.org/?s=PNF", "yt_id": "ISD7xLUrNJ4"}, {"id": "jefferson", "name": "Jefferson Curl", "level": 2, "track": "Warm-up & Method", "how": "Standing on a step, chin to chest, roll down one vertebra at a time holding a light weight; restack to come up.", "target": "Hamstrings and whole posterior chain under load — the safest strength-stretch.", "dose": "3–4 × 5 reps, 10–15 s at the bottom; start with 5 kg or less.", "prereq": "Seated forward fold", "yt": "https://www.youtube.com/watch?v=_C9CdHrXmww", "yt_by": "Jefferson Curl guide", "tag": "jeffersoncurl", "ig": "https://www.instagram.com/explore/tags/jeffersoncurl/", "ig_label": "#jeffersoncurl", "acropedia": "https://www.acropedia.org/?s=Jefferson+Curl", "yt_id": "_C9CdHrXmww"}, {"id": "seated-forward-fold", "name": "Seated forward fold", "level": 1, "track": "Hamstrings & Pike", "how": "Legs straight, hinge from the hips, chest toward the thighs.", "target": "Hamstrings, calves, low back.", "dose": "3 × 45 s.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=oJX8EKF3TqM", "yt_by": "Beginner hamstring stretch", "tag": "forwardfold", "ig": "https://www.instagram.com/explore/tags/forwardfold/", "ig_label": "#forwardfold", "acropedia": "https://www.acropedia.org/?s=Seated+forward+fold", "yt_id": "oJX8EKF3TqM"}, {"id": "pike", "name": "Pike (full forward fold)", "level": 4, "track": "Hamstrings & Pike", "how": "Straight legs, flat back, chest on thighs — standing and seated versions.", "target": "The end-goal hamstring position; unlocks Jade, Russian split, Chopsticks.", "dose": "4–6× a week, 10 min routine.", "prereq": "Seated forward fold, Jefferson Curl", "yt": "https://www.youtube.com/watch?v=K56H17_nBeo", "yt_by": "Improve pike flexibility", "tag": "pikestretch", "ig": "https://www.instagram.com/explore/tags/pikestretch/", "ig_label": "#pikestretch", "acropedia": "https://www.acropedia.org/?s=Pike", "yt_id": "K56H17_nBeo"}, {"id": "weighted-pike", "name": "Elevated / weighted pike", "level": 4, "track": "Hamstrings & Pike", "how": "Feet elevated on a block, light dumbbells in hand, fold and pulse.", "target": "Loaded end-range for stubborn hamstrings.", "dose": "3 × 10 pulses + 30 s hold.", "prereq": "Pike", "yt": "https://www.youtube.com/watch?v=ycNAtCKVgkE", "yt_by": "Elevated pike with dumbbells", "tag": "pikestretch", "ig": "https://www.instagram.com/explore/tags/pikestretch/", "ig_label": "#pikestretch", "acropedia": "https://www.acropedia.org/?s=Elevated", "yt_id": "ycNAtCKVgkE"}, {"id": "couch", "name": "Couch stretch (hip flexor / quad)", "level": 1, "track": "Front Split Line", "how": "Back knee on the floor, rear foot on a couch or wall, squeeze the glute and stay tall.", "target": "Hip flexors and rectus femoris — the back leg of the split.", "dose": "2 min per side.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=WKo4APrwfXQ", "yt_by": "Couch stretch progressions", "tag": "couchstretch", "ig": "https://www.instagram.com/explore/tags/couchstretch/", "ig_label": "#couchstretch", "acropedia": "https://www.acropedia.org/?s=Couch+stretch", "yt_id": "WKo4APrwfXQ"}, {"id": "half-split", "name": "Half split & long lunge", "level": 2, "track": "Front Split Line", "how": "Front leg straight with hips square (half split); then long lunge with femur parallel to the floor.", "target": "Hamstring of the front leg + hip flexor of the back leg, one at a time.", "dose": "3 × 45 s each, each side.", "prereq": "Couch stretch, Seated forward fold", "yt": "https://www.youtube.com/watch?v=k0HHzxa7St8", "yt_by": "Splits for the inflexible", "tag": "halfsplit", "ig": "https://www.instagram.com/explore/tags/halfsplit/", "ig_label": "#halfsplit", "acropedia": "https://www.acropedia.org/?s=Half+split+&+long+lunge", "yt_id": "k0HHzxa7St8"}, {"id": "front-split", "name": "Front split", "level": 4, "track": "Front Split Line", "how": "Front leg forward, back leg behind, hips square, both legs straight, hips on the floor.", "target": "The Jade, Allegra, Russian split shape.", "dose": "3–5 × 60 s per side, 4× a week; use blocks under the hands.", "prereq": "Half split, Couch stretch", "yt": "https://www.youtube.com/watch?v=vO5XU7wZrmY", "yt_by": "Front split beginner → advanced", "tag": "frontsplit", "ig": "https://www.instagram.com/explore/tags/frontsplit/", "ig_label": "#frontsplit", "acropedia": "https://www.acropedia.org/?s=Front+split", "yt_id": "vO5XU7wZrmY"}, {"id": "oversplit", "name": "Oversplit", "level": 5, "track": "Front Split Line", "how": "Front foot elevated on a block once the flat split is comfortable.", "target": "Beyond-180° range for Bird of Paradise, Pegasus, Marchenko.", "dose": "End of session only, fully warm, 3 × 30 s.", "prereq": "Front split held 60 s cold", "yt": "https://www.youtube.com/watch?v=tJ_ouK0c3eI", "yt_by": "How to oversplit safely", "tag": "oversplit", "ig": "https://www.instagram.com/explore/tags/oversplit/", "ig_label": "#oversplit", "acropedia": "https://www.acropedia.org/?s=Oversplit", "yt_id": "tJ_ouK0c3eI"}, {"id": "butterfly-frog", "name": "Butterfly & Frog", "level": 2, "track": "Middle Split & Pancake", "how": "Butterfly: soles together, knees toward the floor. Frog: knees wide on the floor, hips sinking back.", "target": "Adductors and groin — the middle split's engine.", "dose": "2 min each.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=0muW5EnrJ6I", "yt_by": "Butterfly & Frog for middle split", "tag": "frogstretch", "ig": "https://www.instagram.com/explore/tags/frogstretch/", "ig_label": "#frogstretch", "acropedia": "https://www.acropedia.org/?s=Butterfly+&+Frog", "yt_id": "0muW5EnrJ6I"}, {"id": "horse-stance", "name": "Horse stance", "level": 2, "track": "Middle Split & Pancake", "how": "Wide squat, thighs parallel, knees over ankles — hold and breathe.", "target": "Active adductor strength in the bent-leg straddle.", "dose": "3 × 45–60 s.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=kXWtk3NLESk", "yt_by": "Antranik · horse stance", "tag": "horsestance", "ig": "https://www.instagram.com/explore/tags/horsestance/", "ig_label": "#horsestance", "acropedia": "https://www.acropedia.org/?s=Horse+stance", "yt_id": "kXWtk3NLESk"}, {"id": "pancake", "name": "Pancake", "level": 4, "track": "Middle Split & Pancake", "how": "Seated straddle, hinge forward with a flat back until the chest reaches the floor.", "target": "Adductors + hamstrings together; unlocks Chopsticks, Spatchcock, Straddle Bat.", "dose": "4–6× a week, 10 min after a 15-min warm-up.", "prereq": "Horse stance, Seated forward fold", "yt": "https://www.youtube.com/watch?v=CHRUb43S6RM", "yt_by": "Pancake beginner → advanced", "tag": "pancakestretch", "ig": "https://www.instagram.com/explore/tags/pancakestretch/", "ig_label": "#pancakestretch", "acropedia": "https://www.acropedia.org/?s=Pancake", "yt_id": "CHRUb43S6RM"}, {"id": "middle-split", "name": "Middle split", "level": 4, "track": "Middle Split & Pancake", "how": "Legs out to the sides in a line, hips forward, torso upright or folded.", "target": "Spatchcock and Chopsticks; the hardest split for most.", "dose": "3–5 × 60 s, 3–4× a week.", "prereq": "Butterfly & Frog, Horse stance", "yt": "https://www.youtube.com/watch?v=g0YgFfoke4U", "yt_by": "Straddle split routine", "tag": "middlesplit", "ig": "https://www.instagram.com/explore/tags/middlesplit/", "ig_label": "#middlesplit", "acropedia": "https://www.acropedia.org/?s=Middle+split", "yt_id": "g0YgFfoke4U"}, {"id": "pigeon", "name": "Pigeon", "level": 1, "track": "Middle Split & Pancake", "how": "Front shin across the mat, back leg long, fold over the front leg.", "target": "Hip external rotation; the fix for pinchy frog and middle split.", "dose": "90 s per side.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=46phRH_09yM", "yt_by": "Pigeon for beginners", "tag": "pigeonpose", "ig": "https://www.instagram.com/explore/tags/pigeonpose/", "ig_label": "#pigeonpose", "acropedia": "https://www.acropedia.org/?s=Pigeon", "yt_id": "46phRH_09yM"}, {"id": "cobra-sphinx", "name": "Cobra · Sphinx · Seal", "level": 1, "track": "Back & Backbends", "how": "Prone back extensions of increasing depth: forearms (sphinx), hands (cobra), straight arms (seal).", "target": "Spinal extension warm-up; teaches the back to bend evenly.", "dose": "5 breaths each, every backbend session.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=E2lq0m253eQ", "yt_by": "Cobra, Sphinx & Seal", "tag": "cobrapose", "ig": "https://www.instagram.com/explore/tags/cobrapose/", "ig_label": "#cobrapose", "acropedia": "https://www.acropedia.org/?s=Cobra+·+Sphinx+·+Seal", "yt_id": "E2lq0m253eQ"}, {"id": "thoracic", "name": "Thoracic mobility drills", "level": 1, "track": "Back & Backbends", "how": "Foam-roller extensions, thread-the-needle rotations, reach-backs.", "target": "Upper-back bend so the lower back doesn't take the whole arch.", "dose": "5 min daily.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=0CrX59ulj9U", "yt_by": "Top 5 thoracic drills", "tag": "thoracicmobility", "ig": "https://www.instagram.com/explore/tags/thoracicmobility/", "ig_label": "#thoracicmobility", "acropedia": "https://www.acropedia.org/?s=Thoracic+mobility+drills", "yt_id": "0CrX59ulj9U"}, {"id": "camel", "name": "Camel", "level": 2, "track": "Back & Backbends", "how": "Kneeling, hips forward, hands to heels, chest to the ceiling.", "target": "Hip flexors + thoracic extension — the Dove and Eagle shape.", "dose": "3 × 30 s.", "prereq": "Cobra, Couch stretch", "yt": "https://www.youtube.com/watch?v=__vU-k16HB4", "yt_by": "Camel tutorial", "tag": "camelpose", "ig": "https://www.instagram.com/explore/tags/camelpose/", "ig_label": "#camelpose", "acropedia": "https://www.acropedia.org/?s=Camel", "yt_id": "__vU-k16HB4"}, {"id": "bow-dancer", "name": "Bow / Dancer / King Pigeon", "level": 3, "track": "Back & Backbends", "how": "Foot-to-hand backbends: bow on the floor, dancer standing, king pigeon kneeling.", "target": "Shoulder + back + hip flexor together — exactly the Cocoon, Eagle and Marchenko chain.", "dose": "3 × 30 s per shape.", "prereq": "Camel", "yt": "https://www.youtube.com/watch?v=nbiiDpSnPJw", "yt_by": "King Pigeon beginner-friendly", "tag": "kingpigeon", "ig": "https://www.instagram.com/explore/tags/kingpigeon/", "ig_label": "#kingpigeon", "acropedia": "https://www.acropedia.org/?s=Bow", "yt_id": "nbiiDpSnPJw"}, {"id": "bridge", "name": "Bridge / Full Wheel", "level": 3, "track": "Back & Backbends", "how": "Hands and feet on the floor, press up; walk hands toward feet over time.", "target": "The contortion prerequisite; every deeper backbend starts here.", "dose": "5 × 20 s, 3× a week.", "prereq": "Camel, Thoracic drills", "yt": "https://www.youtube.com/watch?v=tSvmWU-0Zo0", "yt_by": "Back bridge for beginners", "tag": "backbridge", "ig": "https://www.instagram.com/explore/tags/backbridge/", "ig_label": "#backbridge", "acropedia": "https://www.acropedia.org/?s=Bridge", "yt_id": "tSvmWU-0Zo0"}, {"id": "dropback", "name": "Standing backbend & drop-back", "level": 4, "track": "Back & Backbends", "how": "From standing, arch back to the wall, then to the floor; stand back up.", "target": "Control through the full arc — active back strength.", "dose": "3–5 reps at the wall, then free with a spotter.", "prereq": "Bridge", "yt": "https://www.youtube.com/watch?v=6mgqfWYkqsY", "yt_by": "Backbend progression L1 of 4", "tag": "dropback", "ig": "https://www.instagram.com/explore/tags/dropback/", "ig_label": "#dropback", "acropedia": "https://www.acropedia.org/?s=Standing+backbend+&+drop-back", "yt_id": "6mgqfWYkqsY"}, {"id": "chest-stand", "name": "Chest stand", "level": 5, "track": "Back & Backbends", "how": "From bridge, walk feet in until the chest and chin rest on the floor, legs overhead.", "target": "Marchenko-level back flexibility; needs neck strength work first.", "dose": "Only after a comfortable bridge; 3 × 20 s with a spotter.", "prereq": "Bridge, Drop-back", "yt": "https://www.youtube.com/watch?v=MU7JDf9XQSM", "yt_by": "Ultimate chest stand tutorial", "tag": "cheststand", "ig": "https://www.instagram.com/explore/tags/cheststand/", "ig_label": "#cheststand", "acropedia": "https://www.acropedia.org/?s=Chest+stand", "yt_id": "MU7JDf9XQSM"}, {"id": "scorpion", "name": "Scorpion (forearm stand)", "level": 5, "track": "Back & Backbends", "how": "Forearm stand with feet dropping toward the head.", "target": "Shoulder strength + backbend under balance.", "dose": "Wall-supported first; 5 × 10 s.", "prereq": "Bridge, forearm stand", "yt": "https://www.youtube.com/watch?v=YyFcNzSlI9A", "yt_by": "Briohny Smyth · Scorpion", "tag": "scorpionpose", "ig": "https://www.instagram.com/explore/tags/scorpionpose/", "ig_label": "#scorpionpose", "acropedia": "https://www.acropedia.org/?s=Scorpion", "yt_id": "YyFcNzSlI9A"}, {"id": "wall-angels", "name": "Wall angels", "level": 1, "track": "Shoulders & Upper Body", "how": "Back and arms on the wall, slide elbows up keeping the low back in contact.", "target": "Shoulder flexion + thoracic — the test most people fail.", "dose": "2 × 10 slow reps daily.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=kLu2mBnhP2w", "yt_by": "Wall angels shoulder mobility", "tag": "wallangels", "ig": "https://www.instagram.com/explore/tags/wallangels/", "ig_label": "#wallangels", "acropedia": "https://www.acropedia.org/?s=Wall+angels", "yt_id": "kLu2mBnhP2w"}, {"id": "lat-side", "name": "Lat & side-body stretch", "level": 1, "track": "Shoulders & Upper Body", "how": "Hands on a counter, sink the chest; side bends holding the pole.", "target": "Lats — tight lats block overhead reach in Ayesha and inverts.", "dose": "60 s each side.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=h65QtIeNziw", "yt_by": "Lat and side stretches", "tag": "latstretch", "ig": "https://www.instagram.com/explore/tags/latstretch/", "ig_label": "#latstretch", "acropedia": "https://www.acropedia.org/?s=Lat+&+side-body+stretch", "yt_id": "h65QtIeNziw"}, {"id": "shoulder-mobility", "name": "Shoulder & back mobility for pole", "level": 2, "track": "Shoulders & Upper Body", "how": "Pole-specific routine: chest openers, pec stretch, extension work for twisted grip and Cocoon.", "target": "Twisted-grip safety and backbend shapes.", "dose": "10 min, 3× a week.", "prereq": "Wall angels", "yt": "https://www.youtube.com/watch?v=tcvQj5ejD4Y", "yt_by": "Back & shoulder flexibility for pole", "tag": "shouldermobility", "ig": "https://www.instagram.com/explore/tags/shouldermobility/", "ig_label": "#shouldermobility", "acropedia": "https://www.acropedia.org/?s=Shoulder+&+back+mobility+for+pole", "yt_id": "tcvQj5ejD4Y"}, {"id": "rear-hand-clasp", "name": "Rear hand clasp (cow-face arms)", "level": 2, "track": "Shoulders & Upper Body", "how": "One arm over, one under, clasp hands behind the back; strap if needed.", "target": "Shoulder internal + external rotation — Eagle, Cocoon, Allegra grabs.", "dose": "45 s per side.", "prereq": "Wall angels", "yt": "https://www.youtube.com/watch?v=6SK8jcDBkBk", "yt_by": "Dani Winks · Flexopedia", "tag": "rearhandclasp", "ig": "https://www.instagram.com/explore/tags/rearhandclasp/", "ig_label": "#rearhandclasp", "acropedia": "https://www.acropedia.org/?s=Rear+hand+clasp", "yt_id": "6SK8jcDBkBk"}, {"id": "active-flex", "name": "Active flexibility drills", "level": 3, "track": "Active Flexibility & Compression", "how": "Leg lifts, holds and pulses at end range without hands — strength in the stretch.", "target": "Range you can actually use in the air.", "dose": "2× a week, 15 min.", "prereq": "Half split, Horse stance", "yt": "https://www.youtube.com/watch?v=x8lJ9LlIvr0", "yt_by": "Active flexibility for pole dancers", "tag": "activeflexibility", "ig": "https://www.instagram.com/explore/tags/activeflexibility/", "ig_label": "#activeflexibility", "acropedia": "https://www.acropedia.org/?s=Active+flexibility+drills", "yt_id": "x8lJ9LlIvr0"}, {"id": "compression", "name": "Pike compression & L-sit", "level": 3, "track": "Active Flexibility & Compression", "how": "Seated pike pulses, tuck → L-sit progressions, weighted pike pulses.", "target": "Hip flexor strength for inverts, Chopsticks and press-ups.", "dose": "3 × 10 pulses + 3 × 10 s L-sit.", "prereq": "Seated forward fold", "yt": "https://www.youtube.com/watch?v=yQXnOuQqKYc", "yt_by": "Antranik · active pike compression", "tag": "pikecompression", "ig": "https://www.instagram.com/explore/tags/pikecompression/", "ig_label": "#pikecompression", "acropedia": "https://www.acropedia.org/?s=Pike+compression+&+L-sit", "yt_id": "yQXnOuQqKYc"}, {"id": "standing-split", "name": "Standing split", "level": 4, "track": "Active Flexibility & Compression", "how": "Hands on the floor, one leg to the ceiling, hips square.", "target": "Active front-split line for Bird of Paradise and Russian split.", "dose": "3 × 30 s per side.", "prereq": "Front split, Active flexibility", "yt": "https://www.youtube.com/watch?v=k0kS6fMXUr4", "yt_by": "Standing splits / needles", "tag": "standingsplit", "ig": "https://www.instagram.com/explore/tags/standingsplit/", "ig_label": "#standingsplit", "acropedia": "https://www.acropedia.org/?s=Standing+split", "yt_id": "k0kS6fMXUr4"}, {"id": "needle", "name": "Needle scale", "level": 5, "track": "Active Flexibility & Compression", "how": "Standing split with the back arched and the lifted foot caught overhead.", "target": "Backbend + split + balance together.", "dose": "After a full warm-up; 3 × 15 s.", "prereq": "Standing split, Bow/Dancer", "yt": "https://www.youtube.com/watch?v=delJW9_dXJw", "yt_by": "Needle / Scorpion stretches", "tag": "needlescale", "ig": "https://www.instagram.com/explore/tags/needlescale/", "ig_label": "#needlescale", "acropedia": "https://www.acropedia.org/?s=Needle+scale", "yt_id": "delJW9_dXJw"}, {"id": "wrist-forearm", "name": "Wrist & forearm care", "level": 1, "track": "Feet · Wrists · Recovery", "how": "Flexor and extensor stretches, wrist circles, rice-bucket or towel grip work.", "target": "Pole grip endurance and injury prevention.", "dose": "5 min after every pole session.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=JmnpUT52XjI", "yt_by": "Hand, wrist, forearm & grip", "tag": "wriststretch", "ig": "https://www.instagram.com/explore/tags/wriststretch/", "ig_label": "#wriststretch", "acropedia": "https://www.acropedia.org/?s=Wrist+&+forearm+care", "yt_id": "JmnpUT52XjI"}, {"id": "ankle-foot", "name": "Ankle & foot (pointe and arch)", "level": 1, "track": "Feet · Wrists · Recovery", "how": "Doming, pointe stretches, arch strengthening — dancer feet.", "target": "Clean lines in every pole shape; judges look at feet.", "dose": "5 min, 3× a week.", "prereq": "—", "yt": "https://www.youtube.com/watch?v=u_fL-QnLs9M", "yt_by": "How to get dancers' feet", "tag": "dancerfeet", "ig": "https://www.instagram.com/explore/tags/dancerfeet/", "ig_label": "#dancerfeet", "acropedia": "https://www.acropedia.org/?s=Ankle+&+foot", "yt_id": "u_fL-QnLs9M"}]};
+const EMBEDDED = {};
+const USER = "olga";
+const KEY = "skilltracker-stretch-" + USER + "-v1";
+const ST = ["not started","learning","with spot","solid"];
+let prog = {}; try{ prog = JSON.parse(localStorage.getItem(KEY) || localStorage.getItem("skilltracker-stretch-v1") || "{}"); }catch(e){}
+// file-saved progress is the floor; anything newer in this browser wins per skill
+for (const k in EMBEDDED) if (!(k in prog)) prog[k] = EMBEDDED[k];
+let lvlFilter = null, trackFilter = null;
+
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(prog)); }catch(e){} }
+function lv(n){ return D.levels[String(n)]; }
+
+function render(){
+  const c = document.getElementById("content"); c.innerHTML = "";
+  for (const t of D.tracks){
+    const skills = D.skills.filter(s=>s.track===t);
+    if(!skills.length) continue;
+    const h = document.createElement("div"); h.className="track";
+    h.innerHTML = `<h2>${t}</h2><small>${skills.length} skills</small>`;
+    const g = document.createElement("div"); g.className="grid";
+    for (const s of skills){
+      const L = lv(s.level); const st = prog[s.id]||0;
+      const card = document.createElement("div");
+      card.className = "card st"+st; card.dataset.id=s.id; card.dataset.level=s.level; card.dataset.track=t;
+      card.style.setProperty("--lc", L.color); card.style.setProperty("--lbg", L.bg);
+      let thumb = `L${s.level}`;
+      if (s.img_url) thumb = `<img loading="lazy" src="${s.img_url}" alt="${s.name}"><a class="cap" href="${s.img_page}" target="_blank">wikimedia</a>`;
+      else if (s.yt_id) thumb = `<a href="${s.yt}" target="_blank" style="display:contents"><img loading="lazy" src="https://img.youtube.com/vi/${s.yt_id}/hqdefault.jpg" alt="${s.name}"></a><a class="cap" href="${s.yt}" target="_blank">▶ ${s.yt_by||"tutorial"}</a>`;
+      const roles = (D.fields||[]).filter(f=>s[f[0]]).map(f=>`<p class="role"><b>${f[1]}</b> ${s[f[0]]}</p>`).join("");
+      const note = s.note ? `<p class="note">${s.note}</p>` : "";
+      card.innerHTML = `
+        <div class="thumb">${thumb}</div>
+        <div class="body">
+          <div class="hd"><h3>${s.name}</h3><span class="lvl">L${s.level} · ${L.name}</span></div>
+          ${roles}${note}
+          <p class="pre">Prereq: ${s.prereq}</p>
+          <div class="links">
+            <a href="${s.yt}" target="_blank">▶ tutorial</a>
+            <a href="${s.ig}" target="_blank">◎ ${s.ig_label}</a>
+            <a href="${s.acropedia}" target="_blank">📖 acropedia</a>
+          </div>
+          <button class="status s${st}" data-id="${s.id}">${ST[st]}<span>click to change</span></button>
+        </div>`;
+      g.appendChild(card);
+    }
+    c.appendChild(h); c.appendChild(g);
+  }
+  c.querySelectorAll(".status").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.id; prog[id]=((prog[id]||0)+1)%4; save(); render();
+  });
+  applyFilters(); summary();
+}
+
+function summary(){
+  const el = document.getElementById("summary"); el.innerHTML="";
+  for (const n of [1,2,3,4,5]){
+    const L = lv(n); const ss = D.skills.filter(s=>s.level===n);
+    const cnt=[0,0,0,0]; ss.forEach(s=>cnt[prog[s.id]||0]++);
+    const t = document.createElement("div"); t.className="tile"+(lvlFilter===n?" active":"");
+    t.style.borderLeftColor=L.color;
+    const seg = (i,cls)=>`<i style="width:${100*cnt[i]/ss.length}%;background:var(--${cls})"></i>`;
+    t.innerHTML = `<b style="color:${L.color}">L${n} · ${L.name}</b><div class="n">${cnt[3]} / ${ss.length} <span style="font-size:12px;color:var(--muted);font-weight:400">solid</span></div>
+      <div class="bar">${seg(3,"s3")}${seg(2,"s2")}${seg(1,"s1")}</div>`;
+    t.onclick=()=>{ lvlFilter = lvlFilter===n?null:n; summary(); applyFilters(); };
+    el.appendChild(t);
+  }
+  const total = D.skills.length, solid = D.skills.filter(s=>(prog[s.id]||0)===3).length, going = D.skills.filter(s=>[1,2].includes(prog[s.id]||0)).length;
+  document.getElementById("count").textContent = `${total} skills · ${solid} solid · ${going} in progress`;
+}
+
+function tracks(){
+  const el = document.getElementById("tracks");
+  el.innerHTML = `<span class="chip ${trackFilter?"":"on"}" data-t="">all tracks</span>` + D.tracks.map(t=>`<span class="chip ${trackFilter===t?"on":""}" data-t="${t}">${t}</span>`).join("");
+  el.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{ trackFilter = ch.dataset.t||null; tracks(); applyFilters(); });
+}
+
+function applyFilters(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const hideSolid = document.getElementById("hideSolid").checked, onlyMine = document.getElementById("onlyMine").checked;
+  document.querySelectorAll(".card").forEach(c=>{
+    const s = D.skills.find(x=>x.id===c.dataset.id); const st = prog[s.id]||0;
+    let show = true;
+    if (lvlFilter && s.level!==lvlFilter) show=false;
+    if (trackFilter && s.track!==trackFilter) show=false;
+    if (q && !(s.name+" "+(D.fields||[]).map(f=>s[f[0]]||"").join(" ")+" "+s.prereq).toLowerCase().includes(q)) show=false;
+    if (hideSolid && st===3) show=false;
+    if (onlyMine && !(st===1||st===2)) show=false;
+    c.classList.toggle("hide", !show);
+  });
+  document.querySelectorAll(".track").forEach(h=>{
+    const g=h.nextElementSibling; h.style.display = g.querySelector(".card:not(.hide)") ? "" : "none"; g.style.display=h.style.display;
+  });
+}
+
+document.getElementById("q").oninput=applyFilters;
+document.getElementById("hideSolid").onchange=applyFilters;
+document.getElementById("onlyMine").onchange=applyFilters;
+document.getElementById("dl").onclick=()=>{ const b=new Blob([JSON.stringify(prog,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download="stretch_progress_olga.json"; a.click(); };
+document.getElementById("exp").onclick=()=>{ const s=JSON.stringify(prog); document.getElementById("box").value=s; navigator.clipboard&&navigator.clipboard.writeText(s); };
+document.getElementById("imp").onclick=()=>{ try{ prog=JSON.parse(document.getElementById("box").value); save(); render(); }catch(e){ alert("not valid JSON"); } };
+document.getElementById("clr").onclick=()=>{ if(confirm("Reset all progress?")){ prog={}; save(); render(); } };
+tracks(); render();
+</script>
+</body>
+</html>
