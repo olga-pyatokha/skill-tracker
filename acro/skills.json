@@ -1,4 +1,30 @@
 {
+ "fields": [
+  [
+   "base",
+   "Base"
+  ],
+  [
+   "flyer",
+   "Flyer"
+  ],
+  [
+   "spotter",
+   "Spotter"
+  ]
+ ],
+ "statuses": [
+  "not started",
+  "learning",
+  "with spot",
+  "solid"
+ ],
+ "status_help": [
+  "haven't tried it yet",
+  "drilling it — needs a base/flyer who already has it",
+  "can do it, but only with a spotter standing by",
+  "clean, repeatable, with most partners, no spotter"
+ ],
  "levels": {
   "1": {
    "name": "Foundations",
@@ -26,6 +52,7 @@
    "bg": "#f3e5f5"
   }
  },
+ "level_notes": "L1 first classes · L2 inversions and star family · L3 hand-to-hand entries and the classic washing machines · L4 H2H, standing acro, pops · L5 icarian and free machines",
  "tracks": [
   "Fundamentals",
   "L-Base Statics",
@@ -909,20 +936,5 @@
    "yt": "https://www.youtube.com/watch?v=tTG42xzJb2E",
    "yt_by": "Banquine + H2H (demo)"
   }
- ],
- "fields": [
-  [
-   "base",
-   "Base"
-  ],
-  [
-   "flyer",
-   "Flyer"
-  ],
-  [
-   "spotter",
-   "Spotter"
-  ]
- ],
- "level_notes": "L1 first classes · L2 inversions and star family · L3 hand-to-hand entries and the classic washing machines · L4 H2H, standing acro, pops · L5 icarian and free machines"
+ ]
 }

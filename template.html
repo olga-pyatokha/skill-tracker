@@ -27,6 +27,7 @@ h1 small{font-weight:400;color:var(--muted);font-size:15px;margin-left:10px}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 input[type=search]{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;background:var(--card)}
 .legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:0 0 14px}
+.legend span{cursor:help}
 .legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:var(--c)}
 .track{margin:26px 0 10px;display:flex;align-items:baseline;gap:12px}
 .track h2{margin:0;font-size:20px}
@@ -140,7 +141,7 @@ function render(){
             <a href="${s.ig}" target="_blank">◎ ${s.ig_label}</a>
             <a href="${s.ref}" target="_blank">${s.ref_label}</a>
           </div>
-          <button class="status s${st}" data-id="${s.id}">${ST[st]}<span>click to change</span></button>
+          <button class="status s${st}" data-id="${s.id}" title="${(D.status_help||[])[st]||""}">${ST[st]}<span>click to change</span></button>
         </div>`;
       g.appendChild(card);
     }
@@ -200,7 +201,8 @@ document.getElementById("dl").onclick=()=>{ const b=new Blob([JSON.stringify(pro
 document.getElementById("exp").onclick=()=>{ const s=JSON.stringify(prog); document.getElementById("box").value=s; navigator.clipboard&&navigator.clipboard.writeText(s); };
 document.getElementById("imp").onclick=()=>{ try{ prog=JSON.parse(document.getElementById("box").value); save(); render(); }catch(e){ alert("not valid JSON"); } };
 document.getElementById("clr").onclick=()=>{ if(confirm("Reset all progress?")){ prog={}; save(); render(); } };
-document.querySelectorAll(".legend [data-st]").forEach(el=>el.textContent=ST[+el.dataset.st]);
+const HELP = D.status_help || [];
+document.querySelectorAll(".legend [data-st]").forEach(el=>{ el.textContent=ST[+el.dataset.st]; if (HELP[+el.dataset.st]) el.title=HELP[+el.dataset.st]; });
 document.getElementById("cycle").textContent = ST.join(" → ");
 document.getElementById("hideLbl").textContent = ST[3];
 tracks(); render();
