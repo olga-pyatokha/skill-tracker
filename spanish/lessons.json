@@ -1,91 +1,1064 @@
 [
- {"n":1,"title":"La entrevista","theme":"Trabajo · plantear · exigir · el plazo · lograr",
-  "grammar":"Contrast set — noun ↔ verb slots: <b>el apoyo</b> / <i>apoyar</i>, <b>la exigencia</b> / <i>exigir</i>, <b>el logro</b> / <i>lograr</i>, <b>el planteamiento</b> / <i>plantear</i>. In the cloze, check the slot before the meaning.",
-  "es":"La entrevista era a las nueve y llegué a las ocho y media, con el **propósito** de parecer tranquila. No lo **logré**. La mujer que me recibió no hizo ninguna pregunta sobre mi experiencia; fue directo al **asunto**: la empresa necesitaba a alguien que empezara el lunes.\n\n—El **plazo** es corto —dijo—. Lo sé. Pero no podemos esperar más.\n\nLe **planteé** el problema: tenía otro trabajo y debía avisar con dos semanas. Ella **exigió** una respuesta ese mismo día. Le pregunté qué **ventaja** tenía yo si aceptaba tan rápido. Sonrió por primera vez.\n\n—Que el puesto **surgió** hace tres días y usted es la única persona que ha venido preparada.\n\nMe dijo que el equipo la **apoyaría** en cualquier decisión, pero que la decisión era mía. Salí a la calle sin saber si acababa de conseguir un trabajo o de perderlo.",
-  "targets":[["el propósito","purpose, intention"],["lograr","to manage to, to achieve"],["el asunto","matter, business"],["el plazo","deadline, time frame"],["plantear","to raise (an issue), to put forward"],["exigir","to demand"],["la ventaja","advantage"],["surgir","to arise, to come up"],["apoyar","to support, to back"]],
-  "glosses":[["recibir","to receive / see (someone)"],["avisar","to give notice"],["el puesto","the position (job)"],["acabar de + inf.","to have just"]],
-  "en":"The interview was at nine and I arrived at half past eight, with the intention of seeming calm. I didn't manage it. The woman who saw me asked nothing about my experience; she went straight to the matter: the company needed someone who could start on Monday.\n\n'The time frame is short,' she said. 'I know. But we can't wait any longer.'\n\nI raised the problem: I had another job and had to give two weeks' notice. She demanded an answer that same day. I asked her what advantage I got if I accepted so fast. She smiled for the first time.\n\n'That the position came up three days ago and you are the only person who has come prepared.'\n\nShe told me the team would back her in any decision, but that the decision was mine. I walked out onto the street not knowing whether I had just got a job or lost one.",
-  "cloze":[["Llegué temprano con el ___ de parecer tranquila.","propósito"],["No ___ parecer tranquila; me temblaban las manos.","logré"],["Ella fue directo al ___: necesitaban a alguien para el lunes.","asunto"],["El ___ es corto, pero no podemos esperar más.","plazo"],["Le ___ el problema del otro trabajo.","planteé"],["Ella ___ una respuesta ese mismo día.","exigió"],["El puesto ___ hace tres días.","surgió"],["El equipo la ___ en cualquier decisión.","apoyaría"]],
-  "speak":["Retell the story in English, out loud, without looking — that is the test.","Which four targets are verbs and which nouns? Say each pair: <i>apoyar / el apoyo</i>…","Optional, in Spanish: ¿Qué decidirías tú y por qué?"]},
-
- {"n":2,"title":"El aviso","theme":"Una reunión de vecinos · advertir · la amenaza · el riesgo · impedir",
-  "grammar":"Contrast set: <b>advertir</b> (to warn) ≠ <i>advertise</i>; <b>el aviso</b> / <i>avisar</i> (notice / to notify); <b>la falta</b> / <i>faltar</i> (lack / to be missing). Also <b>la medida</b> = measure (both senses).",
-  "es":"El **aviso** apareció en el ascensor un martes: reunión de vecinos, jueves, ocho de la noche, tema único. Nadie sabía cuál era el tema.\n\nEl administrador **advirtió** desde el principio que no venía a asustar a nadie. Después nos asustó. La empresa que revisa los edificios había **señalado** grietas en dos columnas del garaje. No era una **amenaza** inmediata, dijo, pero el **riesgo** existía y **aumentaba** con cada invierno.\n\nUna señora del quinto preguntó qué **medidas** había que tomar. La respuesta fue larga y cara. Otro vecino dijo que el problema era la **falta** de mantenimiento durante años, y que ahora pagábamos todos por la **escasa** atención de los anteriores dueños.\n\nAl final se votó **impedir** el uso del garaje hasta tener el informe completo. Yo levanté la mano sin estar segura de nada. Cuando bajé por la escalera, evité mirar las columnas.",
-  "targets":[["el aviso","notice, warning (sign)"],["advertir","to warn"],["señalar","to point out, to flag"],["la amenaza","threat"],["el riesgo","risk"],["aumentar","to increase"],["la medida","measure (step taken)"],["la falta","lack, absence"],["escaso","scarce, scant"],["impedir","to prevent, to block"]],
-  "glosses":[["el administrador","building manager"],["la grieta","crack"],["el mantenimiento","maintenance"],["el dueño","owner"],["el informe","report"]],
-  "en":"The notice appeared in the lift on a Tuesday: residents' meeting, Thursday, eight in the evening, single topic. Nobody knew what the topic was.\n\nThe building manager warned from the start that he hadn't come to frighten anyone. Then he frightened us. The company that inspects the buildings had flagged cracks in two columns of the garage. It wasn't an immediate threat, he said, but the risk existed and grew with every winter.\n\nA woman from the fifth floor asked what measures had to be taken. The answer was long and expensive. Another neighbour said the problem was the lack of maintenance for years, and that now we were all paying for the scant attention of the previous owners.\n\nIn the end it was voted to block use of the garage until the full report was in. I raised my hand without being sure of anything. When I went down by the stairs, I avoided looking at the columns.",
-  "cloze":[["El ___ apareció en el ascensor un martes.","aviso"],["El administrador ___ que no venía a asustar a nadie.","advirtió"],["La empresa había ___ grietas en dos columnas.","señalado"],["No era una ___ inmediata, pero el riesgo existía.","amenaza"],["El riesgo ___ con cada invierno.","aumentaba"],["¿Qué ___ hay que tomar? —preguntó una señora.","medidas"],["El problema era la ___ de mantenimiento durante años.","falta"],["Se votó ___ el uso del garaje.","impedir"]],
-  "speak":["Retell in English without looking.","Say the pairs: <i>advertir / la advertencia</i>, <i>avisar / el aviso</i>, <i>faltar / la falta</i> — which is the noun?","Optional en español: ¿Qué habrías votado tú?"]},
-
- {"n":3,"title":"Las cifras","theme":"Un negocio pequeño · la cifra · el ingreso · el gasto · suponer",
-  "grammar":"Contrast set: <b>la cifra</b> (figure, statistic) vs <i>el número</i>; <b>el ingreso</b> (income) vs <i>la entrada</i> (entry, ticket); <b>la mejora</b> / <i>mejorar</i>. <b>suponer</b> = to suppose <u>and</u> to entail.",
-  "es":"Mi tía Rosa tiene una panadería desde hace treinta años y nunca había mirado una hoja de cálculo. Este verano su hijo la obligó.\n\nLas **cifras** no eran buenas. Los **ingresos** habían bajado un doce por ciento en dos años; los **gastos**, en cambio, habían subido. El **retraso** de los proveedores la obligaba a comprar harina más cara en el último momento. Mi primo le mostró una **muestra** de tres meses y le explicó que el problema no era vender menos pan, sino venderlo peor.\n\n—¿Y eso qué **supone**? —preguntó ella.\n—Supone cambiar el horario y **reducir** la variedad.\n\nRosa se negó al principio. Después preguntó cuál sería el **alcance** del cambio: si afectaría a los clientes de siempre. Mi primo prometió una **mejora** visible en seis meses o volver al sistema antiguo.\n\nLa panadería abre ahora una hora más tarde y hace la mitad de los tipos de pan. Las cifras, dice Rosa sin mirarlas, van bien.",
-  "targets":[["la cifra","figure, number (statistic)"],["el ingreso","income, revenue"],["el gasto","expense, spending"],["el retraso","delay"],["la muestra","sample"],["suponer","to entail; to suppose"],["reducir","to reduce"],["el alcance","scope, extent, reach"],["la mejora","improvement"]],
-  "glosses":[["la hoja de cálculo","spreadsheet"],["el proveedor","supplier"],["la harina","flour"],["negarse","to refuse"]],
-  "en":"My aunt Rosa has had a bakery for thirty years and had never looked at a spreadsheet. This summer her son made her.\n\nThe figures weren't good. Revenue had fallen twelve percent in two years; expenses, by contrast, had gone up. The suppliers' delays forced her to buy more expensive flour at the last minute. My cousin showed her a three-month sample and explained that the problem wasn't selling less bread, but selling it worse.\n\n'And what does that entail?' she asked.\n'It entails changing the hours and reducing the variety.'\n\nRosa refused at first. Then she asked what the scope of the change would be: whether it would affect the regular customers. My cousin promised a visible improvement in six months or a return to the old system.\n\nThe bakery now opens an hour later and makes half the kinds of bread. The figures, Rosa says without looking at them, are going well.",
-  "cloze":[["Las ___ no eran buenas.","cifras"],["Los ___ habían bajado un doce por ciento.","ingresos"],["Los ___, en cambio, habían subido.","gastos"],["El ___ de los proveedores la obligaba a comprar harina cara.","retraso"],["Le mostró una ___ de tres meses.","muestra"],["¿Y eso qué ___? —preguntó ella.","supone"],["Hay que ___ la variedad de panes.","reducir"],["Prometió una ___ visible en seis meses.","mejora"]],
-  "speak":["Retell in English without looking.","<i>Suponer</i> appears twice with two meanings — find both.","Optional en español: ¿Qué le dirías a Rosa?"]},
-
- {"n":4,"title":"El vínculo","theme":"Familia · el vínculo · ajeno · alejarse · el rasgo",
-  "grammar":"Contrast set: <b>recordar</b> (to remember / remind) vs <i>acordarse de</i> (to remember); <b>el recuerdo</b> (memory) vs <i>la memoria</i> (memory as faculty); <b>ajeno</b> (someone else's, foreign to) vs <i>extraño</i> (strange).",
-  "es":"Mi padre y su hermano no se hablaron durante once años. Nadie en la familia **recuerda** bien el **motivo**; cada uno cuenta una versión distinta y todas parecen pequeñas.\n\nLo que sí recuerdo es cómo se **alejaron**: primero dejaron de venir a las mismas cenas, después dejaron de preguntar el uno por el otro. El **vínculo** no se rompió de golpe. Se fue gastando, como una **costumbre** que nadie decide abandonar.\n\nEl año pasado murió la abuela y se vieron en el hospital. Mi tío llegó con un abrigo **ajeno**, prestado por un vecino, porque había salido de casa con prisa. Mi padre lo **reconoció** desde el pasillo por un **rasgo** que los dos comparten: caminan con las manos a la espalda.\n\nNo hablaron mucho. **Sostuvieron** la mirada un momento y después hablaron de la abuela, del tráfico, de nada. Pero desde entonces mi tío viene a cenar los domingos, y nadie menciona los once años.",
-  "targets":[["recordar","to remember; to remind"],["el motivo","reason, motive"],["alejarse","to drift apart, to move away"],["el vínculo","bond, link, tie"],["la costumbre","habit, custom"],["ajeno","someone else's, borrowed"],["reconocer","to recognise; to admit"],["el rasgo","trait, feature"],["sostener","to hold (a gaze); to sustain, to maintain"]],
-  "glosses":[["de golpe","all at once"],["gastarse","to wear out"],["prestado","borrowed, lent"],["el pasillo","corridor"]],
-  "en":"My father and his brother didn't speak for eleven years. Nobody in the family remembers the reason well; each tells a different version and they all seem small.\n\nWhat I do remember is how they drifted apart: first they stopped coming to the same dinners, then they stopped asking after each other. The bond didn't break all at once. It wore down, like a habit nobody decides to abandon.\n\nLast year my grandmother died and they saw each other at the hospital. My uncle arrived in someone else's coat, lent by a neighbour, because he had left home in a hurry. My father recognised him from the corridor by a trait they both share: they walk with their hands behind their backs.\n\nThey didn't talk much. They held each other's gaze a moment and then talked about grandma, the traffic, nothing. But since then my uncle comes to dinner on Sundays, and nobody mentions the eleven years.",
-  "cloze":[["Nadie ___ bien el motivo de la pelea.","recuerda"],["Cada uno cuenta un ___ distinto.","motivo"],["Los hermanos se ___ poco a poco.","alejaron"],["El ___ no se rompió de golpe.","vínculo"],["Llegó con un abrigo ___, prestado por un vecino.","ajeno"],["Mi padre lo ___ desde el pasillo.","reconoció"],["Comparten un ___: caminan con las manos a la espalda.","rasgo"],["___ la mirada un momento y después hablaron de nada.","Sostuvieron"]],
-  "speak":["Retell in English without looking.","<i>Reconocer</i> has two meanings — which one is used here, and what would the other look like in a sentence?","Optional en español: cuenta una reconciliación que conozcas."]},
-
- {"n":5,"title":"La huelga","theme":"Trabajo y conflicto · el esfuerzo · fracasar · el acuerdo · negarse",
-  "grammar":"Contrast set — the pairs that failed on the 0011 cloze: <b>el fracaso</b> / <i>fracasar</i>, <b>la queja</b> / <i>quejarse</i>, <b>el despido</b> / <i>despedir</i> (to fire — and, reflexive, to say goodbye). Check the slot.",
-  "es":"La **huelga** duró nueve días. Empezó con una **queja** pequeña: el turno de noche cobraba lo mismo que el de día y el **sueldo** no había subido en tres años. La dirección se **negó** a hablar hasta que la fábrica se detuvo.\n\nMi vecino Andrés estuvo en la puerta todos los días. Decía que el **esfuerzo** valía la pena aunque **fracasaran**, porque por lo menos la empresa sabría que existían. Su mujer no estaba tan segura; había dos **despidos** en la lista de riesgos y uno de ellos era el suyo.\n\nEl **acuerdo** llegó el noveno día, de madrugada. No era lo que pedían: un aumento pequeño, ningún cambio en los turnos, la promesa de revisar todo en un año. Andrés votó a favor. Dijo que tenían el **derecho** a seguir, pero no las fuerzas.\n\nAl día siguiente volvió a la fábrica a las seis. Me contó que nadie hablaba en el vestuario. No por rabia. Por cansancio.",
-  "targets":[["la huelga","strike"],["la queja","complaint"],["el sueldo","salary, wages"],["negarse a","to refuse to"],["el esfuerzo","effort"],["fracasar","to fail, to fall through"],["el despido","dismissal, firing"],["el acuerdo","agreement, deal"],["el derecho","right (entitlement); law"]],
-  "glosses":[["el turno","shift"],["la dirección","management"],["detenerse","to stop"],["de madrugada","in the small hours"],["el vestuario","changing room"]],
-  "en":"The strike lasted nine days. It began with a small complaint: the night shift was paid the same as the day shift and wages hadn't gone up in three years. Management refused to talk until the factory stopped.\n\nMy neighbour Andrés was at the gate every day. He said the effort was worth it even if they failed, because at least the company would know they existed. His wife wasn't so sure; there were two dismissals on the list of risks and one of them was his.\n\nThe agreement came on the ninth day, in the small hours. It wasn't what they'd asked for: a small raise, no change to the shifts, a promise to review everything in a year. Andrés voted in favour. He said they had the right to go on, but not the strength.\n\nThe next day he went back to the factory at six. He told me nobody spoke in the changing room. Not out of anger. Out of tiredness.",
-  "cloze":[["La ___ duró nueve días.","huelga"],["Empezó con una ___ pequeña sobre el turno de noche.","queja"],["El ___ no había subido en tres años.","sueldo"],["La dirección se ___ a hablar.","negó"],["El ___ valía la pena aunque fracasaran.","esfuerzo"],["Si ___, por lo menos la empresa sabría que existían.","fracasaban"],["Había dos ___ en la lista de riesgos.","despidos"],["El ___ llegó el noveno día.","acuerdo"]],
-  "speak":["Retell in English without looking.","Noun or verb? <i>fracaso / fracasó</i>, <i>queja / quejó</i>, <i>despido / despidió</i> — say a sentence for each.","Optional en español: ¿Habrías votado a favor?"]},
-
- {"n":6,"title":"La prueba","theme":"Un conflicto legal · la prueba · culpar · el hecho · el testigo",
-  "grammar":"Contrast set: <b>la prueba</b> (proof, test) / <i>probar</i> (to prove, to try, to taste); <b>el hecho</b> (fact) vs <i>hecho</i> (done, past participle of hacer); <b>la culpa</b> / <i>culpar</i> / <i>culpable</i>. Watch <b>sin embargo</b> = however.",
-  "es":"El **hecho** era simple: el muro entre los dos jardines se había caído una noche de viento. Lo demás no era simple.\n\nMi vecina Carmen **culpaba** al matrimonio del otro lado, que había plantado un árbol demasiado cerca. Ellos, **sin embargo**, decían que el muro ya estaba mal antes del árbol, y tenían una **prueba**: una foto de hace cinco años con una grieta visible.\n\nEl **juez** pidió **testigos**. Vino el jardinero, que no recordaba nada; vino un albañil, que recordaba demasiado. La **ley**, explicó el abogado de Carmen, dice que cada dueño responde por el **daño** que causa su propiedad. El problema era demostrar de qué lado venía el daño.\n\nAl final no hubo **denuncia**. Los dos vecinos pagaron el muro a partes iguales, y el árbol sigue donde estaba. Carmen dice que perdió. El matrimonio dice lo mismo. Yo creo que ganó el albañil.",
-  "targets":[["el hecho","fact"],["culpar","to blame"],["sin embargo","however, nevertheless"],["la prueba","proof, evidence; test"],["el juez","judge"],["el testigo","witness"],["la ley","law"],["el daño","damage, harm"],["la denuncia","formal complaint, report (to authorities)"]],
-  "glosses":[["el muro","wall (freestanding)"],["el matrimonio","married couple"],["el albañil","builder, bricklayer"],["a partes iguales","in equal shares"]],
-  "en":"The fact was simple: the wall between the two gardens had fallen one windy night. The rest wasn't simple.\n\nMy neighbour Carmen blamed the couple on the other side, who had planted a tree too close. They, however, said the wall was already in bad shape before the tree, and they had proof: a photo from five years ago with a visible crack.\n\nThe judge asked for witnesses. The gardener came, who remembered nothing; a builder came, who remembered too much. The law, Carmen's lawyer explained, says each owner is liable for the damage their property causes. The problem was proving which side the damage came from.\n\nIn the end there was no formal complaint. The two neighbours paid for the wall in equal shares, and the tree is still where it was. Carmen says she lost. The couple say the same. I think the builder won.",
-  "cloze":[["El ___ era simple: el muro se había caído.","hecho"],["Carmen ___ al matrimonio del otro lado.","culpaba"],["Ellos, ___ ___, decían que el muro ya estaba mal.","sin embargo"],["Tenían una ___: una foto con una grieta visible.","prueba"],["El ___ pidió testigos.","juez"],["Vino un ___ que recordaba demasiado.","testigo"],["Cada dueño responde por el ___ que causa su propiedad.","daño"],["Al final no hubo ___.","denuncia"]],
-  "speak":["Retell in English without looking.","Three sentences with <i>probar</i> in its three meanings: prove, try, taste.","Optional en español: ¿Quién tenía razón?"]},
-
- {"n":7,"title":"El proyecto","theme":"Un proyecto comunitario · desarrollar · disponer de · carecer de · el presupuesto",
-  "grammar":"Contrast set: <b>disponer de</b> (to have available) vs <i>disponible</i> (available); <b>carecer de</b> (to lack) / <i>la carencia</i>; <b>lograr</b> / <i>el logro</i>; <b>invertir</b> (to invest — and to invert) / <i>la inversión</i>.",
-  "es":"El barrio **carecía** de biblioteca desde que cerraron la antigua en 2009. Un grupo de vecinos decidió abrir una en un local vacío, sin saber muy bien cómo.\n\nEl primer problema fue el **presupuesto**: el ayuntamiento ofrecía el local pero no el dinero. **Disponíamos de** trescientos libros donados y de nada más. Una profesora jubilada propuso **desarrollar** el proyecto en fases: primero estanterías y horario, después actividades, después, si llegaba, la **inversión** grande.\n\nLa **fuente** de dinero apareció donde nadie miraba: una panadería del barrio ofreció el diez por ciento de sus ventas de los sábados durante un año. Con ese **recurso** pagamos la luz y una persona a media jornada.\n\nEl **apoyo** de los vecinos fue irregular. Venían muchos a la inauguración y pocos a las reuniones. Aun así, un año después la biblioteca tiene mil doscientos libros y un club de lectura. No es un gran **logro**, dice la profesora. Yo creo que sí lo es.",
-  "targets":[["carecer de","to lack"],["el presupuesto","budget"],["disponer de","to have (available), to have at one's disposal"],["desarrollar","to develop"],["la inversión","investment"],["la fuente","source; fountain"],["el recurso","resource"],["el apoyo","support"],["el logro","achievement"]],
-  "glosses":[["el local","premises"],["el ayuntamiento","town hall, city council"],["jubilado","retired"],["la estantería","shelving"],["a media jornada","part-time"],["aun así","even so"]],
-  "en":"The neighbourhood had lacked a library since the old one closed in 2009. A group of residents decided to open one in an empty premises, without quite knowing how.\n\nThe first problem was the budget: the town hall offered the premises but not the money. We had three hundred donated books available and nothing else. A retired teacher proposed developing the project in phases: first shelving and opening hours, then activities, then, if it came, the big investment.\n\nThe source of money appeared where nobody was looking: a neighbourhood bakery offered ten percent of its Saturday sales for a year. With that resource we paid the electricity and one part-time person.\n\nThe residents' support was patchy. Many came to the opening and few to the meetings. Even so, a year later the library has twelve hundred books and a reading club. It's not a great achievement, says the teacher. I think it is.",
-  "cloze":[["El barrio ___ de biblioteca desde 2009.","carecía"],["El primer problema fue el ___.","presupuesto"],["___ de trescientos libros y de nada más.","Disponíamos"],["Propuso ___ el proyecto en fases.","desarrollar"],["La ___ grande llegaría después, si llegaba.","inversión"],["La ___ de dinero apareció donde nadie miraba.","fuente"],["El ___ de los vecinos fue irregular.","apoyo"],["No es un gran ___, dice la profesora.","logro"]],
-  "speak":["Retell in English without looking.","<i>Disponer de</i> vs <i>disponible</i> — one sentence each.","Optional en español: ¿Qué le falta a tu barrio?"]},
-
- {"n":8,"title":"Según la encuesta","theme":"Registro periodístico · según · la encuesta · el dato · destacar · la tasa",
-  "grammar":"Expository register. Contrast set — false friends: <b>el dato</b> (piece of data) ≠ <i>date</i> (<i>la fecha</i>); <b>la tasa</b> (rate) ≠ <i>la taza</i> (cup); <b>afirmar</b> (to state) vs <i>asegurar</i> (to assure / insure). <b>según</b> = according to.",
-  "es":"**Según** una **encuesta** publicada esta semana, el cuarenta y tres por ciento de los adultos del país lee menos de un libro al año. El **dato** no es nuevo, pero la **tendencia** sí: la cifra ha subido cinco puntos desde 2019.\n\nLos autores del estudio **destacan** dos factores. El primero es el tiempo dedicado a las pantallas, que ha **aumentado** en todos los grupos de edad. El segundo es el **nivel** de ingresos: en los hogares con menos recursos, la **tasa** de lectura **disminuye** casi a la mitad.\n\nNo todo son malas noticias. La misma encuesta **afirma** que quienes leen, leen más que antes: el **promedio** entre lectores habituales pasó de ocho a once libros al año. Es decir, el país se divide en dos: los que no leen nada y los que leen cada vez más.\n\nLa ministra de Cultura declaró que los datos «exigen una respuesta». No especificó cuál.",
-  "targets":[["según","according to"],["la encuesta","survey, poll"],["el dato","piece of data, fact"],["la tendencia","trend"],["destacar","to highlight, to stand out"],["el nivel","level"],["la tasa","rate"],["disminuir","to decrease"],["afirmar","to state, to assert"],["el promedio","average"]],
-  "glosses":[["la pantalla","screen"],["el hogar","household"],["es decir","that is to say"],["la ministra","minister (f.)"]],
-  "en":"According to a survey published this week, forty-three percent of adults in the country read fewer than one book a year. The figure isn't new, but the trend is: the number has risen five points since 2019.\n\nThe study's authors highlight two factors. The first is time spent on screens, which has increased in every age group. The second is income level: in households with fewer resources, the reading rate drops by almost half.\n\nIt isn't all bad news. The same survey states that those who read, read more than before: the average among regular readers went from eight to eleven books a year. That is, the country splits in two: those who read nothing and those who read more and more.\n\nThe Minister of Culture declared that the data 'demand a response'. She didn't specify which.",
-  "cloze":[["___ una encuesta, el 43% lee menos de un libro al año.","Según"],["El ___ no es nuevo, pero la tendencia sí.","dato"],["Los autores ___ dos factores.","destacan"],["El segundo factor es el ___ de ingresos.","nivel"],["La ___ de lectura disminuye casi a la mitad.","tasa"],["En los hogares con menos recursos, la lectura ___.","disminuye"],["La encuesta ___ que quienes leen, leen más.","afirma"],["El ___ pasó de ocho a once libros al año.","promedio"]],
-  "speak":["Retell in English without looking — including the two numbers.","Say the false-friend pairs aloud: <i>dato / fecha</i>, <i>tasa / taza</i>.","Optional en español: ¿Cuántos libros lees al año? ¿Y tu familia?"]},
-
- {"n":9,"title":"La sequía","theme":"Entorno y cambio · la sequía · la cosecha · la pérdida · adaptarse",
-  "grammar":"Contrast set — form neighbours: <b>el suelo</b> (soil, floor) vs <i>el sueldo</i> (salary) vs <i>el sol</i>; <b>la pérdida</b> / <i>perder</i>; <b>la escasez</b> (shortage) / <i>escaso</i>. <b>afectar a</b> takes <i>a</i> even with things.",
-  "es":"El pueblo de mi abuelo vivía de la **cosecha** de almendras. Este año no hubo cosecha. La **sequía** empezó en marzo, y para junio el **suelo** estaba tan duro que las raíces no encontraban agua.\n\nLa **pérdida** no fue solo económica. Mi tío, que heredó las tierras, dice que el **entorno** cambió más en cinco años que en los cincuenta anteriores: menos lluvia, más calor, el **clima** de otro lugar. La **escasez** de agua **afecta** primero a los árboles viejos, que son los que más producen.\n\nAlgunos vecinos han empezado a **adaptarse**. Uno plantó pistachos, que necesitan menos agua. Otro vendió las tierras a una empresa de paneles solares. Mi tío no ha decidido. Dice que la sequía **amenaza** el pueblo, pero que vender también lo amenaza, de otra forma.\n\nEn agosto llovió dos días seguidos. Todo el pueblo salió a mirar. No fue suficiente para nada, pero nadie lo dijo.",
-  "targets":[["la cosecha","harvest, crop"],["la sequía","drought"],["el suelo","soil; ground, floor"],["la pérdida","loss"],["el entorno","environment, surroundings"],["el clima","climate"],["la escasez","shortage, scarcity"],["afectar a","to affect"],["adaptarse","to adapt"],["amenazar","to threaten"]],
-  "glosses":[["la almendra","almond"],["la raíz","root"],["heredar","to inherit"],["seguidos","in a row"]],
-  "en":"My grandfather's village lived off the almond harvest. This year there was no harvest. The drought began in March, and by June the soil was so hard the roots couldn't find water.\n\nThe loss wasn't only economic. My uncle, who inherited the land, says the surroundings changed more in five years than in the fifty before: less rain, more heat, the climate of somewhere else. The water shortage hits the old trees first, and they are the ones that produce most.\n\nSome neighbours have started to adapt. One planted pistachios, which need less water. Another sold the land to a solar-panel company. My uncle hasn't decided. He says the drought threatens the village, but selling threatens it too, in another way.\n\nIn August it rained two days in a row. The whole village went out to look. It wasn't enough for anything, but nobody said so.",
-  "cloze":[["El pueblo vivía de la ___ de almendras.","cosecha"],["La ___ empezó en marzo.","sequía"],["Para junio el ___ estaba duro como piedra.","suelo"],["La ___ no fue solo económica.","pérdida"],["El ___ cambió más en cinco años que en cincuenta.","entorno"],["La ___ de agua afecta primero a los árboles viejos.","escasez"],["Algunos vecinos han empezado a ___.","adaptarse"],["La sequía ___ el pueblo, pero vender también.","amenaza"]],
-  "speak":["Retell in English without looking.","<i>Suelo / sueldo / sol</i> — three sentences, no mixing.","Optional en español: ¿Qué harías con las tierras?"]},
-
- {"n":10,"title":"A pesar de todo","theme":"Repaso · conectores del discurso · a pesar de · aunque · en cambio · ni siquiera",
-  "grammar":"The connectors that carry adult prose. Contrast set: <b>aun</b> (even) vs <i>aún</i> (still); <b>sin embargo</b> (however) vs <i>en cambio</i> (whereas, on the other hand); <b>apenas</b> (hardly / as soon as); <b>ni siquiera</b> (not even). Every target here is a connector — the cloze tests the logic of the sentence, not a noun.",
-  "es":"**A pesar de** todo lo que había pasado ese año —la huelga, la sequía en el pueblo, la biblioteca a medio construir—, Marta decidió quedarse. **Aunque** su hermana insistía en que la ciudad le daría más oportunidades, ella respondía siempre lo mismo: que las oportunidades no eran el problema.\n\n**Mientras** empaquetaba los libros que iba a donar, pensó en las **cifras** de la panadería, en el **acuerdo** de la fábrica, en el **vínculo** recuperado entre su padre y su tío. Nada de eso había salido como se esperaba. **Sin embargo**, todo había salido.\n\nSu hermana, **en cambio**, veía solo lo que faltaba. **Ni siquiera** había venido a la inauguración. **Apenas** llamaba.\n\n—**Es decir**, que te quedas por ellos —le dijo por teléfono.\n—No. Me quedo porque **incluso** cuando todo **fracasa**, aquí alguien se entera. **Por lo tanto**, alguien lo intenta otra vez.\n\nColgó antes de que su hermana pudiera contestar. Después se sintió culpable. Después, no.",
-  "targets":[["a pesar de","despite, in spite of"],["aunque","although, even though"],["mientras","while"],["sin embargo","however"],["en cambio","on the other hand, whereas"],["ni siquiera","not even"],["apenas","hardly; as soon as"],["es decir","that is to say, in other words"],["incluso","even (including)"],["por lo tanto","therefore"]],
-  "glosses":[["empaquetar","to pack up"],["donar","to donate"],["enterarse","to find out, to notice"],["colgar","to hang up"]],
-  "en":"Despite everything that had happened that year — the strike, the drought in the village, the half-built library — Marta decided to stay. Although her sister insisted the city would give her more opportunities, she always answered the same: that opportunities weren't the problem.\n\nWhile she packed the books she was going to donate, she thought about the bakery's figures, the factory agreement, the bond recovered between her father and her uncle. None of it had turned out as expected. However, all of it had turned out.\n\nHer sister, on the other hand, saw only what was missing. She hadn't even come to the opening. She hardly called.\n\n'In other words, you're staying for them,' she said on the phone.\n'No. I'm staying because even when everything fails, here somebody notices. Therefore, somebody tries again.'\n\nShe hung up before her sister could answer. Afterwards she felt guilty. Afterwards, not.",
-  "cloze":[["___ ___ ___ todo lo que había pasado, decidió quedarse.","A pesar de"],["___ su hermana insistía, ella respondía lo mismo.","Aunque"],["___ empaquetaba los libros, pensó en el año.","Mientras"],["Nada salió como se esperaba. ___ ___, todo salió.","Sin embargo"],["Su hermana, ___ ___, veía solo lo que faltaba.","en cambio"],["___ ___ había venido a la inauguración.","Ni siquiera"],["___ llamaba.","Apenas"],["___ ___ ___, alguien lo intenta otra vez.","Por lo tanto"]],
-  "speak":["Retell in English without looking — every connector must survive the retelling.","Say one sentence each with <i>aun</i> and <i>aún</i>.","Optional en español: cuenta tu año con cinco de estos conectores."]}
+ {
+  "n": 1,
+  "title": "La entrevista",
+  "theme": "Trabajo · plantear · exigir · el plazo · lograr",
+  "grammar": "Contrast set — noun ↔ verb slots: <b>el apoyo</b> / <i>apoyar</i>, <b>la exigencia</b> / <i>exigir</i>, <b>el logro</b> / <i>lograr</i>, <b>el planteamiento</b> / <i>plantear</i>. In the cloze, check the slot before the meaning.",
+  "es": "La entrevista era a las nueve y llegué a las ocho y media, con el **propósito** de parecer tranquila. No lo **logré**. La mujer que me recibió no hizo ninguna pregunta sobre mi experiencia; fue directo al **asunto**: la empresa necesitaba a alguien que empezara el lunes.\n\n—El **plazo** es corto —dijo—. Lo sé. Pero no podemos esperar más.\n\nLe **planteé** el problema: tenía otro trabajo y debía avisar con dos semanas. Ella **exigió** una respuesta ese mismo día. Le pregunté qué **ventaja** tenía yo si aceptaba tan rápido. Sonrió por primera vez.\n\n—Que el puesto **surgió** hace tres días y usted es la única persona que ha venido preparada.\n\nMe dijo que el equipo la **apoyaría** en cualquier decisión, pero que la decisión era mía. Salí a la calle sin saber si acababa de conseguir un trabajo o de perderlo.",
+  "targets": [
+   [
+    "el propósito",
+    "purpose, intention"
+   ],
+   [
+    "lograr",
+    "to manage to, to achieve"
+   ],
+   [
+    "el asunto",
+    "matter, business"
+   ],
+   [
+    "el plazo",
+    "deadline, time frame"
+   ],
+   [
+    "plantear",
+    "to raise (an issue), to put forward"
+   ],
+   [
+    "exigir",
+    "to demand"
+   ],
+   [
+    "la ventaja",
+    "advantage"
+   ],
+   [
+    "surgir",
+    "to arise, to come up"
+   ],
+   [
+    "apoyar",
+    "to support, to back"
+   ]
+  ],
+  "glosses": [
+   [
+    "recibir",
+    "to receive / see (someone)"
+   ],
+   [
+    "avisar",
+    "to give notice"
+   ],
+   [
+    "el puesto",
+    "the position (job)"
+   ],
+   [
+    "acabar de + inf.",
+    "to have just"
+   ]
+  ],
+  "en": "The interview was at nine and I arrived at half past eight, with the intention of seeming calm. I didn't manage it. The woman who saw me asked nothing about my experience; she went straight to the matter: the company needed someone who could start on Monday.\n\n'The time frame is short,' she said. 'I know. But we can't wait any longer.'\n\nI raised the problem: I had another job and had to give two weeks' notice. She demanded an answer that same day. I asked her what advantage I got if I accepted so fast. She smiled for the first time.\n\n'That the position came up three days ago and you are the only person who has come prepared.'\n\nShe told me the team would back her in any decision, but that the decision was mine. I walked out onto the street not knowing whether I had just got a job or lost one.",
+  "cloze": [
+   [
+    "Llegué temprano con el ___ de parecer tranquila.",
+    "propósito"
+   ],
+   [
+    "No ___ parecer tranquila; me temblaban las manos.",
+    "logré"
+   ],
+   [
+    "Ella fue directo al ___: necesitaban a alguien para el lunes.",
+    "asunto"
+   ],
+   [
+    "El ___ es corto, pero no podemos esperar más.",
+    "plazo"
+   ],
+   [
+    "Le ___ el problema del otro trabajo.",
+    "planteé"
+   ],
+   [
+    "Ella ___ una respuesta ese mismo día.",
+    "exigió"
+   ],
+   [
+    "El puesto ___ hace tres días.",
+    "surgió"
+   ],
+   [
+    "El equipo la ___ en cualquier decisión.",
+    "apoyaría"
+   ]
+  ],
+  "speak": [
+   "Retell the story in English, out loud, without looking — that is the test.",
+   "Which four targets are verbs and which nouns? Say each pair: <i>apoyar / el apoyo</i>…",
+   "Optional, in Spanish: ¿Qué decidirías tú y por qué?"
+  ]
+ },
+ {
+  "n": 2,
+  "title": "El aviso",
+  "theme": "Una reunión de vecinos · advertir · la amenaza · el riesgo · impedir",
+  "grammar": "Contrast set: <b>advertir</b> (to warn) ≠ <i>advertise</i>; <b>el aviso</b> / <i>avisar</i> (notice / to notify); <b>la falta</b> / <i>faltar</i> (lack / to be missing). Also <b>la medida</b> = measure (both senses).",
+  "es": "El **aviso** apareció en el ascensor un martes: reunión de vecinos, jueves, ocho de la noche, tema único. Nadie sabía cuál era el tema.\n\nEl administrador **advirtió** desde el principio que no venía a asustar a nadie. Después nos asustó. La empresa que revisa los edificios había **señalado** grietas en dos columnas del garaje. No era una **amenaza** inmediata, dijo, pero el **riesgo** existía y **aumentaba** con cada invierno.\n\nUna señora del quinto preguntó qué **medidas** había que tomar. La respuesta fue larga y cara. Otro vecino dijo que el problema era la **falta** de mantenimiento durante años, y que ahora pagábamos todos por la **escasa** atención de los anteriores dueños.\n\nAl final se votó **impedir** el uso del garaje hasta tener el informe completo. Yo levanté la mano sin estar segura de nada. Cuando bajé por la escalera, evité mirar las columnas.",
+  "targets": [
+   [
+    "el aviso",
+    "notice, warning (sign)"
+   ],
+   [
+    "advertir",
+    "to warn"
+   ],
+   [
+    "señalar",
+    "to point out, to flag"
+   ],
+   [
+    "la amenaza",
+    "threat"
+   ],
+   [
+    "el riesgo",
+    "risk"
+   ],
+   [
+    "aumentar",
+    "to increase"
+   ],
+   [
+    "la medida",
+    "measure (step taken)"
+   ],
+   [
+    "la falta",
+    "lack, absence"
+   ],
+   [
+    "escaso",
+    "scarce, scant"
+   ],
+   [
+    "impedir",
+    "to prevent, to block"
+   ]
+  ],
+  "glosses": [
+   [
+    "el administrador",
+    "building manager"
+   ],
+   [
+    "la grieta",
+    "crack"
+   ],
+   [
+    "el mantenimiento",
+    "maintenance"
+   ],
+   [
+    "el dueño",
+    "owner"
+   ],
+   [
+    "el informe",
+    "report"
+   ]
+  ],
+  "en": "The notice appeared in the lift on a Tuesday: residents' meeting, Thursday, eight in the evening, single topic. Nobody knew what the topic was.\n\nThe building manager warned from the start that he hadn't come to frighten anyone. Then he frightened us. The company that inspects the buildings had flagged cracks in two columns of the garage. It wasn't an immediate threat, he said, but the risk existed and grew with every winter.\n\nA woman from the fifth floor asked what measures had to be taken. The answer was long and expensive. Another neighbour said the problem was the lack of maintenance for years, and that now we were all paying for the scant attention of the previous owners.\n\nIn the end it was voted to block use of the garage until the full report was in. I raised my hand without being sure of anything. When I went down by the stairs, I avoided looking at the columns.",
+  "cloze": [
+   [
+    "El ___ apareció en el ascensor un martes.",
+    "aviso"
+   ],
+   [
+    "El administrador ___ que no venía a asustar a nadie.",
+    "advirtió"
+   ],
+   [
+    "La empresa había ___ grietas en dos columnas.",
+    "señalado"
+   ],
+   [
+    "No era una ___ inmediata, pero el riesgo existía.",
+    "amenaza"
+   ],
+   [
+    "El riesgo ___ con cada invierno.",
+    "aumentaba"
+   ],
+   [
+    "¿Qué ___ hay que tomar? —preguntó una señora.",
+    "medidas"
+   ],
+   [
+    "El problema era la ___ de mantenimiento durante años.",
+    "falta"
+   ],
+   [
+    "Se votó ___ el uso del garaje.",
+    "impedir"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "Say the pairs: <i>advertir / la advertencia</i>, <i>avisar / el aviso</i>, <i>faltar / la falta</i> — which is the noun?",
+   "Optional en español: ¿Qué habrías votado tú?"
+  ]
+ },
+ {
+  "n": 3,
+  "title": "Las cifras",
+  "theme": "Un negocio pequeño · la cifra · el ingreso · el gasto · suponer",
+  "grammar": "Contrast set: <b>la cifra</b> (figure, statistic) vs <i>el número</i>; <b>el ingreso</b> (income) vs <i>la entrada</i> (entry, ticket); <b>la mejora</b> / <i>mejorar</i>. <b>suponer</b> = to suppose <u>and</u> to entail.",
+  "es": "Mi tía Rosa tiene una panadería desde hace treinta años y nunca había mirado una hoja de cálculo. Este verano su hijo la obligó.\n\nLas **cifras** no eran buenas. Los **ingresos** habían bajado un doce por ciento en dos años; los **gastos**, en cambio, habían subido. El **retraso** de los proveedores la obligaba a comprar harina más cara en el último momento. Mi primo le mostró una **muestra** de tres meses y le explicó que el problema no era vender menos pan, sino venderlo peor.\n\n—¿Y eso qué **supone**? —preguntó ella.\n—Supone cambiar el horario y **reducir** la variedad.\n\nRosa se negó al principio. Después preguntó cuál sería el **alcance** del cambio: si afectaría a los clientes de siempre. Mi primo prometió una **mejora** visible en seis meses o volver al sistema antiguo.\n\nLa panadería abre ahora una hora más tarde y hace la mitad de los tipos de pan. Las cifras, dice Rosa sin mirarlas, van bien.",
+  "targets": [
+   [
+    "la cifra",
+    "figure, number (statistic)"
+   ],
+   [
+    "el ingreso",
+    "income, revenue"
+   ],
+   [
+    "el gasto",
+    "expense, spending"
+   ],
+   [
+    "el retraso",
+    "delay"
+   ],
+   [
+    "la muestra",
+    "sample"
+   ],
+   [
+    "suponer",
+    "to entail; to suppose"
+   ],
+   [
+    "reducir",
+    "to reduce"
+   ],
+   [
+    "el alcance",
+    "scope, extent, reach"
+   ],
+   [
+    "la mejora",
+    "improvement"
+   ]
+  ],
+  "glosses": [
+   [
+    "la hoja de cálculo",
+    "spreadsheet"
+   ],
+   [
+    "el proveedor",
+    "supplier"
+   ],
+   [
+    "la harina",
+    "flour"
+   ],
+   [
+    "negarse",
+    "to refuse"
+   ]
+  ],
+  "en": "My aunt Rosa has had a bakery for thirty years and had never looked at a spreadsheet. This summer her son made her.\n\nThe figures weren't good. Revenue had fallen twelve percent in two years; expenses, by contrast, had gone up. The suppliers' delays forced her to buy more expensive flour at the last minute. My cousin showed her a three-month sample and explained that the problem wasn't selling less bread, but selling it worse.\n\n'And what does that entail?' she asked.\n'It entails changing the hours and reducing the variety.'\n\nRosa refused at first. Then she asked what the scope of the change would be: whether it would affect the regular customers. My cousin promised a visible improvement in six months or a return to the old system.\n\nThe bakery now opens an hour later and makes half the kinds of bread. The figures, Rosa says without looking at them, are going well.",
+  "cloze": [
+   [
+    "Las ___ no eran buenas.",
+    "cifras"
+   ],
+   [
+    "Los ___ habían bajado un doce por ciento.",
+    "ingresos"
+   ],
+   [
+    "Los ___, en cambio, habían subido.",
+    "gastos"
+   ],
+   [
+    "El ___ de los proveedores la obligaba a comprar harina cara.",
+    "retraso"
+   ],
+   [
+    "Le mostró una ___ de tres meses.",
+    "muestra"
+   ],
+   [
+    "¿Y eso qué ___? —preguntó ella.",
+    "supone"
+   ],
+   [
+    "Hay que ___ la variedad de panes.",
+    "reducir"
+   ],
+   [
+    "Prometió una ___ visible en seis meses.",
+    "mejora"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "<i>Suponer</i> appears twice with two meanings — find both.",
+   "Optional en español: ¿Qué le dirías a Rosa?"
+  ]
+ },
+ {
+  "n": 4,
+  "title": "El vínculo",
+  "theme": "Familia · el vínculo · ajeno · alejarse · el rasgo",
+  "grammar": "Contrast set: <b>recordar</b> (to remember / remind) vs <i>acordarse de</i> (to remember); <b>el recuerdo</b> (memory) vs <i>la memoria</i> (memory as faculty); <b>ajeno</b> (someone else's, foreign to) vs <i>extraño</i> (strange).",
+  "es": "Mi padre y su hermano no se hablaron durante once años. Nadie en la familia **recuerda** bien el **motivo**; cada uno cuenta una versión distinta y todas parecen pequeñas.\n\nLo que sí recuerdo es cómo se **alejaron**: primero dejaron de venir a las mismas cenas, después dejaron de preguntar el uno por el otro. El **vínculo** no se rompió de golpe. Se fue gastando, como una **costumbre** que nadie decide abandonar.\n\nEl año pasado murió la abuela y se vieron en el hospital. Mi tío llegó con un abrigo **ajeno**, prestado por un vecino, porque había salido de casa con prisa. Mi padre lo **reconoció** desde el pasillo por un **rasgo** que los dos comparten: caminan con las manos a la espalda.\n\nNo hablaron mucho. **Sostuvieron** la mirada un momento y después hablaron de la abuela, del tráfico, de nada. Pero desde entonces mi tío viene a cenar los domingos, y nadie menciona los once años.",
+  "targets": [
+   [
+    "recordar",
+    "to remember; to remind"
+   ],
+   [
+    "el motivo",
+    "reason, motive"
+   ],
+   [
+    "alejarse",
+    "to drift apart, to move away"
+   ],
+   [
+    "el vínculo",
+    "bond, link, tie"
+   ],
+   [
+    "la costumbre",
+    "habit, custom"
+   ],
+   [
+    "ajeno",
+    "someone else's, borrowed"
+   ],
+   [
+    "reconocer",
+    "to recognise; to admit"
+   ],
+   [
+    "el rasgo",
+    "trait, feature"
+   ],
+   [
+    "sostener",
+    "to hold (a gaze); to sustain, to maintain"
+   ]
+  ],
+  "glosses": [
+   [
+    "de golpe",
+    "all at once"
+   ],
+   [
+    "gastarse",
+    "to wear out"
+   ],
+   [
+    "prestado",
+    "borrowed, lent"
+   ],
+   [
+    "el pasillo",
+    "corridor"
+   ]
+  ],
+  "en": "My father and his brother didn't speak for eleven years. Nobody in the family remembers the reason well; each tells a different version and they all seem small.\n\nWhat I do remember is how they drifted apart: first they stopped coming to the same dinners, then they stopped asking after each other. The bond didn't break all at once. It wore down, like a habit nobody decides to abandon.\n\nLast year my grandmother died and they saw each other at the hospital. My uncle arrived in someone else's coat, lent by a neighbour, because he had left home in a hurry. My father recognised him from the corridor by a trait they both share: they walk with their hands behind their backs.\n\nThey didn't talk much. They held each other's gaze a moment and then talked about grandma, the traffic, nothing. But since then my uncle comes to dinner on Sundays, and nobody mentions the eleven years.",
+  "cloze": [
+   [
+    "Nadie ___ bien el motivo de la pelea.",
+    "recuerda"
+   ],
+   [
+    "Cada uno cuenta un ___ distinto.",
+    "motivo"
+   ],
+   [
+    "Los hermanos se ___ poco a poco.",
+    "alejaron"
+   ],
+   [
+    "El ___ no se rompió de golpe.",
+    "vínculo"
+   ],
+   [
+    "Llegó con un abrigo ___, prestado por un vecino.",
+    "ajeno"
+   ],
+   [
+    "Mi padre lo ___ desde el pasillo.",
+    "reconoció"
+   ],
+   [
+    "Comparten un ___: caminan con las manos a la espalda.",
+    "rasgo"
+   ],
+   [
+    "___ la mirada un momento y después hablaron de nada.",
+    "Sostuvieron"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "<i>Reconocer</i> has two meanings — which one is used here, and what would the other look like in a sentence?",
+   "Optional en español: cuenta una reconciliación que conozcas."
+  ]
+ },
+ {
+  "n": 5,
+  "title": "La huelga",
+  "theme": "Trabajo y conflicto · el esfuerzo · fracasar · el acuerdo · negarse",
+  "grammar": "Contrast set — noun ↔ verb slots that look alike: <b>el fracaso</b> / <i>fracasar</i>, <b>la queja</b> / <i>quejarse</i>, <b>el despido</b> / <i>despedir</i> (to fire — and, reflexive, to say goodbye). The commonest error at this band is the right meaning in the wrong slot: <i>fracaso</i> where <i>fracasó</i> belongs. Check the slot.",
+  "es": "La **huelga** duró nueve días. Empezó con una **queja** pequeña: el turno de noche cobraba lo mismo que el de día y el **sueldo** no había subido en tres años. La dirección se **negó** a hablar hasta que la fábrica se detuvo.\n\nMi vecino Andrés estuvo en la puerta todos los días. Decía que el **esfuerzo** valía la pena aunque **fracasaran**, porque por lo menos la empresa sabría que existían. Su mujer no estaba tan segura; había dos **despidos** en la lista de riesgos y uno de ellos era el suyo.\n\nEl **acuerdo** llegó el noveno día, de madrugada. No era lo que pedían: un aumento pequeño, ningún cambio en los turnos, la promesa de revisar todo en un año. Andrés votó a favor. Dijo que tenían el **derecho** a seguir, pero no las fuerzas.\n\nAl día siguiente volvió a la fábrica a las seis. Me contó que nadie hablaba en el vestuario. No por rabia. Por cansancio.",
+  "targets": [
+   [
+    "la huelga",
+    "strike"
+   ],
+   [
+    "la queja",
+    "complaint"
+   ],
+   [
+    "el sueldo",
+    "salary, wages"
+   ],
+   [
+    "negarse a",
+    "to refuse to"
+   ],
+   [
+    "el esfuerzo",
+    "effort"
+   ],
+   [
+    "fracasar",
+    "to fail, to fall through"
+   ],
+   [
+    "el despido",
+    "dismissal, firing"
+   ],
+   [
+    "el acuerdo",
+    "agreement, deal"
+   ],
+   [
+    "el derecho",
+    "right (entitlement); law"
+   ]
+  ],
+  "glosses": [
+   [
+    "el turno",
+    "shift"
+   ],
+   [
+    "la dirección",
+    "management"
+   ],
+   [
+    "detenerse",
+    "to stop"
+   ],
+   [
+    "de madrugada",
+    "in the small hours"
+   ],
+   [
+    "el vestuario",
+    "changing room"
+   ]
+  ],
+  "en": "The strike lasted nine days. It began with a small complaint: the night shift was paid the same as the day shift and wages hadn't gone up in three years. Management refused to talk until the factory stopped.\n\nMy neighbour Andrés was at the gate every day. He said the effort was worth it even if they failed, because at least the company would know they existed. His wife wasn't so sure; there were two dismissals on the list of risks and one of them was his.\n\nThe agreement came on the ninth day, in the small hours. It wasn't what they'd asked for: a small raise, no change to the shifts, a promise to review everything in a year. Andrés voted in favour. He said they had the right to go on, but not the strength.\n\nThe next day he went back to the factory at six. He told me nobody spoke in the changing room. Not out of anger. Out of tiredness.",
+  "cloze": [
+   [
+    "La ___ duró nueve días.",
+    "huelga"
+   ],
+   [
+    "Empezó con una ___ pequeña sobre el turno de noche.",
+    "queja"
+   ],
+   [
+    "El ___ no había subido en tres años.",
+    "sueldo"
+   ],
+   [
+    "La dirección se ___ a hablar.",
+    "negó"
+   ],
+   [
+    "El ___ valía la pena aunque fracasaran.",
+    "esfuerzo"
+   ],
+   [
+    "Si ___, por lo menos la empresa sabría que existían.",
+    "fracasaban"
+   ],
+   [
+    "Había dos ___ en la lista de riesgos.",
+    "despidos"
+   ],
+   [
+    "El ___ llegó el noveno día.",
+    "acuerdo"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "Noun or verb? <i>fracaso / fracasó</i>, <i>queja / quejó</i>, <i>despido / despidió</i> — say a sentence for each.",
+   "Optional en español: ¿Habrías votado a favor?"
+  ]
+ },
+ {
+  "n": 6,
+  "title": "La prueba",
+  "theme": "Un conflicto legal · la prueba · culpar · el hecho · el testigo",
+  "grammar": "Contrast set: <b>la prueba</b> (proof, test) / <i>probar</i> (to prove, to try, to taste); <b>el hecho</b> (fact) vs <i>hecho</i> (done, past participle of hacer); <b>la culpa</b> / <i>culpar</i> / <i>culpable</i>. Watch <b>sin embargo</b> = however.",
+  "es": "El **hecho** era simple: el muro entre los dos jardines se había caído una noche de viento. Lo demás no era simple.\n\nMi vecina Carmen **culpaba** al matrimonio del otro lado, que había plantado un árbol demasiado cerca. Ellos, **sin embargo**, decían que el muro ya estaba mal antes del árbol, y tenían una **prueba**: una foto de hace cinco años con una grieta visible.\n\nEl **juez** pidió **testigos**. Vino el jardinero, que no recordaba nada; vino un albañil, que recordaba demasiado. La **ley**, explicó el abogado de Carmen, dice que cada dueño responde por el **daño** que causa su propiedad. El problema era demostrar de qué lado venía el daño.\n\nAl final no hubo **denuncia**. Los dos vecinos pagaron el muro a partes iguales, y el árbol sigue donde estaba. Carmen dice que perdió. El matrimonio dice lo mismo. Yo creo que ganó el albañil.",
+  "targets": [
+   [
+    "el hecho",
+    "fact"
+   ],
+   [
+    "culpar",
+    "to blame"
+   ],
+   [
+    "sin embargo",
+    "however, nevertheless"
+   ],
+   [
+    "la prueba",
+    "proof, evidence; test"
+   ],
+   [
+    "el juez",
+    "judge"
+   ],
+   [
+    "el testigo",
+    "witness"
+   ],
+   [
+    "la ley",
+    "law"
+   ],
+   [
+    "el daño",
+    "damage, harm"
+   ],
+   [
+    "la denuncia",
+    "formal complaint, report (to authorities)"
+   ]
+  ],
+  "glosses": [
+   [
+    "el muro",
+    "wall (freestanding)"
+   ],
+   [
+    "el matrimonio",
+    "married couple"
+   ],
+   [
+    "el albañil",
+    "builder, bricklayer"
+   ],
+   [
+    "a partes iguales",
+    "in equal shares"
+   ]
+  ],
+  "en": "The fact was simple: the wall between the two gardens had fallen one windy night. The rest wasn't simple.\n\nMy neighbour Carmen blamed the couple on the other side, who had planted a tree too close. They, however, said the wall was already in bad shape before the tree, and they had proof: a photo from five years ago with a visible crack.\n\nThe judge asked for witnesses. The gardener came, who remembered nothing; a builder came, who remembered too much. The law, Carmen's lawyer explained, says each owner is liable for the damage their property causes. The problem was proving which side the damage came from.\n\nIn the end there was no formal complaint. The two neighbours paid for the wall in equal shares, and the tree is still where it was. Carmen says she lost. The couple say the same. I think the builder won.",
+  "cloze": [
+   [
+    "El ___ era simple: el muro se había caído.",
+    "hecho"
+   ],
+   [
+    "Carmen ___ al matrimonio del otro lado.",
+    "culpaba"
+   ],
+   [
+    "Ellos, ___ ___, decían que el muro ya estaba mal.",
+    "sin embargo"
+   ],
+   [
+    "Tenían una ___: una foto con una grieta visible.",
+    "prueba"
+   ],
+   [
+    "El ___ pidió testigos.",
+    "juez"
+   ],
+   [
+    "Vino un ___ que recordaba demasiado.",
+    "testigo"
+   ],
+   [
+    "Cada dueño responde por el ___ que causa su propiedad.",
+    "daño"
+   ],
+   [
+    "Al final no hubo ___.",
+    "denuncia"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "Three sentences with <i>probar</i> in its three meanings: prove, try, taste.",
+   "Optional en español: ¿Quién tenía razón?"
+  ]
+ },
+ {
+  "n": 7,
+  "title": "El proyecto",
+  "theme": "Un proyecto comunitario · desarrollar · disponer de · carecer de · el presupuesto",
+  "grammar": "Contrast set: <b>disponer de</b> (to have available) vs <i>disponible</i> (available); <b>carecer de</b> (to lack) / <i>la carencia</i>; <b>lograr</b> / <i>el logro</i>; <b>invertir</b> (to invest — and to invert) / <i>la inversión</i>.",
+  "es": "El barrio **carecía** de biblioteca desde que cerraron la antigua en 2009. Un grupo de vecinos decidió abrir una en un local vacío, sin saber muy bien cómo.\n\nEl primer problema fue el **presupuesto**: el ayuntamiento ofrecía el local pero no el dinero. **Disponíamos de** trescientos libros donados y de nada más. Una profesora jubilada propuso **desarrollar** el proyecto en fases: primero estanterías y horario, después actividades, después, si llegaba, la **inversión** grande.\n\nLa **fuente** de dinero apareció donde nadie miraba: una panadería del barrio ofreció el diez por ciento de sus ventas de los sábados durante un año. Con ese **recurso** pagamos la luz y una persona a media jornada.\n\nEl **apoyo** de los vecinos fue irregular. Venían muchos a la inauguración y pocos a las reuniones. Aun así, un año después la biblioteca tiene mil doscientos libros y un club de lectura. No es un gran **logro**, dice la profesora. Yo creo que sí lo es.",
+  "targets": [
+   [
+    "carecer de",
+    "to lack"
+   ],
+   [
+    "el presupuesto",
+    "budget"
+   ],
+   [
+    "disponer de",
+    "to have (available), to have at one's disposal"
+   ],
+   [
+    "desarrollar",
+    "to develop"
+   ],
+   [
+    "la inversión",
+    "investment"
+   ],
+   [
+    "la fuente",
+    "source; fountain"
+   ],
+   [
+    "el recurso",
+    "resource"
+   ],
+   [
+    "el apoyo",
+    "support"
+   ],
+   [
+    "el logro",
+    "achievement"
+   ]
+  ],
+  "glosses": [
+   [
+    "el local",
+    "premises"
+   ],
+   [
+    "el ayuntamiento",
+    "town hall, city council"
+   ],
+   [
+    "jubilado",
+    "retired"
+   ],
+   [
+    "la estantería",
+    "shelving"
+   ],
+   [
+    "a media jornada",
+    "part-time"
+   ],
+   [
+    "aun así",
+    "even so"
+   ]
+  ],
+  "en": "The neighbourhood had lacked a library since the old one closed in 2009. A group of residents decided to open one in an empty premises, without quite knowing how.\n\nThe first problem was the budget: the town hall offered the premises but not the money. We had three hundred donated books available and nothing else. A retired teacher proposed developing the project in phases: first shelving and opening hours, then activities, then, if it came, the big investment.\n\nThe source of money appeared where nobody was looking: a neighbourhood bakery offered ten percent of its Saturday sales for a year. With that resource we paid the electricity and one part-time person.\n\nThe residents' support was patchy. Many came to the opening and few to the meetings. Even so, a year later the library has twelve hundred books and a reading club. It's not a great achievement, says the teacher. I think it is.",
+  "cloze": [
+   [
+    "El barrio ___ de biblioteca desde 2009.",
+    "carecía"
+   ],
+   [
+    "El primer problema fue el ___.",
+    "presupuesto"
+   ],
+   [
+    "___ de trescientos libros y de nada más.",
+    "Disponíamos"
+   ],
+   [
+    "Propuso ___ el proyecto en fases.",
+    "desarrollar"
+   ],
+   [
+    "La ___ grande llegaría después, si llegaba.",
+    "inversión"
+   ],
+   [
+    "La ___ de dinero apareció donde nadie miraba.",
+    "fuente"
+   ],
+   [
+    "El ___ de los vecinos fue irregular.",
+    "apoyo"
+   ],
+   [
+    "No es un gran ___, dice la profesora.",
+    "logro"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "<i>Disponer de</i> vs <i>disponible</i> — one sentence each.",
+   "Optional en español: ¿Qué le falta a tu barrio?"
+  ]
+ },
+ {
+  "n": 8,
+  "title": "Según la encuesta",
+  "theme": "Registro periodístico · según · la encuesta · el dato · destacar · la tasa",
+  "grammar": "Expository register. Contrast set — false friends: <b>el dato</b> (piece of data) ≠ <i>date</i> (<i>la fecha</i>); <b>la tasa</b> (rate) ≠ <i>la taza</i> (cup); <b>afirmar</b> (to state) vs <i>asegurar</i> (to assure / insure). <b>según</b> = according to.",
+  "es": "**Según** una **encuesta** publicada esta semana, el cuarenta y tres por ciento de los adultos del país lee menos de un libro al año. El **dato** no es nuevo, pero la **tendencia** sí: la cifra ha subido cinco puntos desde 2019.\n\nLos autores del estudio **destacan** dos factores. El primero es el tiempo dedicado a las pantallas, que ha **aumentado** en todos los grupos de edad. El segundo es el **nivel** de ingresos: en los hogares con menos recursos, la **tasa** de lectura **disminuye** casi a la mitad.\n\nNo todo son malas noticias. La misma encuesta **afirma** que quienes leen, leen más que antes: el **promedio** entre lectores habituales pasó de ocho a once libros al año. Es decir, el país se divide en dos: los que no leen nada y los que leen cada vez más.\n\nLa ministra de Cultura declaró que los datos «exigen una respuesta». No especificó cuál.",
+  "targets": [
+   [
+    "según",
+    "according to"
+   ],
+   [
+    "la encuesta",
+    "survey, poll"
+   ],
+   [
+    "el dato",
+    "piece of data, fact"
+   ],
+   [
+    "la tendencia",
+    "trend"
+   ],
+   [
+    "destacar",
+    "to highlight, to stand out"
+   ],
+   [
+    "el nivel",
+    "level"
+   ],
+   [
+    "la tasa",
+    "rate"
+   ],
+   [
+    "disminuir",
+    "to decrease"
+   ],
+   [
+    "afirmar",
+    "to state, to assert"
+   ],
+   [
+    "el promedio",
+    "average"
+   ]
+  ],
+  "glosses": [
+   [
+    "la pantalla",
+    "screen"
+   ],
+   [
+    "el hogar",
+    "household"
+   ],
+   [
+    "es decir",
+    "that is to say"
+   ],
+   [
+    "la ministra",
+    "minister (f.)"
+   ]
+  ],
+  "en": "According to a survey published this week, forty-three percent of adults in the country read fewer than one book a year. The figure isn't new, but the trend is: the number has risen five points since 2019.\n\nThe study's authors highlight two factors. The first is time spent on screens, which has increased in every age group. The second is income level: in households with fewer resources, the reading rate drops by almost half.\n\nIt isn't all bad news. The same survey states that those who read, read more than before: the average among regular readers went from eight to eleven books a year. That is, the country splits in two: those who read nothing and those who read more and more.\n\nThe Minister of Culture declared that the data 'demand a response'. She didn't specify which.",
+  "cloze": [
+   [
+    "___ una encuesta, el 43% lee menos de un libro al año.",
+    "Según"
+   ],
+   [
+    "El ___ no es nuevo, pero la tendencia sí.",
+    "dato"
+   ],
+   [
+    "Los autores ___ dos factores.",
+    "destacan"
+   ],
+   [
+    "El segundo factor es el ___ de ingresos.",
+    "nivel"
+   ],
+   [
+    "La ___ de lectura disminuye casi a la mitad.",
+    "tasa"
+   ],
+   [
+    "En los hogares con menos recursos, la lectura ___.",
+    "disminuye"
+   ],
+   [
+    "La encuesta ___ que quienes leen, leen más.",
+    "afirma"
+   ],
+   [
+    "El ___ pasó de ocho a once libros al año.",
+    "promedio"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking — including the two numbers.",
+   "Say the false-friend pairs aloud: <i>dato / fecha</i>, <i>tasa / taza</i>.",
+   "Optional en español: ¿Cuántos libros lees al año? ¿Y tu familia?"
+  ]
+ },
+ {
+  "n": 9,
+  "title": "La sequía",
+  "theme": "Entorno y cambio · la sequía · la cosecha · la pérdida · adaptarse",
+  "grammar": "Contrast set — form neighbours: <b>el suelo</b> (soil, floor) vs <i>el sueldo</i> (salary) vs <i>el sol</i>; <b>la pérdida</b> / <i>perder</i>; <b>la escasez</b> (shortage) / <i>escaso</i>. <b>afectar a</b> takes <i>a</i> even with things.",
+  "es": "El pueblo de mi abuelo vivía de la **cosecha** de almendras. Este año no hubo cosecha. La **sequía** empezó en marzo, y para junio el **suelo** estaba tan duro que las raíces no encontraban agua.\n\nLa **pérdida** no fue solo económica. Mi tío, que heredó las tierras, dice que el **entorno** cambió más en cinco años que en los cincuenta anteriores: menos lluvia, más calor, el **clima** de otro lugar. La **escasez** de agua **afecta** primero a los árboles viejos, que son los que más producen.\n\nAlgunos vecinos han empezado a **adaptarse**. Uno plantó pistachos, que necesitan menos agua. Otro vendió las tierras a una empresa de paneles solares. Mi tío no ha decidido. Dice que la sequía **amenaza** el pueblo, pero que vender también lo amenaza, de otra forma.\n\nEn agosto llovió dos días seguidos. Todo el pueblo salió a mirar. No fue suficiente para nada, pero nadie lo dijo.",
+  "targets": [
+   [
+    "la cosecha",
+    "harvest, crop"
+   ],
+   [
+    "la sequía",
+    "drought"
+   ],
+   [
+    "el suelo",
+    "soil; ground, floor"
+   ],
+   [
+    "la pérdida",
+    "loss"
+   ],
+   [
+    "el entorno",
+    "environment, surroundings"
+   ],
+   [
+    "el clima",
+    "climate"
+   ],
+   [
+    "la escasez",
+    "shortage, scarcity"
+   ],
+   [
+    "afectar a",
+    "to affect"
+   ],
+   [
+    "adaptarse",
+    "to adapt"
+   ],
+   [
+    "amenazar",
+    "to threaten"
+   ]
+  ],
+  "glosses": [
+   [
+    "la almendra",
+    "almond"
+   ],
+   [
+    "la raíz",
+    "root"
+   ],
+   [
+    "heredar",
+    "to inherit"
+   ],
+   [
+    "seguidos",
+    "in a row"
+   ]
+  ],
+  "en": "My grandfather's village lived off the almond harvest. This year there was no harvest. The drought began in March, and by June the soil was so hard the roots couldn't find water.\n\nThe loss wasn't only economic. My uncle, who inherited the land, says the surroundings changed more in five years than in the fifty before: less rain, more heat, the climate of somewhere else. The water shortage hits the old trees first, and they are the ones that produce most.\n\nSome neighbours have started to adapt. One planted pistachios, which need less water. Another sold the land to a solar-panel company. My uncle hasn't decided. He says the drought threatens the village, but selling threatens it too, in another way.\n\nIn August it rained two days in a row. The whole village went out to look. It wasn't enough for anything, but nobody said so.",
+  "cloze": [
+   [
+    "El pueblo vivía de la ___ de almendras.",
+    "cosecha"
+   ],
+   [
+    "La ___ empezó en marzo.",
+    "sequía"
+   ],
+   [
+    "Para junio el ___ estaba duro como piedra.",
+    "suelo"
+   ],
+   [
+    "La ___ no fue solo económica.",
+    "pérdida"
+   ],
+   [
+    "El ___ cambió más en cinco años que en cincuenta.",
+    "entorno"
+   ],
+   [
+    "La ___ de agua afecta primero a los árboles viejos.",
+    "escasez"
+   ],
+   [
+    "Algunos vecinos han empezado a ___.",
+    "adaptarse"
+   ],
+   [
+    "La sequía ___ el pueblo, pero vender también.",
+    "amenaza"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking.",
+   "<i>Suelo / sueldo / sol</i> — three sentences, no mixing.",
+   "Optional en español: ¿Qué harías con las tierras?"
+  ]
+ },
+ {
+  "n": 10,
+  "title": "A pesar de todo",
+  "theme": "Repaso · conectores del discurso · a pesar de · aunque · en cambio · ni siquiera",
+  "grammar": "The connectors that carry adult prose. Contrast set: <b>aun</b> (even) vs <i>aún</i> (still); <b>sin embargo</b> (however) vs <i>en cambio</i> (whereas, on the other hand); <b>apenas</b> (hardly / as soon as); <b>ni siquiera</b> (not even). Every target here is a connector — the cloze tests the logic of the sentence, not a noun.",
+  "es": "**A pesar de** todo lo que había pasado ese año —la huelga, la sequía en el pueblo, la biblioteca a medio construir—, Marta decidió quedarse. **Aunque** su hermana insistía en que la ciudad le daría más oportunidades, ella respondía siempre lo mismo: que las oportunidades no eran el problema.\n\n**Mientras** empaquetaba los libros que iba a donar, pensó en las **cifras** de la panadería, en el **acuerdo** de la fábrica, en el **vínculo** recuperado entre su padre y su tío. Nada de eso había salido como se esperaba. **Sin embargo**, todo había salido.\n\nSu hermana, **en cambio**, veía solo lo que faltaba. **Ni siquiera** había venido a la inauguración. **Apenas** llamaba.\n\n—**Es decir**, que te quedas por ellos —le dijo por teléfono.\n—No. Me quedo porque **incluso** cuando todo **fracasa**, aquí alguien se entera. **Por lo tanto**, alguien lo intenta otra vez.\n\nColgó antes de que su hermana pudiera contestar. Después se sintió culpable. Después, no.",
+  "targets": [
+   [
+    "a pesar de",
+    "despite, in spite of"
+   ],
+   [
+    "aunque",
+    "although, even though"
+   ],
+   [
+    "mientras",
+    "while"
+   ],
+   [
+    "sin embargo",
+    "however"
+   ],
+   [
+    "en cambio",
+    "on the other hand, whereas"
+   ],
+   [
+    "ni siquiera",
+    "not even"
+   ],
+   [
+    "apenas",
+    "hardly; as soon as"
+   ],
+   [
+    "es decir",
+    "that is to say, in other words"
+   ],
+   [
+    "incluso",
+    "even (including)"
+   ],
+   [
+    "por lo tanto",
+    "therefore"
+   ]
+  ],
+  "glosses": [
+   [
+    "empaquetar",
+    "to pack up"
+   ],
+   [
+    "donar",
+    "to donate"
+   ],
+   [
+    "enterarse",
+    "to find out, to notice"
+   ],
+   [
+    "colgar",
+    "to hang up"
+   ]
+  ],
+  "en": "Despite everything that had happened that year — the strike, the drought in the village, the half-built library — Marta decided to stay. Although her sister insisted the city would give her more opportunities, she always answered the same: that opportunities weren't the problem.\n\nWhile she packed the books she was going to donate, she thought about the bakery's figures, the factory agreement, the bond recovered between her father and her uncle. None of it had turned out as expected. However, all of it had turned out.\n\nHer sister, on the other hand, saw only what was missing. She hadn't even come to the opening. She hardly called.\n\n'In other words, you're staying for them,' she said on the phone.\n'No. I'm staying because even when everything fails, here somebody notices. Therefore, somebody tries again.'\n\nShe hung up before her sister could answer. Afterwards she felt guilty. Afterwards, not.",
+  "cloze": [
+   [
+    "___ ___ ___ todo lo que había pasado, decidió quedarse.",
+    "A pesar de"
+   ],
+   [
+    "___ su hermana insistía, ella respondía lo mismo.",
+    "Aunque"
+   ],
+   [
+    "___ empaquetaba los libros, pensó en el año.",
+    "Mientras"
+   ],
+   [
+    "Nada salió como se esperaba. ___ ___, todo salió.",
+    "Sin embargo"
+   ],
+   [
+    "Su hermana, ___ ___, veía solo lo que faltaba.",
+    "en cambio"
+   ],
+   [
+    "___ ___ había venido a la inauguración.",
+    "Ni siquiera"
+   ],
+   [
+    "___ llamaba.",
+    "Apenas"
+   ],
+   [
+    "___ ___ ___, alguien lo intenta otra vez.",
+    "Por lo tanto"
+   ]
+  ],
+  "speak": [
+   "Retell in English without looking — every connector must survive the retelling.",
+   "Say one sentence each with <i>aun</i> and <i>aún</i>.",
+   "Optional en español: cuenta tu año con cinco de estos conectores."
+  ]
+ }
 ]

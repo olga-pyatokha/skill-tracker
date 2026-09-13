@@ -61,7 +61,7 @@ def render_lessons():
         glosses = " · ".join(f"<b>{H.escape(a)}</b> {H.escape(bb)}" for a, bb in l["glosses"])
         cloze = "".join(f"<li>{H.escape(s)}</li>" for s, _ in l["cloze"])
         answers = "".join(f"<li>{H.escape(a)}</li>" for _, a in l["cloze"])
-        speak = "".join(f"<li>{H.escape(s)}</li>" for s in l["speak"])
+        speak = "".join(f"<li>{s}</li>" for s in l["speak"])  # prompts carry light HTML
         prev_ = f'<a href="{n-1:02d}.html">← {n-1}</a>' if n > 1 else ""
         next_ = f'<a href="{n+1:02d}.html">{n+1} →</a>' if n < n_all else ""
         prevf = f'<a href="{n-1:02d}.html">← Lección {n-1}</a>' if n > 1 else ""
