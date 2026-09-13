@@ -1,31 +1,240 @@
 {
-  "fields": [["what","What"],["goal","Goal"],["homework","Homework"]],
-  "statuses": ["not started","read it","did the exercises","can retell it"],
-  "status_help": ["haven't opened the lesson","read the passage and understood it with the glosses","filled the cloze without peeking and checked the answers","can retell the story out loud in your own words, no text"],
-  "levels": {
-    "1": {"name": "Weeks 1–2", "color": "#2e7d32", "bg": "#e8f5e9"},
-    "2": {"name": "Weeks 3–4", "color": "#00838f", "bg": "#e0f7fa"},
-    "3": {"name": "Weeks 5–6", "color": "#ef6c00", "bg": "#fff3e0"},
-    "4": {"name": "Weeks 7–8", "color": "#c62828", "bg": "#ffebee"},
-    "5": {"name": "Weeks 9–10", "color": "#6a1b9a", "bg": "#f3e5f5"}
-  },
-  "level_notes": "Ten story lessons, one a week, each built the same way: a short Spanish passage with the new words in amber, glosses for the hard support words, the English hidden until you want it, a five-blank cloze, and three speaking prompts. Read → do the cloze → say it out loud. The last status is 'can retell it' because that, not the reading, is the goal.",
-  "tracks": ["The ten lessons", "Weekly habits"],
-  "skills": [
-    {"id":"l01","name":"Lesson 1 · Hola, soy Tanya","level":1,"track":"The ten lessons","what":"Greetings, introducing yourself, <i>ser</i> and <i>llamarse</i>, ages, languages.","goal":"Introduce yourself in six sentences without notes.","homework":"Record your introduction on your phone; listen back once.","prereq":"—","link":"lessons/01.html","link_label":"open lesson 1","no_ig":true},
-    {"id":"l02","name":"Lesson 2 · Mi familia","level":1,"track":"The ten lessons","what":"Family words, <i>tener</i>, adjective agreement, possessives.","goal":"Describe three family members with two adjectives each.","homework":"Write five sentences about your family; read them aloud.","prereq":"Lesson 1","link":"lessons/02.html","link_label":"open lesson 2","no_ig":true},
-    {"id":"l03","name":"Lesson 3 · Un día normal","level":2,"track":"The ten lessons","what":"Daily routine, regular present tense, reflexive verbs, telling the time.","goal":"Narrate your day from waking to bed.","homework":"Say your routine while doing it tomorrow morning — in Spanish, out loud.","prereq":"Lesson 2","link":"lessons/03.html","link_label":"open lesson 3","no_ig":true},
-    {"id":"l04","name":"Lesson 4 · En la cafetería","level":2,"track":"The ten lessons","what":"Ordering food and drink, <i>quisiera</i>, numbers and prices, paying.","goal":"Order a full breakfast and pay, politely, without English.","homework":"Order in Spanish at a real café or taquería this week.","prereq":"Lesson 3","link":"lessons/04.html","link_label":"open lesson 4","no_ig":true},
-    {"id":"l05","name":"Lesson 5 · Perdona, ¿dónde está…?","level":3,"track":"The ten lessons","what":"Asking and giving directions, <i>estar</i> vs <i>hay</i>, place words.","goal":"Give directions from your home to the nearest shop.","homework":"Describe your neighbourhood in six sentences with <i>hay</i>.","prereq":"Lesson 4","link":"lessons/05.html","link_label":"open lesson 5","no_ig":true},
-    {"id":"l06","name":"Lesson 6 · De compras","level":3,"track":"The ten lessons","what":"Clothes, colours, sizes, <i>¿cuánto cuesta?</i>, this/that, first taste of the past.","goal":"Describe what you're wearing and buy something in a shop.","homework":"Name the colour of ten things in your room, fast.","prereq":"Lesson 5","link":"lessons/06.html","link_label":"open lesson 6","no_ig":true},
-    {"id":"l07","name":"Lesson 7 · Me gusta el fin de semana","level":4,"track":"The ten lessons","what":"<i>Gustar</i> and friends, hobbies, plans with <i>voy a</i>.","goal":"Say five likes, three dislikes and your weekend plans.","homework":"Text a friend three plans for the weekend — in Spanish.","prereq":"Lesson 6","link":"lessons/07.html","link_label":"open lesson 7","no_ig":true},
-    {"id":"l08","name":"Lesson 8 · ¿Qué tiempo hace?","level":4,"track":"The ten lessons","what":"Weather, seasons, clothes for the weather.","goal":"Give a 30-second weather report for today.","homework":"Every morning this week: one sentence about the weather, aloud.","prereq":"Lesson 7","link":"lessons/08.html","link_label":"open lesson 8","no_ig":true},
-    {"id":"l09","name":"Lesson 9 · Ayer fue un día largo","level":5,"track":"The ten lessons","what":"The preterite: regular forms and the four irregulars you can't avoid.","goal":"Tell what you did yesterday in eight sentences.","homework":"Each night: three things you did today, in the past tense.","prereq":"Lesson 8","link":"lessons/09.html","link_label":"open lesson 9","no_ig":true},
-    {"id":"l10","name":"Lesson 10 · Planes de viaje","level":5,"track":"The ten lessons","what":"Review of everything: future plans, opinions, connectors.","goal":"Two minutes of continuous Spanish about yourself, recorded.","homework":"Record the two minutes; compare with the Lesson 1 recording.","prereq":"Lesson 9","link":"lessons/10.html","link_label":"open lesson 10","no_ig":true},
-
-    {"id":"h-aloud","name":"Read every lesson aloud, twice","level":1,"track":"Weekly habits","what":"Silent reading trains recognition; reading aloud trains the mouth. Both times, even when it feels silly.","goal":"Comfortable speed on the second read.","homework":"Every lesson, before the cloze.","prereq":"—","yt":"https://www.youtube.com/results?search_query=spanish+pronunciation+for+beginners+vowels","tag":"learnspanish"},
-    {"id":"h-cards","name":"Ten-minute flashcards","level":1,"track":"Weekly habits","what":"Put each lesson's amber words into Anki or paper cards: Spanish on the front, English on the back. Review before adding.","goal":"Every target word from earlier lessons still recalled.","homework":"10 minutes a day, reviews first.","prereq":"—","yt":"https://www.youtube.com/results?search_query=anki+tutorial+beginner+language+learning","tag":"anki"},
-    {"id":"h-listen","name":"Listen: Coffee Break Spanish or Dreaming Spanish","level":2,"track":"Weekly habits","what":"One beginner episode a week. Don't worry about understanding everything; the ear needs volume.","goal":"An episode a week, ten weeks.","homework":"On a walk or the commute.","prereq":"Lesson 2","yt":"https://www.youtube.com/results?search_query=dreaming+spanish+superbeginner","tag":"learnspanish"},
-    {"id":"h-speak","name":"Speak to a real person","level":3,"track":"Weekly habits","what":"Order in Spanish, greet a neighbour, book a 30-minute italki or Tandem chat. Mistakes are the point.","goal":"One real exchange a week from Lesson 4 on.","homework":"Weekly, and note one thing you couldn't say — that's next week's vocabulary.","prereq":"Lesson 4","yt":"https://www.youtube.com/results?search_query=how+to+practice+speaking+spanish+alone+beginner","tag":"learnspanish"}
+ "fields": [
+  [
+   "what",
+   "What"
+  ],
+  [
+   "goal",
+   "Goal"
+  ],
+  [
+   "homework",
+   "Homework"
   ]
+ ],
+ "statuses": [
+  "not started",
+  "read it",
+  "cloze checked",
+  "retold in English"
+ ],
+ "status_help": [
+  "haven't opened the lesson",
+  "read it twice with the glosses, translation still closed",
+  "filled all blanks without the text and checked them",
+  "retold the whole story in English out loud, from memory — the real test"
+ ],
+ "levels": {
+  "1": {
+   "name": "Weeks 1–2",
+   "color": "#2e7d32",
+   "bg": "#e8f5e9"
+  },
+  "2": {
+   "name": "Weeks 3–4",
+   "color": "#00838f",
+   "bg": "#e0f7fa"
+  },
+  "3": {
+   "name": "Weeks 5–6",
+   "color": "#ef6c00",
+   "bg": "#fff3e0"
+  },
+  "4": {
+   "name": "Weeks 7–8",
+   "color": "#c62828",
+   "bg": "#ffebee"
+  },
+  "5": {
+   "name": "Weeks 9–10",
+   "color": "#6a1b9a",
+   "bg": "#f3e5f5"
+  }
+ },
+ "level_notes": "Ten stories at the 2k band — the same vocabulary layer Olga's tutor works in: abstract, functional prose words (el asunto, exigir, la cifra, sin embargo) that high-school Spanish skipped. Grammar is assumed; nothing here is drilled. Each page: the story with targets in amber, support words glossed, English behind a toggle, an eight-blank cloze with at most one support word per sentence, and a contrast set for the form-confusable pairs. The test is retelling in English, not recognising in Spanish.",
+ "tracks": [
+  "The ten lessons",
+  "Weekly habits"
+ ],
+ "skills": [
+  {
+   "id": "l01",
+   "name": "Lesson 1 · La entrevista",
+   "level": 1,
+   "track": "The ten lessons",
+   "what": "A job interview that goes sideways. <i>propósito, lograr, asunto, plazo, plantear, exigir, ventaja, surgir, apoyar</i>.",
+   "goal": "Retell it in English with all nine targets in place.",
+   "homework": "Noun↔verb pairs aloud: apoyar/el apoyo, exigir/la exigencia, lograr/el logro.",
+   "prereq": "—",
+   "link": "lessons/01.html",
+   "link_label": "open lesson 1",
+   "no_ig": true
+  },
+  {
+   "id": "l02",
+   "name": "Lesson 2 · El aviso",
+   "level": 1,
+   "track": "The ten lessons",
+   "what": "A residents' meeting about cracks in the garage. <i>aviso, advertir, señalar, amenaza, riesgo, aumentar, medida, falta, escaso, impedir</i>.",
+   "goal": "Retell in English; get <i>advertir</i> right — it is not advertise.",
+   "homework": "Find <i>advertir</i>, <i>avisar</i> and <i>faltar</i> in anything you read this week.",
+   "prereq": "Lesson 1",
+   "link": "lessons/02.html",
+   "link_label": "open lesson 2",
+   "no_ig": true
+  },
+  {
+   "id": "l03",
+   "name": "Lesson 3 · Las cifras",
+   "level": 2,
+   "track": "The ten lessons",
+   "what": "A bakery meets a spreadsheet. <i>cifra, ingreso, gasto, retraso, muestra, suponer, reducir, alcance, mejora</i>.",
+   "goal": "Retell in English including both meanings of <i>suponer</i>.",
+   "homework": "Read one business article on BBC Mundo; note every target you meet.",
+   "prereq": "Lesson 2",
+   "link": "lessons/03.html",
+   "link_label": "open lesson 3",
+   "no_ig": true
+  },
+  {
+   "id": "l04",
+   "name": "Lesson 4 · El vínculo",
+   "level": 2,
+   "track": "The ten lessons",
+   "what": "Two brothers, eleven years of silence. <i>recordar, motivo, alejarse, vínculo, costumbre, ajeno, reconocer, rasgo, sostener</i>.",
+   "goal": "Retell in English; explain <i>ajeno</i> without the word 'foreign'.",
+   "homework": "Contrast drill: recordar vs acordarse; el recuerdo vs la memoria.",
+   "prereq": "Lesson 3",
+   "link": "lessons/04.html",
+   "link_label": "open lesson 4",
+   "no_ig": true
+  },
+  {
+   "id": "l05",
+   "name": "Lesson 5 · La huelga",
+   "level": 3,
+   "track": "The ten lessons",
+   "what": "Nine days at the factory gate. <i>huelga, queja, sueldo, negarse, esfuerzo, fracasar, despido, acuerdo, derecho</i>.",
+   "goal": "Retell in English; every noun↔verb slot correct in the cloze.",
+   "homework": "The pairs that trip Olga's tutor too: fracaso/fracasó, queja/quejó, despido/despidió.",
+   "prereq": "Lesson 4",
+   "link": "lessons/05.html",
+   "link_label": "open lesson 5",
+   "no_ig": true
+  },
+  {
+   "id": "l06",
+   "name": "Lesson 6 · La prueba",
+   "level": 3,
+   "track": "The ten lessons",
+   "what": "A fallen wall, two neighbours, one builder. <i>hecho, culpar, sin embargo, prueba, juez, testigo, ley, daño, denuncia</i>.",
+   "goal": "Retell in English; use 'however' where <i>sin embargo</i> was.",
+   "homework": "Three sentences with <i>probar</i>: prove, try, taste.",
+   "prereq": "Lesson 5",
+   "link": "lessons/06.html",
+   "link_label": "open lesson 6",
+   "no_ig": true
+  },
+  {
+   "id": "l07",
+   "name": "Lesson 7 · El proyecto",
+   "level": 4,
+   "track": "The ten lessons",
+   "what": "A neighbourhood library from nothing. <i>carecer de, presupuesto, disponer de, desarrollar, inversión, fuente, recurso, apoyo, logro</i>.",
+   "goal": "Retell in English; keep <i>disponer de</i> and <i>carecer de</i> straight.",
+   "homework": "Spot <i>disponer</i>, <i>disponible</i>, <i>carencia</i> in a news article.",
+   "prereq": "Lesson 6",
+   "link": "lessons/07.html",
+   "link_label": "open lesson 7",
+   "no_ig": true
+  },
+  {
+   "id": "l08",
+   "name": "Lesson 8 · Según la encuesta",
+   "level": 4,
+   "track": "The ten lessons",
+   "what": "Expository register: a reading survey. <i>según, encuesta, dato, tendencia, destacar, nivel, tasa, disminuir, afirmar, promedio</i>.",
+   "goal": "Retell in English with the numbers intact.",
+   "homework": "False friends aloud: dato/fecha, tasa/taza. Then read one real survey article.",
+   "prereq": "Lesson 7",
+   "link": "lessons/08.html",
+   "link_label": "open lesson 8",
+   "no_ig": true
+  },
+  {
+   "id": "l09",
+   "name": "Lesson 9 · La sequía",
+   "level": 5,
+   "track": "The ten lessons",
+   "what": "An almond village without a harvest. <i>cosecha, sequía, suelo, pérdida, entorno, clima, escasez, afectar, adaptarse, amenazar</i>.",
+   "goal": "Retell in English; <i>suelo</i> never becomes salary or sun.",
+   "homework": "Contrast drill: suelo/sueldo/sol; pérdida/perder; escasez/escaso.",
+   "prereq": "Lesson 8",
+   "link": "lessons/09.html",
+   "link_label": "open lesson 9",
+   "no_ig": true
+  },
+  {
+   "id": "l10",
+   "name": "Lesson 10 · A pesar de todo",
+   "level": 5,
+   "track": "The ten lessons",
+   "what": "Review through the connectors that carry adult prose. <i>a pesar de, aunque, mientras, sin embargo, en cambio, ni siquiera, apenas, es decir, incluso, por lo tanto</i>.",
+   "goal": "Retell in English with every connector surviving.",
+   "homework": "Write your own year in ten sentences using at least six of these.",
+   "prereq": "Lesson 9",
+   "link": "lessons/10.html",
+   "link_label": "open lesson 10",
+   "no_ig": true
+  },
+  {
+   "id": "h-cards",
+   "name": "Ten-minute recognition cards",
+   "level": 1,
+   "track": "Weekly habits",
+   "what": "Each lesson's amber words on cards: Spanish on the front, and you must <b>produce the English</b> before flipping. Yes/no 'I know it' doesn't count.",
+   "goal": "Every earlier lesson's targets still produce their English.",
+   "homework": "10 min a day, reviews before new words.",
+   "prereq": "—",
+   "yt": "https://www.youtube.com/results?search_query=anki+tutorial+beginner+language+learning",
+   "tag": "anki"
+  },
+  {
+   "id": "h-read",
+   "name": "Read one real article a week and mine it",
+   "level": 2,
+   "track": "Weekly habits",
+   "what": "BBC Mundo or El País. Read once without a dictionary, then list the unknown words that appear twice — those go on the cards; the rest don't.",
+   "goal": "An article a week; 5–8 mined words.",
+   "homework": "Mined words earn their place by having appeared — don't add words you merely think you should know.",
+   "prereq": "Lesson 2",
+   "yt": "https://www.youtube.com/results?search_query=how+to+read+spanish+news+intermediate+learner",
+   "tag": "learnspanish"
+  },
+  {
+   "id": "h-contrast",
+   "name": "Contrast drill: noun ↔ verb slot",
+   "level": 2,
+   "track": "Weekly habits",
+   "what": "Pair every abstract noun with its verb (<i>la queja / quejarse</i>, <i>el fracaso / fracasar</i>) and say a sentence that only works with one of them.",
+   "goal": "Slot errors disappear from the cloze.",
+   "homework": "Five pairs from the current lesson, aloud, twice a week.",
+   "prereq": "Lesson 1",
+   "yt": "https://www.youtube.com/results?search_query=spanish+noun+verb+word+families+nominalization",
+   "tag": "learnspanish"
+  },
+  {
+   "id": "h-listen",
+   "name": "Listen at the same band",
+   "level": 3,
+   "track": "Weekly habits",
+   "what": "Hoy Hablamos or Español con Juan — intermediate podcasts in plain, abstract-heavy Spanish. One episode a week; the ear needs the same words the eyes are getting.",
+   "goal": "An episode a week for the ten weeks.",
+   "homework": "On the commute; no transcript the first time.",
+   "prereq": "Lesson 3",
+   "yt": "https://www.youtube.com/results?search_query=espa%C3%B1ol+con+juan+intermediate+podcast",
+   "tag": "learnspanish"
+  }
+ ]
 }

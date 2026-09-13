@@ -32,7 +32,7 @@
   details > div{padding:0 16px 16px;white-space:pre-line}
   .cloze li{margin:10px 0} .cloze{padding-left:22px;font-size:18px}
   .ans{color:var(--new);font-family:ui-sans-serif,system-ui,sans-serif;font-size:15px}
-  .speak{padding-left:22px} .speak li{margin:8px 0}
+  .speak{padding-left:22px} .speak li{margin:8px 0} .speak i{color:var(--new);font-style:normal}
   .en{color:var(--dim)}
   footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 13px/1 ui-sans-serif,system-ui,sans-serif}
   footer a{color:var(--new);text-decoration:none} footer a:hover{text-decoration:underline}
@@ -47,24 +47,24 @@
 <div class="wrap">
   <h1>__TITLE__</h1>
   <p class="theme">__THEME__</p>
-  <div class="grammar">__GRAMMAR__</div>
+  <div class="grammar"><span class="kicker" style="display:block;margin-bottom:6px">Contraste</span>__GRAMMAR__</div>
 
-  <h2>Lee — primero en silencio, luego en voz alta</h2>
+  <h2>Lee — dos veces, sin abrir la traducción</h2>
   <p class="es">__ES__</p>
 
-  <h2>Palabras nuevas</h2>
+  <h2>Palabras objetivo</h2>
   <div class="words">__TARGETS__</div>
 
-  <h2>Apoyo</h2>
+  <h2>Apoyo — no se estudian, solo ayudan</h2>
   <div class="gl">__GLOSSES__</div>
 
   <details><summary>English translation — open only after the second read</summary><div class="en">__EN__</div></details>
 
-  <h2>Cloze — rellena sin mirar el texto</h2>
+  <h2>Cloze — sin mirar el texto; cuidado con el slot: ¿nombre o verbo?</h2>
   <ol class="cloze">__CLOZE__</ol>
   <details><summary>Answers</summary><div><ol class="ans">__ANSWERS__</ol></div></details>
 
-  <h2>Habla — en voz alta, 30 segundos cada una</h2>
+  <h2>La prueba de verdad</h2>
   <ol class="speak">__SPEAK__</ol>
 
   <footer><span>__PREVF__</span><a href="../tanya.html">← back to the board</a><span>__NEXTF__</span></footer>
