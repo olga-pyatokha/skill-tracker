@@ -11,13 +11,16 @@ ROOT = Path(__file__).resolve().parent
 DOWNLOADS = Path("/mnt/c/Users/olga.p/Downloads")
 WIKI = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=520"
 
-TITLES = {"acro": ("Acro Yoga Skill Map", "🤸"), "pole": ("Pole Skill Map", "🪩"), "stretch": ("Stretching Map", "🧘"), "mobility": ("Hip Mobility Plan", "🦵")}
+TITLES = {"acro": ("Acro Yoga Skill Map", "🤸"), "pole": ("Pole Skill Map", "🪩"), "stretch": ("Stretching Map", "🧘"), "mobility": ("Hip Mobility Plan", "🦵"), "speaking": ("Speaking Skills Map", "🎤"), "pilates": ("Pilates Mat Map", "🌀"), "spanish": ("Spanish · Ten Lessons", "🇪🇸")}
 SOURCES = {
  "pole": """<p>Level bands follow <a href="https://polemovebook.com/">PoleMovebook</a>'s ladder (Intro → solid invert → solid Ayesha → Iron X/Phoenix) cross-checked with <a href="https://polepedia.com/move-dictionary/">PolePedia</a> and <a href="https://louspolewearstudios.com/en/blogs/blog/pole-dance-figuren">Lou's level overview</a>. Sport reference: the <a href="https://ipsfsports.org/downloads/Uncategorised/ipsf_pole_sports_code_of_points_2025-2027_final_070120240.pdf">IPSF Pole Sports Code of Points 2025–27</a> — compulsory elements are grouped strength / flexibility / spins / deadlifts with technical values 0.1–1.0; this board's L4–L5 shapes are the ones that appear there. Tutorials picked 2026-09-12 from ElizabethBfit, PolePedia, PoleFreaks (Holly Munson), Pole with Steph, Polesthenics and the "3 Essential Tips" series.</p>""",
  "mobility": """<p>Built for very tight hips as therapeutic mobility, not performance flexibility. Structure borrows the Bodyweight Warrior "Basics" tier (resting squat, hinge, cross-legged sit) as the goals, and drills from Squat University, Ask Doctor Jo, Antranik and physio channels. The daily 10 minutes matters more than any single drill; test the goals monthly, photograph them, and expect 3–6 months for real change. Not medical advice — a physio should see anything that pinches, clicks or radiates.</p>""",
+ "pilates": """<p>Exercise list and order are Joseph Pilates' 34 from <em>Return to Life Through Contrology</em> (<a href="https://www.pilatesanytime.com/blog/mat/the-34-pilates-mat-exercises-">Pilates Anytime's list</a>, <a href="https://onlinepilatesclasses.com/blog/pilates-mat-exercise-order/">OPC on the order</a>), with the pre-Pilates fundamentals studios teach first. Level bands are how the sequence is usually staged, not an official grading. Tutorials from Pilates Anytime, Online Pilates Classes, Pilates Encyclopedia and physio-led channels. Anything with a history of back or neck trouble: Roll Over, Jackknife, Neck Pull and the rolling exercises want a teacher's eyes first.</p>""",
+ "speaking": """<p>Skill list draws on Toastmasters' <a href="https://www.toastmasters.org/pathways-overview/pathways-presentation-mastery-path">Presentation Mastery</a> competencies, Matt Abrahams (Stanford GSB) and Julian Treasure's TED talk. The order is deliberate: voice, then everyday habits, then prepared talks, then improvisation, then presence. The two habits that compound are recording yourself weekly and practising out loud — a Toastmasters club or a weekly 2-minute recorded 'table topic' gives both.</p>""",
+ "spanish": """<p>Ten story lessons written for this board, A1 → A2 in scope: ser/estar/tener, present tense, gustar, directions, shopping, weather, the preterite, near future. Format borrowed from Olga's own Spanish tutor: Spanish first with new words in amber, support glosses, English hidden behind a toggle, a cloze that blanks only the new words, and speaking prompts — because retelling out loud is the actual test. Companion listening: <a href="https://coffeebreaklanguages.com/coffeebreakspanish/">Coffee Break Spanish</a>, <a href="https://www.dreamingspanish.com/">Dreaming Spanish</a>; dictionary: <a href="https://www.spanishdict.com/">SpanishDict</a>.</p>""",
  "stretch": """<p>Bands follow <a href="https://www.bodyweightwarrior.co.uk/blog/how-flexible-are-you/">Bodyweight Warrior's flexibility levels</a>; progressions and drills draw on <a href="https://www.daniwinksflexibility.com/bendy-blog">Dani Winks Flexibility</a>, <a href="https://gmb.io/splits/">GMB</a> and <a href="https://antranik.org/">Antranik</a>. Dose lines are starting points, not prescriptions — deep stretching 3–4× a week beats daily grinding, and nothing here should hurt in a joint.</p>""",
 }
-USERS = {"acro": ["olga", "reza"], "pole": ["olga"], "stretch": ["olga"], "mobility": ["sid"]}  # who has a board where
+USERS = {"acro": ["olga", "reza"], "pole": ["olga"], "stretch": ["olga"], "mobility": ["sid"], "speaking": ["tanya"], "pilates": ["tanya"], "spanish": ["tanya"]}  # who has a board where
 # hashtag pages deep-link into the Instagram app; only for names that are acro-specific
 # enough that the tag is not swamped by unrelated posts. Everything else gets a site: search.
 IG_TAGS = {
@@ -45,7 +48,35 @@ IG_TAGS = {
 
 def esc(s): return html.escape(str(s), quote=True)
 
+def render_lessons():
+    import html as H
+    L = json.loads((ROOT / "spanish/lessons.json").read_text())
+    tpl = (ROOT / "lesson_template.html").read_text()
+    out_dir = ROOT / "spanish/lessons"; out_dir.mkdir(exist_ok=True)
+    n_all = len(L)
+    for l in L:
+        n = l["n"]; nn = f"{n:02d}"
+        es = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", H.escape(l["es"]))
+        targets = "".join(f"<div><b>{H.escape(a)}</b> <span>— {H.escape(bb)}</span></div>" for a, bb in l["targets"])
+        glosses = " · ".join(f"<b>{H.escape(a)}</b> {H.escape(bb)}" for a, bb in l["glosses"])
+        cloze = "".join(f"<li>{H.escape(s)}</li>" for s, _ in l["cloze"])
+        answers = "".join(f"<li>{H.escape(a)}</li>" for _, a in l["cloze"])
+        speak = "".join(f"<li>{H.escape(s)}</li>" for s in l["speak"])
+        prev_ = f'<a href="{n-1:02d}.html">← {n-1}</a>' if n > 1 else ""
+        next_ = f'<a href="{n+1:02d}.html">{n+1} →</a>' if n < n_all else ""
+        prevf = f'<a href="{n-1:02d}.html">← Lección {n-1}</a>' if n > 1 else ""
+        nextf = f'<a href="{n+1:02d}.html">Lección {n+1} →</a>' if n < n_all else ""
+        page = (tpl.replace("__N__", str(n)).replace("__TITLE__", H.escape(l["title"])).replace("__THEME__", H.escape(l["theme"]))
+                   .replace("__GRAMMAR__", l["grammar"]).replace("__ES__", es).replace("__TARGETS__", targets)
+                   .replace("__GLOSSES__", glosses).replace("__EN__", H.escape(l["en"])).replace("__CLOZE__", cloze)
+                   .replace("__ANSWERS__", answers).replace("__SPEAK__", speak)
+                   .replace("__PREV__", prev_).replace("__NEXT__", next_).replace("__PREVF__", prevf).replace("__NEXTF__", nextf))
+        (out_dir / f"{nn}.html").write_text(page, encoding="utf-8")
+    print(f"wrote {n_all} lesson pages")
+
 def build(disc: str):
+    if disc == "spanish":
+        render_lessons()
     d = json.loads((ROOT / disc / "skills.json").read_text())
     title, emoji = TITLES.get(disc, (f"{disc} skills", "✅"))
     for s in d["skills"]:
@@ -60,9 +91,15 @@ def build(disc: str):
         REF = {"acro": ("https://www.acropedia.org/?s=", "📖 acropedia"),
                "pole": ("https://polepedia.com/?s=", "📖 polepedia"),
                "stretch": ("https://www.daniwinksflexibility.com/search?q=", "📖 dani winks"),
-               "mobility": ("https://www.google.com/search?q=site:squatuniversity.com+", "📖 squat university")}
+               "mobility": ("https://www.google.com/search?q=site:squatuniversity.com+", "📖 squat university"),
+               "pilates": ("https://www.google.com/search?q=site:pilatesanytime.com+", "📖 pilates anytime"),
+               "speaking": ("https://www.google.com/search?q=site:toastmasters.org+", "📖 toastmasters"),
+               "spanish": ("https://www.spanishdict.com/translate/", "📖 spanishdict")}
         base, label = REF.get(disc, REF["acro"])
         s["ref"] = base + q.replace(" ", "+"); s["ref_label"] = label
+    for s in d["skills"]:
+        if s.get("link") and s["id"].startswith("l"):
+            s["tile"] = s["id"][1:].lstrip("0") or "0"
     # tutorial video id -> thumbnail
     for s in d["skills"]:
         m = re.search(r"(?:v=|youtu\.be/)([\w-]{11})", s.get("yt", ""))

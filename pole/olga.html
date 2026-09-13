@@ -123,7 +123,7 @@ function render(){
       const card = document.createElement("div");
       card.className = "card st"+st; card.dataset.id=s.id; card.dataset.level=s.level; card.dataset.track=t;
       card.style.setProperty("--lc", L.color); card.style.setProperty("--lbg", L.bg);
-      let thumb = `L${s.level}`;
+      let thumb = s.link ? `<a href="${s.link}" style="display:contents;text-decoration:none;color:inherit">${s.tile||("L"+s.level)}</a>` : `L${s.level}`;
       if (s.img_url) thumb = `<img loading="lazy" src="${s.img_url}" alt="${s.name}"><a class="cap" href="${s.img_page}" target="_blank">wikimedia</a>`;
       else if (s.yt_id) thumb = `<a href="${s.yt}" target="_blank" style="display:contents"><img loading="lazy" src="https://img.youtube.com/vi/${s.yt_id}/hqdefault.jpg" alt="${s.name}"></a><a class="cap" href="${s.yt}" target="_blank">▶ ${s.yt_by||"tutorial"}</a>`;
       const roles = (D.fields||[]).filter(f=>s[f[0]]).map(f=>`<p class="role"><b>${f[1]}</b> ${s[f[0]]}</p>`).join("");
@@ -135,8 +135,8 @@ function render(){
           ${roles}${note}
           <p class="pre">Prereq: ${s.prereq}</p>
           <div class="links">
-            <a href="${s.yt}" target="_blank">▶ tutorial</a>
-            <a href="${s.ig}" target="_blank">◎ ${s.ig_label}</a>
+            ${s.link ? `<a href="${s.link}">📘 ${s.link_label||"open"}</a>` : `<a href="${s.yt}" target="_blank">▶ tutorial</a>`}
+            ${s.no_ig ? "" : `<a href="${s.ig}" target="_blank">◎ ${s.ig_label}</a>`}
             <a href="${s.ref}" target="_blank">${s.ref_label}</a>
           </div>
           <button class="status s${st}" data-id="${s.id}" title="${(D.status_help||[])[st]||""}">${ST[st]}<span>click to change</span></button>

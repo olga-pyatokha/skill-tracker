@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spanish · Ten Lessons · Tanya</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1f2328;--muted:#6b7280;--line:#e6e2da;--accent:#0f766e;
+ --l1:#2e7d32;--l2:#00838f;--l3:#ef6c00;--l4:#c62828;--l5:#6a1b9a;
+ --s0:#e5e7eb;--s1:#fde68a;--s2:#93c5fd;--s3:#86efac}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Segoe UI",Inter,Roboto,sans-serif}
+header{padding:28px 24px 12px;max-width:1280px;margin:0 auto}
+h1{margin:0 0 4px;font-size:30px;letter-spacing:-.01em}
+h1 small{font-weight:400;color:var(--muted);font-size:15px;margin-left:10px}
+.sub{color:var(--muted);margin:0 0 18px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px 60px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;border-left-width:5px}
+.tile.active{outline:2px solid var(--ink)}
+.tile b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.tile .n{font-size:22px;font-weight:700;margin-top:2px}
+.tile .bar{height:6px;border-radius:3px;background:#eee;margin-top:8px;overflow:hidden;display:flex}
+.tile .bar i{display:block;height:100%}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 18px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px;user-select:none}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+input[type=search]{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;background:var(--card)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:0 0 14px}
+.legend span{cursor:help}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;background:var(--c)}
+.track{margin:26px 0 10px;display:flex;align-items:baseline;gap:12px}
+.track h2{margin:0;font-size:20px}
+.track small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;position:relative;border-top:4px solid var(--lc)}
+.card.hide{display:none}
+.card.st3{opacity:.75}
+.thumb{height:150px;background:linear-gradient(135deg,var(--lbg),#fff);display:flex;align-items:center;justify-content:center;color:var(--lc);font-size:44px;font-weight:800;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb a.cap{position:absolute;right:8px;bottom:6px;font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:2px 6px;border-radius:6px;text-decoration:none}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.hd h3{margin:0;font-size:16px;line-height:1.25}
+.lvl{font-size:11px;font-weight:700;color:#fff;background:var(--lc);border-radius:6px;padding:3px 7px;white-space:nowrap}
+.role{font-size:13px;margin:0}
+.role b{display:inline-block;min-width:54px;color:var(--muted);font-weight:600}
+.note{font-size:13px;color:var(--accent);margin:0}
+.pre{font-size:12px;color:var(--muted);margin:0}
+.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.links a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:4px 8px;color:var(--ink);background:#fafafa}
+.links a:hover{border-color:var(--ink)}
+.status{border:none;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;background:var(--s0);width:100%;text-align:left;display:flex;justify-content:space-between}
+.status.s1{background:var(--s1)}.status.s2{background:var(--s2)}.status.s3{background:var(--s3)}
+.status span{opacity:.6;font-weight:400}
+details.sources{margin-top:36px;color:var(--muted);font-size:13px}
+details.sources a{color:var(--accent)}
+.io{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.io button{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:#fff;cursor:pointer}
+textarea{width:100%;min-height:70px;font:12px monospace;margin-top:6px}
+@media (max-width:600px){
+ header{padding:18px 16px 8px}.wrap{padding-left:16px;padding-right:16px}
+ h1{font-size:22px}h1 small{display:block;margin:4px 0 0;font-size:13px}.sub{font-size:14px}
+ .summary{grid-template-columns:repeat(2,1fr);gap:8px}.tile{padding:10px 10px;border-radius:10px}.tile .n{font-size:18px}.tile b{font-size:11px}
+ .chip{padding:8px 12px}input[type=search]{padding:10px 12px;font-size:16px}
+ .grid{grid-template-columns:1fr;gap:12px}.thumb{height:170px}
+ .hd{flex-direction:column;gap:4px}.lvl{align-self:flex-start}
+ .status{min-height:44px;font-size:14px}.links a{padding:8px 10px;font-size:13px}
+ .track{margin-top:20px}.track h2{font-size:18px}
+}
+@media (hover:none){.status:active{filter:brightness(.95)}}
+</style>
+</head>
+<body>
+<header>
+ <h1>🇪🇸 Spanish · Ten Lessons <small>Tanya's board</small> <small id="count"></small></h1>
+ <p class="sub">Ten story lessons, one a week, each built the same way: a short Spanish passage with the new words in amber, glosses for the hard support words, the English hidden until you want it, a five-blank cloze, and three speaking prompts. Read → do the cloze → say it out loud. The last status is &#x27;can retell it&#x27; because that, not the reading, is the goal. — Every skill, grouped by track and levelled 1–5. Click a level tile to filter. Click a skill's status bar to cycle <em id="cycle"></em>; progress saves in this browser — hit <em>Save progress to file</em> in the footer now and then so it survives rebuilds.</p>
+</header>
+<div class="wrap">
+ <div class="summary" id="summary"></div>
+ <div class="legend">
+  <span style="--c:var(--s0)" data-st="0"></span><span style="--c:var(--s1)" data-st="1"></span><span style="--c:var(--s2)" data-st="2"></span><span style="--c:var(--s3)" data-st="3"></span>
+ </div>
+ <div class="controls" id="tracks"></div>
+ <div class="controls">
+  <input type="search" id="q" placeholder="search skills…">
+  <label class="chip"><input type="checkbox" id="hideSolid" checked style="vertical-align:-2px"> hide <span id="hideLbl">solid</span></label>
+  <label class="chip"><input type="checkbox" id="onlyMine" style="vertical-align:-2px"> only in progress</label>
+ </div>
+ <div id="content"></div>
+ <details class="sources">
+  <summary>Sources, method &amp; export</summary>
+  <p>Ten story lessons written for this board, A1 → A2 in scope: ser/estar/tener, present tense, gustar, directions, shopping, weather, the preterite, near future. Format borrowed from Olga's own Spanish tutor: Spanish first with new words in amber, support glosses, English hidden behind a toggle, a cloze that blanks only the new words, and speaking prompts — because retelling out loud is the actual test. Companion listening: <a href="https://coffeebreaklanguages.com/coffeebreakspanish/">Coffee Break Spanish</a>, <a href="https://www.dreamingspanish.com/">Dreaming Spanish</a>; dictionary: <a href="https://www.spanishdict.com/">SpanishDict</a>.</p>
+  
+  <div class="io"><button id="dl"><b>Save progress to file</b> (Downloads/spanish_progress_tanya.json — rebuilds keep it)</button><button id="exp">Copy progress JSON</button><button id="imp">Import from box</button><button id="clr">Reset progress</button></div>
+  <textarea id="box" placeholder="progress JSON appears here on export; paste here to import"></textarea>
+ </details>
+</div>
+<script>
+const D = {"fields": [["what", "What"], ["goal", "Goal"], ["homework", "Homework"]], "statuses": ["not started", "read it", "did the exercises", "can retell it"], "status_help": ["haven't opened the lesson", "read the passage and understood it with the glosses", "filled the cloze without peeking and checked the answers", "can retell the story out loud in your own words, no text"], "levels": {"1": {"name": "Weeks 1–2", "color": "#2e7d32", "bg": "#e8f5e9"}, "2": {"name": "Weeks 3–4", "color": "#00838f", "bg": "#e0f7fa"}, "3": {"name": "Weeks 5–6", "color": "#ef6c00", "bg": "#fff3e0"}, "4": {"name": "Weeks 7–8", "color": "#c62828", "bg": "#ffebee"}, "5": {"name": "Weeks 9–10", "color": "#6a1b9a", "bg": "#f3e5f5"}}, "level_notes": "Ten story lessons, one a week, each built the same way: a short Spanish passage with the new words in amber, glosses for the hard support words, the English hidden until you want it, a five-blank cloze, and three speaking prompts. Read → do the cloze → say it out loud. The last status is 'can retell it' because that, not the reading, is the goal.", "tracks": ["The ten lessons", "Weekly habits"], "skills": [{"id": "l01", "name": "Lesson 1 · Hola, soy Tanya", "level": 1, "track": "The ten lessons", "what": "Greetings, introducing yourself, <i>ser</i> and <i>llamarse</i>, ages, languages.", "goal": "Introduce yourself in six sentences without notes.", "homework": "Record your introduction on your phone; listen back once.", "prereq": "—", "link": "lessons/01.html", "link_label": "open lesson 1", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+1+·+Hola,+soy+Tanya", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+1+·+Hola,+soy+Tanya", "ref_label": "📖 spanishdict", "tile": "1"}, {"id": "l02", "name": "Lesson 2 · Mi familia", "level": 1, "track": "The ten lessons", "what": "Family words, <i>tener</i>, adjective agreement, possessives.", "goal": "Describe three family members with two adjectives each.", "homework": "Write five sentences about your family; read them aloud.", "prereq": "Lesson 1", "link": "lessons/02.html", "link_label": "open lesson 2", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+2+·+Mi+familia", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+2+·+Mi+familia", "ref_label": "📖 spanishdict", "tile": "2"}, {"id": "l03", "name": "Lesson 3 · Un día normal", "level": 2, "track": "The ten lessons", "what": "Daily routine, regular present tense, reflexive verbs, telling the time.", "goal": "Narrate your day from waking to bed.", "homework": "Say your routine while doing it tomorrow morning — in Spanish, out loud.", "prereq": "Lesson 2", "link": "lessons/03.html", "link_label": "open lesson 3", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+3+·+Un+día+normal", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+3+·+Un+día+normal", "ref_label": "📖 spanishdict", "tile": "3"}, {"id": "l04", "name": "Lesson 4 · En la cafetería", "level": 2, "track": "The ten lessons", "what": "Ordering food and drink, <i>quisiera</i>, numbers and prices, paying.", "goal": "Order a full breakfast and pay, politely, without English.", "homework": "Order in Spanish at a real café or taquería this week.", "prereq": "Lesson 3", "link": "lessons/04.html", "link_label": "open lesson 4", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+4+·+En+la+cafetería", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+4+·+En+la+cafetería", "ref_label": "📖 spanishdict", "tile": "4"}, {"id": "l05", "name": "Lesson 5 · Perdona, ¿dónde está…?", "level": 3, "track": "The ten lessons", "what": "Asking and giving directions, <i>estar</i> vs <i>hay</i>, place words.", "goal": "Give directions from your home to the nearest shop.", "homework": "Describe your neighbourhood in six sentences with <i>hay</i>.", "prereq": "Lesson 4", "link": "lessons/05.html", "link_label": "open lesson 5", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+5+·+Perdona,+¿dónde+está…?", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+5+·+Perdona,+¿dónde+está…?", "ref_label": "📖 spanishdict", "tile": "5"}, {"id": "l06", "name": "Lesson 6 · De compras", "level": 3, "track": "The ten lessons", "what": "Clothes, colours, sizes, <i>¿cuánto cuesta?</i>, this/that, first taste of the past.", "goal": "Describe what you're wearing and buy something in a shop.", "homework": "Name the colour of ten things in your room, fast.", "prereq": "Lesson 5", "link": "lessons/06.html", "link_label": "open lesson 6", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+6+·+De+compras", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+6+·+De+compras", "ref_label": "📖 spanishdict", "tile": "6"}, {"id": "l07", "name": "Lesson 7 · Me gusta el fin de semana", "level": 4, "track": "The ten lessons", "what": "<i>Gustar</i> and friends, hobbies, plans with <i>voy a</i>.", "goal": "Say five likes, three dislikes and your weekend plans.", "homework": "Text a friend three plans for the weekend — in Spanish.", "prereq": "Lesson 6", "link": "lessons/07.html", "link_label": "open lesson 7", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+7+·+Me+gusta+el+fin+de+semana", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+7+·+Me+gusta+el+fin+de+semana", "ref_label": "📖 spanishdict", "tile": "7"}, {"id": "l08", "name": "Lesson 8 · ¿Qué tiempo hace?", "level": 4, "track": "The ten lessons", "what": "Weather, seasons, clothes for the weather.", "goal": "Give a 30-second weather report for today.", "homework": "Every morning this week: one sentence about the weather, aloud.", "prereq": "Lesson 7", "link": "lessons/08.html", "link_label": "open lesson 8", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+8+·+¿Qué+tiempo+hace?", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+8+·+¿Qué+tiempo+hace?", "ref_label": "📖 spanishdict", "tile": "8"}, {"id": "l09", "name": "Lesson 9 · Ayer fue un día largo", "level": 5, "track": "The ten lessons", "what": "The preterite: regular forms and the four irregulars you can't avoid.", "goal": "Tell what you did yesterday in eight sentences.", "homework": "Each night: three things you did today, in the past tense.", "prereq": "Lesson 8", "link": "lessons/09.html", "link_label": "open lesson 9", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+9+·+Ayer+fue+un+día+largo", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+9+·+Ayer+fue+un+día+largo", "ref_label": "📖 spanishdict", "tile": "9"}, {"id": "l10", "name": "Lesson 10 · Planes de viaje", "level": 5, "track": "The ten lessons", "what": "Review of everything: future plans, opinions, connectors.", "goal": "Two minutes of continuous Spanish about yourself, recorded.", "homework": "Record the two minutes; compare with the Lesson 1 recording.", "prereq": "Lesson 9", "link": "lessons/10.html", "link_label": "open lesson 10", "no_ig": true, "ig": "https://www.google.com/search?q=site:instagram.com+acroyoga+Lesson+10+·+Planes+de+viaje", "ig_label": "instagram via google", "ref": "https://www.spanishdict.com/translate/Lesson+10+·+Planes+de+viaje", "ref_label": "📖 spanishdict", "tile": "10"}, {"id": "h-aloud", "name": "Read every lesson aloud, twice", "level": 1, "track": "Weekly habits", "what": "Silent reading trains recognition; reading aloud trains the mouth. Both times, even when it feels silly.", "goal": "Comfortable speed on the second read.", "homework": "Every lesson, before the cloze.", "prereq": "—", "yt": "https://www.youtube.com/results?search_query=spanish+pronunciation+for+beginners+vowels", "tag": "learnspanish", "ig": "https://www.instagram.com/explore/tags/learnspanish/", "ig_label": "#learnspanish", "ref": "https://www.spanishdict.com/translate/Read+every+lesson+aloud,+twice", "ref_label": "📖 spanishdict"}, {"id": "h-cards", "name": "Ten-minute flashcards", "level": 1, "track": "Weekly habits", "what": "Put each lesson's amber words into Anki or paper cards: Spanish on the front, English on the back. Review before adding.", "goal": "Every target word from earlier lessons still recalled.", "homework": "10 minutes a day, reviews first.", "prereq": "—", "yt": "https://www.youtube.com/results?search_query=anki+tutorial+beginner+language+learning", "tag": "anki", "ig": "https://www.instagram.com/explore/tags/anki/", "ig_label": "#anki", "ref": "https://www.spanishdict.com/translate/Ten-minute+flashcards", "ref_label": "📖 spanishdict"}, {"id": "h-listen", "name": "Listen: Coffee Break Spanish or Dreaming Spanish", "level": 2, "track": "Weekly habits", "what": "One beginner episode a week. Don't worry about understanding everything; the ear needs volume.", "goal": "An episode a week, ten weeks.", "homework": "On a walk or the commute.", "prereq": "Lesson 2", "yt": "https://www.youtube.com/results?search_query=dreaming+spanish+superbeginner", "tag": "learnspanish", "ig": "https://www.instagram.com/explore/tags/learnspanish/", "ig_label": "#learnspanish", "ref": "https://www.spanishdict.com/translate/Listen:+Coffee+Break+Spanish+or+Dreaming+Spanish", "ref_label": "📖 spanishdict"}, {"id": "h-speak", "name": "Speak to a real person", "level": 3, "track": "Weekly habits", "what": "Order in Spanish, greet a neighbour, book a 30-minute italki or Tandem chat. Mistakes are the point.", "goal": "One real exchange a week from Lesson 4 on.", "homework": "Weekly, and note one thing you couldn't say — that's next week's vocabulary.", "prereq": "Lesson 4", "yt": "https://www.youtube.com/results?search_query=how+to+practice+speaking+spanish+alone+beginner", "tag": "learnspanish", "ig": "https://www.instagram.com/explore/tags/learnspanish/", "ig_label": "#learnspanish", "ref": "https://www.spanishdict.com/translate/Speak+to+a+real+person", "ref_label": "📖 spanishdict"}]};
+const EMBEDDED = {};
+const USER = "tanya";
+const KEY = "skilltracker-spanish-" + USER + "-v1";
+const ST = D.statuses || ["not started","learning","with spot","solid"];
+let prog = {}; try{ prog = JSON.parse(localStorage.getItem(KEY) || localStorage.getItem("skilltracker-spanish-v1") || "{}"); }catch(e){}
+// file-saved progress is the floor; anything newer in this browser wins per skill
+for (const k in EMBEDDED) if (!(k in prog)) prog[k] = EMBEDDED[k];
+let lvlFilter = null, trackFilter = null;
+
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(prog)); }catch(e){} }
+function lv(n){ return D.levels[String(n)]; }
+
+function render(){
+  const c = document.getElementById("content"); c.innerHTML = "";
+  for (const t of D.tracks){
+    const skills = D.skills.filter(s=>s.track===t);
+    if(!skills.length) continue;
+    const h = document.createElement("div"); h.className="track";
+    h.innerHTML = `<h2>${t}</h2><small>${skills.length} skills</small>`;
+    const g = document.createElement("div"); g.className="grid";
+    for (const s of skills){
+      const L = lv(s.level); const st = prog[s.id]||0;
+      const card = document.createElement("div");
+      card.className = "card st"+st; card.dataset.id=s.id; card.dataset.level=s.level; card.dataset.track=t;
+      card.style.setProperty("--lc", L.color); card.style.setProperty("--lbg", L.bg);
+      let thumb = s.link ? `<a href="${s.link}" style="display:contents;text-decoration:none;color:inherit">${s.tile||("L"+s.level)}</a>` : `L${s.level}`;
+      if (s.img_url) thumb = `<img loading="lazy" src="${s.img_url}" alt="${s.name}"><a class="cap" href="${s.img_page}" target="_blank">wikimedia</a>`;
+      else if (s.yt_id) thumb = `<a href="${s.yt}" target="_blank" style="display:contents"><img loading="lazy" src="https://img.youtube.com/vi/${s.yt_id}/hqdefault.jpg" alt="${s.name}"></a><a class="cap" href="${s.yt}" target="_blank">▶ ${s.yt_by||"tutorial"}</a>`;
+      const roles = (D.fields||[]).filter(f=>s[f[0]]).map(f=>`<p class="role"><b>${f[1]}</b> ${s[f[0]]}</p>`).join("");
+      const note = s.note ? `<p class="note">${s.note}</p>` : "";
+      card.innerHTML = `
+        <div class="thumb">${thumb}</div>
+        <div class="body">
+          <div class="hd"><h3>${s.name}</h3><span class="lvl">L${s.level} · ${L.name}</span></div>
+          ${roles}${note}
+          <p class="pre">Prereq: ${s.prereq}</p>
+          <div class="links">
+            ${s.link ? `<a href="${s.link}">📘 ${s.link_label||"open"}</a>` : `<a href="${s.yt}" target="_blank">▶ tutorial</a>`}
+            ${s.no_ig ? "" : `<a href="${s.ig}" target="_blank">◎ ${s.ig_label}</a>`}
+            <a href="${s.ref}" target="_blank">${s.ref_label}</a>
+          </div>
+          <button class="status s${st}" data-id="${s.id}" title="${(D.status_help||[])[st]||""}">${ST[st]}<span>click to change</span></button>
+        </div>`;
+      g.appendChild(card);
+    }
+    c.appendChild(h); c.appendChild(g);
+  }
+  c.querySelectorAll(".status").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.id; prog[id]=((prog[id]||0)+1)%4; save(); render();
+  });
+  applyFilters(); summary();
+}
+
+function summary(){
+  const el = document.getElementById("summary"); el.innerHTML="";
+  for (const n of [1,2,3,4,5]){
+    const L = lv(n); const ss = D.skills.filter(s=>s.level===n);
+    const cnt=[0,0,0,0]; ss.forEach(s=>cnt[prog[s.id]||0]++);
+    const t = document.createElement("div"); t.className="tile"+(lvlFilter===n?" active":"");
+    t.style.borderLeftColor=L.color;
+    const seg = (i,cls)=>`<i style="width:${100*cnt[i]/ss.length}%;background:var(--${cls})"></i>`;
+    t.innerHTML = `<b style="color:${L.color}">L${n} · ${L.name}</b><div class="n">${cnt[3]} / ${ss.length} <span style="font-size:12px;color:var(--muted);font-weight:400">${ST[3]}</span></div>
+      <div class="bar">${seg(3,"s3")}${seg(2,"s2")}${seg(1,"s1")}</div>`;
+    t.onclick=()=>{ lvlFilter = lvlFilter===n?null:n; summary(); applyFilters(); };
+    el.appendChild(t);
+  }
+  const total = D.skills.length, solid = D.skills.filter(s=>(prog[s.id]||0)===3).length, going = D.skills.filter(s=>[1,2].includes(prog[s.id]||0)).length;
+  document.getElementById("count").textContent = `${total} skills · ${solid} ${ST[3]} · ${going} in progress`;
+}
+
+function tracks(){
+  const el = document.getElementById("tracks");
+  el.innerHTML = `<span class="chip ${trackFilter?"":"on"}" data-t="">all tracks</span>` + D.tracks.map(t=>`<span class="chip ${trackFilter===t?"on":""}" data-t="${t}">${t}</span>`).join("");
+  el.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{ trackFilter = ch.dataset.t||null; tracks(); applyFilters(); });
+}
+
+function applyFilters(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const hideSolid = document.getElementById("hideSolid").checked, onlyMine = document.getElementById("onlyMine").checked;
+  document.querySelectorAll(".card").forEach(c=>{
+    const s = D.skills.find(x=>x.id===c.dataset.id); const st = prog[s.id]||0;
+    let show = true;
+    if (lvlFilter && s.level!==lvlFilter) show=false;
+    if (trackFilter && s.track!==trackFilter) show=false;
+    if (q && !(s.name+" "+(D.fields||[]).map(f=>s[f[0]]||"").join(" ")+" "+s.prereq).toLowerCase().includes(q)) show=false;
+    if (hideSolid && st===3) show=false;
+    if (onlyMine && !(st===1||st===2)) show=false;
+    c.classList.toggle("hide", !show);
+  });
+  document.querySelectorAll(".track").forEach(h=>{
+    const g=h.nextElementSibling; h.style.display = g.querySelector(".card:not(.hide)") ? "" : "none"; g.style.display=h.style.display;
+  });
+}
+
+document.getElementById("q").oninput=applyFilters;
+document.getElementById("hideSolid").onchange=applyFilters;
+document.getElementById("onlyMine").onchange=applyFilters;
+document.getElementById("dl").onclick=()=>{ const b=new Blob([JSON.stringify(prog,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download="spanish_progress_tanya.json"; a.click(); };
+document.getElementById("exp").onclick=()=>{ const s=JSON.stringify(prog); document.getElementById("box").value=s; navigator.clipboard&&navigator.clipboard.writeText(s); };
+document.getElementById("imp").onclick=()=>{ try{ prog=JSON.parse(document.getElementById("box").value); save(); render(); }catch(e){ alert("not valid JSON"); } };
+document.getElementById("clr").onclick=()=>{ if(confirm("Reset all progress?")){ prog={}; save(); render(); } };
+const HELP = D.status_help || [];
+document.querySelectorAll(".legend [data-st]").forEach(el=>{ el.textContent=ST[+el.dataset.st]; if (HELP[+el.dataset.st]) el.title=HELP[+el.dataset.st]; });
+document.getElementById("cycle").textContent = ST.join(" → ");
+document.getElementById("hideLbl").textContent = ST[3];
+tracks(); render();
+</script>
+</body>
+</html>
